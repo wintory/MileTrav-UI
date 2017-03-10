@@ -1,0 +1,55 @@
+import React from 'react'
+import Tickets from './Tickets'
+import Schedule from './Schedule'
+class Detail extends React.Component{
+  render(){
+    return(
+        <div>
+            <div className="thumbnail blogSinglePost img-hovers">
+              <div className="caption">
+                <h1>{this.props.activity_name}</h1>
+                        <div className="row">
+                                <div className="col-md-4">
+                                    <p>Host : {this.props.owner}</p>
+                                </div>
+                                <div className="col-md-4">
+                                    <p>Type : {this.props.type}</p>
+                                </div>
+                        </div>
+                        <div className="row">
+                                <div className="col-md-12">
+                                  <h2>Province : {this.props.province}</h2>
+                                  <h2>Location : {this.props.location}</h2>
+                                </div>
+                        </div>
+                        <hr/>
+                        <div className="row">
+                                <div className="col-md-12">
+                                      <h2>Description</h2>
+                                      <p>{this.props.activity_desc}</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div className="row">
+                      <div className="col-md-12">
+
+                              <Schedule aid={this.props.aid} />
+                        </div>
+                </div>
+
+
+                <div className="row">
+                        <div className="col-md-12">
+                            
+                            <Tickets aid={this.props.aid} />
+                        </div>
+               </div>
+          </div>
+    )
+  }
+}
+export default Detail
