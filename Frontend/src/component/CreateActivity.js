@@ -283,7 +283,8 @@ class CreateActivity extends React.Component {
     showFiletypeIcon: true,
     postUrl: 'no-url'
   };
-  var djsConfig = { autoProcessQueue: false }
+  var djsConfig = { autoProcessQueue: false,    addRemoveLinks: true,  uploadMultiple: false , maxFiles: 1
+}
   var eventHandlers = {
     addedfile: (file) => {
         var  type = file.name.split('.');

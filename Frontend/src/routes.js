@@ -8,6 +8,7 @@ import ActivityResultByProvince from './component/ActivityResultByProvince'
 import Register from './component/Register'
 import Login from './component/Login'
 import CreateActivity from './component/CreateActivity';
+import Profile from './component/Profile'
 export default (
       <Route>
            <Route path="/" component={Home}> </Route>
@@ -15,6 +16,7 @@ export default (
            <Route path="/activity/:activity_name" component={ActivityDetail}></Route>
            <Route path="/register" component={Register}></Route>
            <Route path="/login" component={Login}></Route>
+           <Route path="/Profile" component={Profile}></Route>
            <Route path="/CreateActivity/:step" component={CreateActivity}></Route>
       </Route>
 )
