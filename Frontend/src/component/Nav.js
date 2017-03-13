@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from 'react-loading'
 import {Router , Link , browserHistory} from 'react-router'
 class Nav extends React.Component{
 
@@ -36,7 +37,7 @@ class Nav extends React.Component{
 
 
   render(){
- if(!this.state.isLogin || this.state.username == ""){
+ if((!this.state.isLogin )|| this.state.username == ""){
       return(
         <header>
        <nav className="navbar navbar-default navbar-main navbar-fixed-top lightHeader" role="navigation">

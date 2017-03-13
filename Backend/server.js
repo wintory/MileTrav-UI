@@ -2,6 +2,7 @@ const Hapi = require('hapi');
 const mysql = require('promise-mysql')
 var connection ;
 const HapiAuth = require('hapi-auth-jwt2');
+var fs = require('fs');
 const JWT = require('jsonwebtoken');
 var sha1 = require("sha1");
 
@@ -10,7 +11,8 @@ mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'senior_project'
+    database: 'senior_project' //,
+    //socketPath : /var/run/mysqld/mysqld.sock
 }).then(function(conn){
     connection = conn;
 });
@@ -22,6 +24,22 @@ server.connection({
             cors: true
         }
 });
+/*
+server.connection({
+  port : 8001,
+  tls: {
+      key: fs.readFileSync('server.key'),
+        cert: fs.readFileSync('miletrav_com.crt')
+
+  },
+    routes:{
+    cors: true
+
+  }
+*/
+
+
+
 
 server.register(HapiAuth, err => {
   if (err) {

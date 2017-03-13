@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route , IndexRoute} from 'react-router'
+import { Route , IndexRoute , browserHistory} from 'react-router'
 import ActivityDetail from './component/ActivityDetail'
 import Page1 from './component/page1'
 import Page2 from './component/page2'
@@ -16,7 +16,7 @@ export default (
            <Route path="/activity/:activity_name" component={ActivityDetail}></Route>
            <Route path="/register" component={Register}></Route>
            <Route path="/login" component={Login}></Route>
-           <Route path="/Profile" component={Profile}></Route>
-           <Route path="/CreateActivity/:step" component={CreateActivity}></Route>
+           <Route path="/Profile" component={Profile} ></Route>
+           <Route path="/CreateActivity/:step" component={CreateActivity} ></Route>
       </Route>
 )

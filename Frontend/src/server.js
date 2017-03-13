@@ -21,8 +21,8 @@ app.use(router)
 
 /*
 var options = {
-         key: fs.readFileSync('server.key'),
-        cert: fs.readFileSync('miletrav_com.crt')
+         key: fs.readFileSync(path.join(__dirname , './server.key')),
+        cert: fs.readFileSync(path.join(__dirname ,'./miletrav_com.crt'))
 
 }
 

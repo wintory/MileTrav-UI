@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
+import { browserHistory} from 'react-router'
 import 'whatwg-fetch'
 import Footer from './Footer'
 import DropzoneComponent from 'react-dropzone-component/lib/react-dropzone';
@@ -29,39 +30,46 @@ class Profile extends React.Component{
             this.fetchData = this.fetchData.bind(this)
           }
 
+
+
           componentDidMount(){
-            var config = {
-                apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
-                authDomain: "miletrav-4f855.firebaseapp.com",
-                databaseURL: "https://miletrav-4f855.firebaseio.com",
-                storageBucket: "miletrav-4f855.appspot.com",
-                messagingSenderId: "469316737513"
-              };
-            firebase.initializeApp(config);
-            fetch(host+'api/profile/'+localStorage.getItem('username') , {
-              method: 'GET',
-               headers: {
-                  'Content-Type': 'application/json',
-                  'Accept': 'application/json',
-                  'Authorization': 'Bearer '+localStorage.getItem('token')
-               }
-            }).then((res)=>{
-              return res.json()
-            }).then((res)=>{
-                var x = res
-                x.map((value) =>{
-                    this.setState({
-                      name: value.first_name,
-                      surname: value.last_name,
-                      cover_photo : value.cover_photo == null ? "": value.cover_photo,
-                      cover : null,
-                      type_file : "",
-                      tel: value.tel_no == null ? "" :value.tel_no ,
-                      email: value.email == null ? "" : value.email,
-                      nation:value.nationality == null ? "":value.nationality
-                    })
-                })
-            })
+            if (localStorage.getItem("username") == null || localStorage.getItem("token") == null) {
+                browserHistory.replace("/login")
+            }else{
+              var config = {
+                  apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
+                  authDomain: "miletrav-4f855.firebaseapp.com",
+                  databaseURL: "https://miletrav-4f855.firebaseio.com",
+                  storageBucket: "miletrav-4f855.appspot.com",
+                  messagingSenderId: "469316737513"
+                };
+              firebase.initializeApp(config);
+              fetch(host+'api/profile/'+localStorage.getItem('username') , {
+                method: 'GET',
+                 headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer '+localStorage.getItem('token')
+                 }
+              }).then((res)=>{
+                return res.json()
+              }).then((res)=>{
+                  var x = res
+                  x.map((value) =>{
+                      this.setState({
+                        name: value.first_name,
+                        surname: value.last_name,
+                        cover_photo : value.cover_photo == null ? "": value.cover_photo,
+                        cover : null,
+                        type_file : "",
+                        tel: value.tel_no == null ? "" :value.tel_no ,
+                        email: value.email == null ? "" : value.email,
+                        nation:value.nationality == null ? "":value.nationality
+                      })
+                  })
+              })
+            }
+
           }
 
           fetchData(){

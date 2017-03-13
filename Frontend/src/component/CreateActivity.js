@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from 'react-loading'
 import {host} from './host'
 import 'whatwg-fetch';
 import Nav from './Nav'
@@ -26,7 +27,8 @@ class CreateActivity extends React.Component {
                   hour: "01",
                   minute: "00",
                   routine_desc: "",
-                  itinerary : []
+                  itinerary : [],
+                  onLoad : false
                 }
                 this.create = this.create.bind(this);
                 this.setCity = this.setCity.bind(this);
@@ -40,20 +42,27 @@ class CreateActivity extends React.Component {
               }
 
               componentDidMount(){
-                var config = {
-                    apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
-                    authDomain: "miletrav-4f855.firebaseapp.com",
-                    databaseURL: "https://miletrav-4f855.firebaseio.com",
-                    storageBucket: "miletrav-4f855.appspot.com",
-                    messagingSenderId: "469316737513"
-                  };
-                firebase.initializeApp(config);
+                if (localStorage.getItem("username") == null || localStorage.getItem("token") == null) {
+                    browserHistory.replace("/login")
+                }else{
+                  var config = {
+                      apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
+                      authDomain: "miletrav-4f855.firebaseapp.com",
+                      databaseURL: "https://miletrav-4f855.firebaseio.com",
+                      storageBucket: "miletrav-4f855.appspot.com",
+                      messagingSenderId: "469316737513"
+                    };
+                  firebase.initializeApp(config);
+                }
+
               }
 
               create(e){
                   e.preventDefault();
                   var img = this.state.name+"_activity_cover."+this.state.type_file
-
+                  this.setState({
+                    onLoad : true
+                  })
                   var insertId;
                   console.log("authen : "+localStorage.getItem('token'))
                 fetch(host+'api/activities' , {
@@ -128,7 +137,10 @@ class CreateActivity extends React.Component {
                                   return res.json()
                                 }).then((res)=>{
                                   console.log(res)
-                                  console.log("insert complete !!")
+                                  this.setState({
+                                    onLoad : false
+                                  })
+                                  browserHistory.push('/activity/'+this.state.name);
                                 })
                               })
 
@@ -302,217 +314,239 @@ class CreateActivity extends React.Component {
   const hour = [ '01', '02' , '03' , '04' , '05' ,'06' , '07' ,'08' ,'09' ,'10' ,'11','12','13','14','15', '16', '17' ,'18'
    ,'19' ,'20' , '21' ,'22' ,'23' ,'00']
    const minute = ['00' , '15' ,'30' ,'45'];
-    return(
-      <div className="main-wrapper">
-          <Nav />
-          <section className="mainContentSection singlePackage">
-          <br/><br/>
-              <div className="container" style={{width: 1024}}>
-                    <div className="col-sm-12 col-xs-12">
-                        <div className="portlet light">
-                          <div className="portlet-title">
-                              <center>
-                                <div className="caption font-kademy">
-                                  <h3>Create Your Activity</h3>
-                                </div>
-                              </center>
-                            </div>
-                            <div className="portlet-body">
-                              <div className="row">
-                              <br/>
-                              <br/>
-                                <center>
-                                <br/>
-                                <br/>
-                                <br/>
-                                    <div className="col-md-12">
-                                    <form className="form-horizontal">
-                                            <h3>Activity Detail</h3>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Activity name:</label>
-                                              <div className="col-sm-10">
-                                                <input type="text" className="form-control" onChange={this.setName} placeholder="Activity name" />
-                                              </div>
-                                            </div>
-
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Activity Description:</label>
-                                              <div className="col-sm-10">
-                                                <textarea className="form-control" onChange={this.setDesc} placeholder="description here" />
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Cover image here</label>
-                                              <div className="col-sm-10">
-                                                                      <DropzoneComponent config={componentConfig}
-                                                                          eventHandlers={eventHandlers}
-                                                                          djsConfig={djsConfig} />
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Province</label>
-                                              <div className="col-sm-10">
-                                              <select onChange={this.setCity} className="form-control">
-                                                {
-                                                  city.map((value , index) => {
-                                                    return(
-                                                        <option key={index} value={value}>{value}</option>
-                                                    )
-                                                  })
-                                                }
-                                              </select>
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Location :</label>
-                                              <div className="col-sm-10">
-                                                <input type="text" className="form-control" onChange={this.setLocation} placeholder="location here"/>
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Category :</label>
-                                              <div className="col-sm-10">
-                                              <select onChange={this.setType} className="form-control">
-                                              {
-                                                cate.map((value , index) => {
-                                                  return(
-                                                      <option key={index} value={value}>{value}</option>
-                                                  )
-                                                })
-                                              }
-                                              </select>
-                                              </div>
-                                            </div>
-                                            <h3>Ticket</h3>
-                                              <div className="form-group">
-                                              <div className="row">
-                                                <div className="col-md-12">
-                                                    <table className="table">
-                                                      <thead>
-                                                        <tr>
-                                                        <td>Ticket Name</td>
-                                                        <td>Price</td>
-                                                        <td>Action</td>
-                                                        </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                      <tr>
-                                                        <td>
-                                                          <input type="text" className="form-control"
-                                                          onChange={this.setTicketName} value={this.state.ticket_name} placeholder="Earlybird , RSVP , ..."/>
-                                                        </td>
-                                                        <td>
-                                                          <input type="number" className="form-control"
-                                                          onChange={this.setTicketPrice} value={this.state.ticket_price}  placeholder="150.00 THB"/>
-                                                        </td>
-                                                        <td>
-                                                        <button type="button" className="btn btn-block buttonCustomPrimary"
-                                                        onClick={this.addTicket}>Add</button>
-                                                        </td>
-                                                      </tr>
-                                                      {
-                                                        this.state.tickets.map((value , key) =>{
-                                                          return(
-                                                            <tr key={key}>
-                                                            <td>{value.name} </td>
-                                                            <td>{value.price}</td>
-                                                            <td>
-                                                            <button type="button" onClick={this.deleteTicket.bind(this, key)} className="btn btn-block buttonCustomPrimary">x</button>
-                                                            </td>
-                                                              </tr>
-                                                          )
-                                                        })
-                                                      }
-
-                                                      </tbody>
-                                                    </table>
-                                                  </div>
-                                                </div>
-                                            </div>
-                                            <h3>Schedule</h3>
-
-                                            <div className="form-group">
-                                            <div className="row">
-                                              <div className="col-md-12">
-                                                  <table className="table">
-                                                    <thead>
-                                                      <tr>
-                                                      <td>Hour</td>
-                                                      <td>Minute</td>
-                                                      <td>Activity</td>
-                                                      <td>Action</td>
-                                                      </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                      <td>
-                                                      <select onChange={this.setHour.bind(this)} className="form-control">
-                                                      {
-                                                        hour.map((value , index) =>{
-                                                          return(
-                                                            <option key={index} value={value}>{value}</option>
-                                                          )
-                                                        })
-                                                      }
-                                                      </select>
-                                                      </td>
-                                                      <td>
-                                                      <select onChange={this.setMinute.bind(this)} className="form-control">
-                                                      {
-                                                        minute.map((value , index) =>{
-                                                          return(
-                                                            <option key={index} value={value}>{value}</option>
-                                                          )
-                                                        })
-                                                      }
-                                                      </select>
-                                                      </td>
-                                                      <td>
-                                                      <input type="text" className="form-control"
-                                                      onChange={this.setRoutine.bind(this)} value={this.state.routine_desc} placeholder="Meet up at ..... , Finished activity"/>
-                                                      </td>
-                                                      <td>
-                                                      <button type="button" className="btn btn-block buttonCustomPrimary"
-                                                      onClick={this.addSchedule.bind(this)}>Add</button>
-                                                      </td>
-                                                    </tr>
-
-                                                    {
-                                                      this.state.itinerary.map((value , key) =>{
-                                                        return(
-                                                          <tr key={key}>
-                                                            <td colSpan="2">{value.time} </td>
-                                                            <td>{value.desc} </td>
-                                                            <td><button type="button" onClick={this.deleteSchedule.bind(this, key)} className="btn btn-block buttonCustomPrimary">x</button></td>
-                                                          </tr>
-                                                        )
-                                                      })
-                                                    }
-                                                    </tbody>
-                                                  </table>
 
 
-                                                </div>
-                                              </div>
-                                          </div>
 
-                                            <div className="form-group">
-                                              <div className="col-sm-offset-2 col-sm-2">
-                                                <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.create}>Create Activity</button>
-                                              </div>
-                                            </div>
-                                          </form>
-                                    </div>
-                                </center>
-                              </div>
-                            </div>
-                        </div>
+
+   if(this.state.onLoad){
+     return(
+       <div className="main-wrapper">
+           <Nav />
+           <section className="mainContentSection singlePackage">
+              <center>
+                    <div className="container" style={{marginTop : 300 , marginBottom: 300}}>
+                          <Loading type='bars' color="#26A65B" style={{width: 200 , height: 100}}/>
                     </div>
-              </div>
-            </section>
-            <Footer />
+              </center>
+           </section>
+           <Footer />
       </div>
-    )
+     )
+
+   }else{
+     return(
+       <div className="main-wrapper">
+           <Nav />
+           <section className="mainContentSection singlePackage">
+           <br/><br/>
+               <div className="container" style={{width: 1024}}>
+                     <div className="col-sm-12 col-xs-12">
+                         <div className="portlet light">
+                           <div className="portlet-title">
+                               <center>
+                                 <div className="caption font-kademy">
+                                   <h3>Create Your Activity</h3>
+                                 </div>
+                               </center>
+                             </div>
+                             <div className="portlet-body">
+                               <div className="row">
+                               <br/>
+                               <br/>
+                                 <center>
+                                 <br/>
+                                 <br/>
+                                 <br/>
+                                     <div className="col-md-12">
+                                     <form className="form-horizontal">
+                                             <h3>Activity Detail</h3>
+                                             <div className="form-group">
+                                               <label className="control-label col-sm-2">Activity name:</label>
+                                               <div className="col-sm-10">
+                                                 <input type="text" className="form-control" onChange={this.setName} placeholder="Activity name" />
+                                               </div>
+                                             </div>
+
+                                             <div className="form-group">
+                                               <label className="control-label col-sm-2">Activity Description:</label>
+                                               <div className="col-sm-10">
+                                                 <textarea className="form-control" onChange={this.setDesc} placeholder="description here" />
+                                               </div>
+                                             </div>
+                                             <div className="form-group">
+                                               <label className="control-label col-sm-2">Cover image here</label>
+                                               <div className="col-sm-10">
+                                                                       <DropzoneComponent config={componentConfig}
+                                                                           eventHandlers={eventHandlers}
+                                                                           djsConfig={djsConfig} />
+                                               </div>
+                                             </div>
+                                             <div className="form-group">
+                                               <label className="control-label col-sm-2">Province</label>
+                                               <div className="col-sm-10">
+                                               <select onChange={this.setCity} className="form-control">
+                                                 {
+                                                   city.map((value , index) => {
+                                                     return(
+                                                         <option key={index} value={value}>{value}</option>
+                                                     )
+                                                   })
+                                                 }
+                                               </select>
+                                               </div>
+                                             </div>
+                                             <div className="form-group">
+                                               <label className="control-label col-sm-2">Location :</label>
+                                               <div className="col-sm-10">
+                                                 <input type="text" className="form-control" onChange={this.setLocation} placeholder="location here"/>
+                                               </div>
+                                             </div>
+                                             <div className="form-group">
+                                               <label className="control-label col-sm-2">Category :</label>
+                                               <div className="col-sm-10">
+                                               <select onChange={this.setType} className="form-control">
+                                               {
+                                                 cate.map((value , index) => {
+                                                   return(
+                                                       <option key={index} value={value}>{value}</option>
+                                                   )
+                                                 })
+                                               }
+                                               </select>
+                                               </div>
+                                             </div>
+                                             <h3>Ticket</h3>
+                                               <div className="form-group">
+                                               <div className="row">
+                                                 <div className="col-md-12">
+                                                     <table className="table">
+                                                       <thead>
+                                                         <tr>
+                                                         <td>Ticket Name</td>
+                                                         <td>Price</td>
+                                                         <td>Action</td>
+                                                         </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                         <td>
+                                                           <input type="text" className="form-control"
+                                                           onChange={this.setTicketName} value={this.state.ticket_name} placeholder="Earlybird , RSVP , ..."/>
+                                                         </td>
+                                                         <td>
+                                                           <input type="number" className="form-control"
+                                                           onChange={this.setTicketPrice} value={this.state.ticket_price}  placeholder="150.00 THB"/>
+                                                         </td>
+                                                         <td>
+                                                         <button type="button" className="btn btn-block buttonCustomPrimary"
+                                                         onClick={this.addTicket}>Add</button>
+                                                         </td>
+                                                       </tr>
+                                                       {
+                                                         this.state.tickets.map((value , key) =>{
+                                                           return(
+                                                             <tr key={key}>
+                                                             <td>{value.name} </td>
+                                                             <td>{value.price}</td>
+                                                             <td>
+                                                             <button type="button" onClick={this.deleteTicket.bind(this, key)} className="btn btn-block buttonCustomPrimary">x</button>
+                                                             </td>
+                                                               </tr>
+                                                           )
+                                                         })
+                                                       }
+
+                                                       </tbody>
+                                                     </table>
+                                                   </div>
+                                                 </div>
+                                             </div>
+                                             <h3>Schedule</h3>
+
+                                             <div className="form-group">
+                                             <div className="row">
+                                               <div className="col-md-12">
+                                                   <table className="table">
+                                                     <thead>
+                                                       <tr>
+                                                       <td>Hour</td>
+                                                       <td>Minute</td>
+                                                       <td>Activity</td>
+                                                       <td>Action</td>
+                                                       </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                       <td>
+                                                       <select onChange={this.setHour.bind(this)} className="form-control">
+                                                       {
+                                                         hour.map((value , index) =>{
+                                                           return(
+                                                             <option key={index} value={value}>{value}</option>
+                                                           )
+                                                         })
+                                                       }
+                                                       </select>
+                                                       </td>
+                                                       <td>
+                                                       <select onChange={this.setMinute.bind(this)} className="form-control">
+                                                       {
+                                                         minute.map((value , index) =>{
+                                                           return(
+                                                             <option key={index} value={value}>{value}</option>
+                                                           )
+                                                         })
+                                                       }
+                                                       </select>
+                                                       </td>
+                                                       <td>
+                                                       <input type="text" className="form-control"
+                                                       onChange={this.setRoutine.bind(this)} value={this.state.routine_desc} placeholder="Meet up at ..... , Finished activity"/>
+                                                       </td>
+                                                       <td>
+                                                       <button type="button" className="btn btn-block buttonCustomPrimary"
+                                                       onClick={this.addSchedule.bind(this)}>Add</button>
+                                                       </td>
+                                                     </tr>
+
+                                                     {
+                                                       this.state.itinerary.map((value , key) =>{
+                                                         return(
+                                                           <tr key={key}>
+                                                             <td colSpan="2">{value.time} </td>
+                                                             <td>{value.desc} </td>
+                                                             <td><button type="button" onClick={this.deleteSchedule.bind(this, key)} className="btn btn-block buttonCustomPrimary">x</button></td>
+                                                           </tr>
+                                                         )
+                                                       })
+                                                     }
+                                                     </tbody>
+                                                   </table>
+
+
+                                                 </div>
+                                               </div>
+                                           </div>
+
+                                             <div className="form-group">
+                                               <div className="col-sm-offset-2 col-sm-2">
+                                                 <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.create}>Create Activity</button>
+                                               </div>
+                                             </div>
+                                           </form>
+                                     </div>
+                                 </center>
+                               </div>
+                             </div>
+                         </div>
+                     </div>
+               </div>
+             </section>
+             <Footer />
+       </div>
+     )
+   }
+
   }
 }
 export default CreateActivity;
