@@ -2654,49 +2654,50 @@ var Nav = function (_React$Component) {
           null,
           _react2.default.createElement(
             'nav',
-            { className: 'navbar navbar-default navbar-main navbar-fixed-top lightHeader', role: 'navigation' },
+            { className: 'navbar' },
             _react2.default.createElement(
               'div',
-              { className: 'container' },
+              { className: 'container-fluid nav' },
               _react2.default.createElement(
                 'div',
                 { className: 'navbar-header' },
                 _react2.default.createElement(
                   'button',
-                  { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '.navbar-ex1-collapse' },
+                  { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
                   _react2.default.createElement(
                     'span',
                     { className: 'sr-only' },
-                    'Toggle navigation'
-                  ),
-                  _react2.default.createElement('span', { className: 'icon-bar' }),
-                  _react2.default.createElement('span', { className: 'icon-bar' }),
-                  _react2.default.createElement('span', { className: 'icon-bar' })
+                    'Miletrav'
+                  )
                 ),
-                _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'collapse navbar-collapse navbar-ex1-collapse' },
                 _react2.default.createElement(
-                  'ul',
-                  { className: 'nav navbar-nav navbar-right' },
+                  'div',
+                  null,
+                  _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  null,
                   _react2.default.createElement(
-                    'li',
-                    { className: 'active dropdown singleDrop' },
+                    'ul',
+                    { className: 'nav navbar-nav navbar-right' },
                     _react2.default.createElement(
-                      _reactRouter.Link,
-                      { to: '/register' },
-                      'REGISTER'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'li',
-                    { className: 'active dropdown singleDrop' },
+                      'li',
+                      { className: 'active dropdown singleDrop' },
+                      _react2.default.createElement(
+                        _reactRouter.Link,
+                        { to: '/register' },
+                        'REGISTER'
+                      )
+                    ),
                     _react2.default.createElement(
-                      _reactRouter.Link,
-                      { to: '/login' },
-                      'LOGIN'
+                      'li',
+                      { className: 'active dropdown singleDrop' },
+                      _react2.default.createElement(
+                        _reactRouter.Link,
+                        { to: '/login' },
+                        'LOGIN'
+                      )
                     )
                   )
                 )

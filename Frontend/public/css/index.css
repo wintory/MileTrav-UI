@@ -1,0 +1,165 @@
+body.b{
+   background-color: #800722;
+   color: white;
+}
+
+section{
+ margin-top: 3%;
+    margin-right: auto;
+     margin-left: auto;
+      width: 85%;
+      height: 70px;
+}
+
+div{
+    background-color:inherit; 
+    color: white;
+}
+
+
+img.logo{
+    height: 70px;
+    width: auto;
+}
+img.detail{
+    width: 85%;
+}
+
+form.nav{
+    margin-top: 5%;
+}
+
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+div.nav{
+   margin-top: 3%;
+    margin-right: auto;
+     margin-left: auto;
+      width: 85%;
+      height: 70px;
+}
+
+div.component{
+   margin-top: 3%;
+    margin-right: auto;
+     margin-left: 50%;
+      width: 85%;
+}
+
+div.detailleft{
+   margin-top: 3%;
+    margin-right: 50%
+     margin-left: auto;
+      width: 40%;
+}
+
+div.detailright{
+   margin-top: 3%;
+    margin-right: auto;
+     margin-left: auto;
+      width: 40%;
+}
+
+div.component{
+   margin-top: 3%;
+    margin-right: auto;
+     margin-left: auto;
+      width: 85%;
+}
+
+
+nav.nav{
+    background-color:inherit; 
+   margin-top: 5%;
+    margin-right: auto;
+     margin-left: auto;
+      width: 85%;
+      height: 70px;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+
+.main-text
+{
+    position: absolute;
+    top: 50px;
+    width: 96.66666666666666%;
+    color: #FFF;
+}
+.btn-min-block
+{
+    min-width: 170px;
+    line-height: 26px;
+}
+.btn-clear
+{
+    color: #FFF;
+    background-color: transparent;
+    border-color: #FFF;
+    margin-right: 15px;
+}
+.btn-clear:hover
+{
+    color: #000;
+    background-color: #FFF;
+}
