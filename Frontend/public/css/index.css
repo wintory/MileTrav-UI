@@ -2,8 +2,8 @@
 
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 30%;
-      max-height: 400px;
+      width: 20%;
+      max-height: 300px;
       margin: auto;
   }
 
@@ -12,17 +12,33 @@ div.b{
    color: white;
 }
 
+
 section{
  margin-top: 3%;
+ background-color: inherit;
     margin-right: auto;
      margin-left: auto;
       width: 85%;
       height: 70px;
 }
 
+h2{
+    color: white;
+}
+
+section.search{
+    margin-top: -0.5px;
+    background-color: white;
+}
+
+
 div{
     background-color:inherit; 
     color: white;
+}
+
+header.btm{
+    margin-bottom: -3%;
 }
 
 
@@ -50,8 +66,8 @@ form.nav{
 }
 
 div.slideshow{
-    padding-bottom: 13%;
-    background-color:whitesmoke;
+    padding: 1%;
+    background-color:#B100A9;
 }
 
 div.nav{
@@ -67,6 +83,24 @@ div.component{
     margin-right: auto;
      margin-left: 50%;
       width: 85%;
+}
+
+div.decresetop{
+   margin-top: -3%;
+}
+
+div.bgsearch{
+    background-color: white;
+}
+
+div.searchlogo{
+    background-color: #8A0084;
+}
+
+div.searchdetail{
+    background-color: white;
+    padding-left: 2%;
+    margin-right: -10%;
 }
 
 div.detailleft{
@@ -98,81 +132,4 @@ nav.nav{
      margin-left: auto;
       width: 85%;
       height: 70px;
-}
-
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px    
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0    
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc 
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
-}
-
-
-.main-text
-{
-    position: absolute;
-    top: 50px;
-    width: 96.66666666666666%;
-    color: #FFF;
-}
-.btn-min-block
-{
-    min-width: 170px;
-    line-height: 26px;
-}
-.btn-clear
-{
-    color: #FFF;
-    background-color: transparent;
-    border-color: #FFF;
-    margin-right: 15px;
-}
-.btn-clear:hover
-{
-    color: #000;
-    background-color: #FFF;
 }

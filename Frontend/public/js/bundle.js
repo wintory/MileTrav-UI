@@ -2581,7 +2581,7 @@ var Nav = function (_React$Component) {
       if (!this.state.isLogin || this.state.username == "") {
         return _react2.default.createElement(
           'header',
-          null,
+          { className: 'btm' },
           _react2.default.createElement(
             'nav',
             { className: 'navbar' },
@@ -2591,44 +2591,29 @@ var Nav = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'navbar-header' },
+                _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
+              ),
+              _react2.default.createElement(
+                'ul',
+                { className: 'nav navbar-nav navbar-right' },
                 _react2.default.createElement(
-                  'button',
-                  { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
+                  'li',
+                  null,
                   _react2.default.createElement(
-                    'span',
-                    { className: 'sr-only' },
-                    'Miletrav'
+                    _reactRouter.Link,
+                    { to: '/register' },
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
+                    ' Sign Up'
                   )
                 ),
                 _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
-                ),
-                _react2.default.createElement(
-                  'div',
+                  'li',
                   null,
                   _react2.default.createElement(
-                    'ul',
-                    { className: 'nav navbar-nav navbar-right' },
-                    _react2.default.createElement(
-                      'li',
-                      { className: 'active dropdown singleDrop' },
-                      _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: '/register' },
-                        'REGISTER'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'li',
-                      { className: 'active dropdown singleDrop' },
-                      _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: '/login' },
-                        'LOGIN'
-                      )
-                    )
+                    _reactRouter.Link,
+                    { to: '/login' },
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
+                    ' Login'
                   )
                 )
               )
@@ -2641,44 +2626,44 @@ var Nav = function (_React$Component) {
           null,
           _react2.default.createElement(
             'nav',
-            { className: 'navbar navbar-default navbar-main navbar-fixed-top lightHeader', role: 'navigation' },
+            { classNameName: 'navbar navbar-default navbar-main navbar-fixed-top lightHeader', role: 'navigation' },
             _react2.default.createElement(
               'div',
-              { className: 'container' },
+              { classNameName: 'container' },
               _react2.default.createElement(
                 'div',
-                { className: 'navbar-header' },
+                { classNameName: 'navbar-header' },
                 _react2.default.createElement(
                   'button',
-                  { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '.navbar-ex1-collapse' },
+                  { type: 'button', classNameName: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '.navbar-ex1-collapse' },
                   _react2.default.createElement(
                     'span',
-                    { className: 'sr-only' },
+                    { classNameName: 'sr-only' },
                     'Toggle navigation'
                   ),
-                  _react2.default.createElement('span', { className: 'icon-bar' }),
-                  _react2.default.createElement('span', { className: 'icon-bar' }),
-                  _react2.default.createElement('span', { className: 'icon-bar' })
+                  _react2.default.createElement('span', { classNameName: 'icon-bar' }),
+                  _react2.default.createElement('span', { classNameName: 'icon-bar' }),
+                  _react2.default.createElement('span', { classNameName: 'icon-bar' })
                 ),
-                _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
+                _react2.default.createElement(_reactRouter.Link, { to: '/', classNameName: 'navbar-brand' })
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'collapse navbar-collapse navbar-ex1-collapse' },
+                { classNameName: 'collapse navbar-collapse navbar-ex1-collapse' },
                 _react2.default.createElement(
                   'ul',
-                  { className: 'nav navbar-nav navbar-right' },
+                  { classNameName: 'nav navbar-nav navbar-right' },
                   _react2.default.createElement(
                     'li',
-                    { className: 'dropdown singleDrop' },
+                    { classNameName: 'dropdown singleDrop' },
                     _react2.default.createElement(
                       _reactRouter.Link,
-                      { className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+                      { classNameName: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
                       this.state.username
                     ),
                     _react2.default.createElement(
                       'ul',
-                      { className: 'dropdown-menu dropdown-menu-left' },
+                      { classNameName: 'dropdown-menu dropdown-menu-left' },
                       _react2.default.createElement(
                         'li',
                         null,
@@ -2719,7 +2704,7 @@ var Nav = function (_React$Component) {
                   ),
                   _react2.default.createElement(
                     'li',
-                    { className: 'active dropdown singleDrop' },
+                    { classNameName: 'active dropdown singleDrop' },
                     _react2.default.createElement(
                       _reactRouter.Link,
                       { to: "/CreateActivity/" + 1 },
@@ -10130,16 +10115,16 @@ var Search = function (_React$Component) {
 
       return _react2.default.createElement(
         'section',
-        { className: 'darkSection' },
+        { className: 'search' },
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'row gridResize' },
+            { className: ' gridResize bgsearch ' },
             _react2.default.createElement(
               'div',
-              { className: 'col-sm-3 col-xs-12' },
+              { className: 'col-sm-3 col-xs-12 searchlogo slideshow' },
               _react2.default.createElement(
                 'div',
                 { className: 'sectionTitleDouble' },
@@ -10151,60 +10136,51 @@ var Search = function (_React$Component) {
                 _react2.default.createElement(
                   'h2',
                   null,
-                  'Your ',
-                  _react2.default.createElement(
-                    'span',
-                    null,
-                    'City'
-                  )
+                  'Your City'
                 )
               )
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-sm-9 col-xs-12' },
+              { className: 'col-md-8' },
               _react2.default.createElement(
                 'div',
-                { className: 'row' },
+                { className: 'col-sm-4 col-xs-6' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'col-sm-4 col-xs-6' },
+                  { className: 'searchTour' },
                   _react2.default.createElement(
-                    'div',
-                    { className: 'searchTour' },
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'white' },
-                      'Province'
-                    ),
-                    _react2.default.createElement(
-                      'select',
-                      { onChange: this.setCity, className: 'form-control' },
-                      city.map(function (value, index) {
-                        return _react2.default.createElement(
-                          'option',
-                          { key: index, value: value },
-                          value
-                        );
-                      })
-                    )
+                    'span',
+                    { className: 'white' },
+                    'Province'
+                  ),
+                  _react2.default.createElement(
+                    'select',
+                    { onChange: this.setCity, className: 'form-control' },
+                    city.map(function (value, index) {
+                      return _react2.default.createElement(
+                        'option',
+                        { key: index, value: value },
+                        value
+                      );
+                    })
                   )
-                ),
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-sm-4 col-xs-6' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'col-sm-4 col-xs-6' },
+                  { className: 'searchTour' },
+                  _react2.default.createElement('br', null),
                   _react2.default.createElement(
-                    'div',
-                    { className: 'searchTour' },
-                    _react2.default.createElement('br', null),
+                    _reactRouter.Link,
+                    { to: '/to/' + this.state.city },
                     _react2.default.createElement(
-                      _reactRouter.Link,
-                      { to: '/to/' + this.state.city },
-                      _react2.default.createElement(
-                        'button',
-                        { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
-                        'Search'
-                      )
+                      'button',
+                      { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
+                      'Search'
                     )
                   )
                 )
@@ -15324,7 +15300,7 @@ var Header = function (_React$Component) {
       };
       return _react2.default.createElement(
         'div',
-        { id: 'myCarousel', className: 'carousel slide slideshow component', 'data-ride': 'carousel' },
+        { id: 'myCarousel', className: 'carousel slide slideshow component header', 'data-ride': 'carousel' },
         _react2.default.createElement(
           'ol',
           { className: 'carousel-indicators' },
@@ -15339,22 +15315,22 @@ var Header = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'item active' },
-            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Chania', width: '460', height: '345' })
+            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Chania' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'item' },
-            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Chania', width: '460', height: '345' })
+            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Chania' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'item' },
-            _react2.default.createElement('img', { src: 'img_flower.jpg', alt: 'Flower', width: '460', height: '345' })
+            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Flower' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'item' },
-            _react2.default.createElement('img', { src: 'img_flower2.jpg', alt: 'Flower', width: '460', height: '345' })
+            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Flower' })
           )
         ),
         _react2.default.createElement(
@@ -15886,43 +15862,35 @@ var PackageHome = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'section',
-        { className: 'whiteSection' },
+        null,
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'row' },
+            { className: 'col-xs-12' },
             _react2.default.createElement(
               'div',
-              { className: 'col-xs-12' },
+              { className: 'sectionTitle' },
               _react2.default.createElement(
-                'div',
-                { className: 'sectionTitle' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  _react2.default.createElement(
-                    'span',
-                    null,
-                    'Popular Activity'
-                  )
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'These are our favourite & most Activities that you shouldn\u2019t miss while in Thailand!'
-                )
+                'h2',
+                null,
+                'Popular Activity'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'These are our favourite & most Activities that you shouldn\u2019t miss while in Thailand!'
               )
             )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'row isotopeContainer' },
-            this.state.activity.map(function (value, index) {
-              return _react2.default.createElement(_PopularActivities2.default, { name: value.activity_name, cover: value.cover_photo, key: index, province: value.province });
-            })
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row isotopeContainer' },
+          this.state.activity.map(function (value, index) {
+            return _react2.default.createElement(_PopularActivities2.default, { name: value.activity_name, cover: value.cover_photo, key: index, province: value.province });
+          })
         )
       );
     }

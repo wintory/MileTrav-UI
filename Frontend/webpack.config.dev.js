@@ -12,7 +12,7 @@ module.exports = {
         path: path.resolve(__dirname, 'public/js'),
         filename: 'bundle.js',
     },
-  devtool: 'eval',
+  devtool: 'eval-source-map',
     // อ่านไฟล์นามสกุล .js, .jsx ด้วย Babel
     module: {
         loaders: [

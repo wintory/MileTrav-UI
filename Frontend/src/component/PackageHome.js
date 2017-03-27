@@ -27,12 +27,11 @@ method: 'GET' }).then(
 
   render(){
     return(
-<section className="whiteSection">
- <div className="container">
+<section>
    <div className="row">
      <div className="col-xs-12">
        <div className="sectionTitle">
-         <h2><span>Popular Activity</span></h2>
+         <h2>Popular Activity</h2>
          <p>These are our favourite & most Activities that you shouldn’t miss while in Thailand!</p>
        </div>
      </div>
@@ -46,7 +45,7 @@ method: 'GET' }).then(
          })
        }
    </div>
- </div>
+
 </section>
 
     )

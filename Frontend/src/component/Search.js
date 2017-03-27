@@ -19,17 +19,18 @@ class Search extends React.Component{
     const city = ['Bangkok' ,'Chiangmai' , 'Phuket', 'Krabi', 'Chaingrai' ,'Chonburi', 'Ayutthaya' , 'Karnchanaburi' ]
 
     return(
-      <section className="darkSection">
-            <div className="container">
-              <div className="row gridResize">
-                <div className="col-sm-3 col-xs-12">
+    
+      <section className="search">
+            <div >
+              <div className=" gridResize bgsearch ">
+                <div className="col-sm-3 col-xs-12 searchlogo slideshow">
                   <div className="sectionTitleDouble">
                     <p>Choose</p>
-                    <h2>Your <span>City</span></h2>
+                    <h2>Your City</h2>
                   </div>
                 </div>
-                <div className="col-sm-9 col-xs-12">
-                  <div className="row">
+                <div className="col-md-8">
+
                     <div className="col-sm-4 col-xs-6">
                       <div className="searchTour">
                           <span className='white'>Province</span>
@@ -53,7 +54,8 @@ class Search extends React.Component{
                   </div>
                 </div>
               </div>
-            </div>
+     
+      
           </section>
     )
   }

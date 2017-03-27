@@ -1,12 +1,13 @@
 import React from 'react'
 
+
 class Header extends React.Component{
     render(){
       const divStyle = {
           backgroundImage: 'url(' + '/img/cover/home.jpg' + ')',
       };
       return(
-        <div id="myCarousel" className="carousel slide slideshow component" data-ride="carousel">
+        <div id="myCarousel" className="carousel slide slideshow component header" data-ride="carousel">
 
     <ol className="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
@@ -17,19 +18,19 @@ class Header extends React.Component{
 
     <div className="carousel-inner" role="listbox">
       <div className="item active">
-        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Chania" width="460" height="345"/>
+        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Chania" />
       </div>
 
       <div className="item">
-        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Chania" width="460" height="345"/>
+        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Chania" />
       </div>
     
       <div className="item">
-        <img src="img_flower.jpg" alt="Flower" width="460" height="345"/>
+        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Flower" />
       </div>
 
       <div className="item">
-        <img src="img_flower2.jpg" alt="Flower" width="460" height="345"/>
+        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Flower" />
       </div>
     </div>
 
@@ -42,6 +43,7 @@ class Header extends React.Component{
       <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span className="sr-only">Next</span>
     </a>
+
   </div>
 
 

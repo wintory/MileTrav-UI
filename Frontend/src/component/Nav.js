@@ -40,61 +40,47 @@ class Nav extends React.Component {
     if ((!this.state.isLogin) || this.state.username == "") {
       return (
 
-        <header>
-          <nav className="navbar">
-            <div className="container-fluid nav">
-              <div className="navbar-header">
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span className="sr-only">Miletrav</span>
-                </button>
-
-                        <div >
-                  <Link to="/" className="navbar-brand"></Link>
-                </div>
-
-                        <div>
-                  <ul className="nav navbar-nav navbar-right">
-                    <li className="active dropdown singleDrop">
-                      <Link to="/register">REGISTER</Link>
-                    </li>
-                    <li className="active dropdown singleDrop">
-                      <Link to="/login">LOGIN</Link>
-                    </li>
-                  </ul>
-                </div>
-        
-              </div>
-            </div>
-          </nav>
+        <header className="btm">
+         <nav className="navbar">
+  <div className="container-fluid nav">
+    <div className="navbar-header">
+      <Link to="/" className="navbar-brand"></Link>
+    </div>
+    <ul className="nav navbar-nav navbar-right">
+      <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
+      <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+        </ul>
+        </div>
+        </nav>
         </header>
       )
 
     } else {
       return (
         <header>
-          <nav className="navbar navbar-default navbar-main navbar-fixed-top lightHeader" role="navigation">
-            <div className="container">
-              <div className="navbar-header">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
+          <nav classNameName="navbar navbar-default navbar-main navbar-fixed-top lightHeader" role="navigation">
+            <div classNameName="container">
+              <div classNameName="navbar-header">
+                <button type="button" classNameName="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span classNameName="sr-only">Toggle navigation</span>
+                  <span classNameName="icon-bar"></span>
+                  <span classNameName="icon-bar"></span>
+                  <span classNameName="icon-bar"></span>
                 </button>
-                <Link to="/" className="navbar-brand"></Link>
+                <Link to="/" classNameName="navbar-brand"></Link>
               </div>
-              <div className="collapse navbar-collapse navbar-ex1-collapse">
-                <ul className="nav navbar-nav navbar-right">
-                  <li className="dropdown singleDrop">
-                    <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
-                    <ul className="dropdown-menu dropdown-menu-left">
+              <div classNameName="collapse navbar-collapse navbar-ex1-collapse">
+                <ul classNameName="nav navbar-nav navbar-right">
+                  <li classNameName="dropdown singleDrop">
+                    <Link classNameName="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
+                    <ul classNameName="dropdown-menu dropdown-menu-left">
                       <li><Link to="/Profile">Profile</Link></li>
                       <li><Link to="/Dashboard">Dashboard</Link></li>
                       <li><Link to="/Wishlist">Wishlist</Link></li>
                       <li><Link onClick={this.logout}>Logout</Link></li>
                     </ul>
                   </li>
-                  <li className="active dropdown singleDrop">
+                  <li classNameName="active dropdown singleDrop">
                     <Link to={"/CreateActivity/" + 1}>Create Activity</Link>
                   </li>
                 </ul>
