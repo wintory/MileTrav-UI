@@ -58,29 +58,29 @@ class Nav extends React.Component {
     } else {
       return (
         <header>
-          <nav classNameName="navbar navbar-default navbar-main navbar-fixed-top lightHeader" role="navigation">
-            <div classNameName="container">
-              <div classNameName="navbar-header">
-                <button type="button" classNameName="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span classNameName="sr-only">Toggle navigation</span>
-                  <span classNameName="icon-bar"></span>
-                  <span classNameName="icon-bar"></span>
-                  <span classNameName="icon-bar"></span>
+          <nav className="navbar navbar-default navbar-main navbar-fixed-top lightHeader" role="navigation">
+            <div className="container">
+              <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
                 </button>
-                <Link to="/" classNameName="navbar-brand"></Link>
+                <Link to="/" className="navbar-brand"></Link>
               </div>
-              <div classNameName="collapse navbar-collapse navbar-ex1-collapse">
-                <ul classNameName="nav navbar-nav navbar-right">
-                  <li classNameName="dropdown singleDrop">
-                    <Link classNameName="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
-                    <ul classNameName="dropdown-menu dropdown-menu-left">
+              <div className="collapse navbar-collapse navbar-ex1-collapse">
+                <ul className="nav navbar-nav navbar-right">
+                  <li className="dropdown singleDrop">
+                    <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
+                    <ul className="dropdown-menu dropdown-menu-left">
                       <li><Link to="/Profile">Profile</Link></li>
                       <li><Link to="/Dashboard">Dashboard</Link></li>
                       <li><Link to="/Wishlist">Wishlist</Link></li>
                       <li><Link onClick={this.logout}>Logout</Link></li>
                     </ul>
                   </li>
-                  <li classNameName="active dropdown singleDrop">
+                  <li className="active dropdown singleDrop">
                     <Link to={"/CreateActivity/" + 1}>Create Activity</Link>
                   </li>
                 </ul>

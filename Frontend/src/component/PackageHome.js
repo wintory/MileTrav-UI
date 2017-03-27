@@ -3,6 +3,11 @@ import PopularActivities from './PopularActivities'
 import 'whatwg-fetch';
 import {Link} from 'react-router'
 import {host} from './host'
+import Home from './home'
+import Footer from './footer'
+import HomeCard from './homecard'
+import ActivityHome from './ActivityHome'
+import StaticBox from './staticbox'
 class PackageHome extends React.Component{
 
   constructor(props){
@@ -27,27 +32,34 @@ method: 'GET' }).then(
 
   render(){
     return(
+      <div className="b">
+        <Home/>
 <section>
    <div className="row">
-     <div className="col-xs-12">
-       <div className="sectionTitle">
-         <h2>Popular Activity</h2>
-         <p>These are our favourite & most Activities that you shouldn’t miss while in Thailand!</p>
+     <div className="col-xs-12 col-sm-6">
+       <div className="bgwhite">
+         <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215"/>
+         <HomeCard/>
+         </div>  
        </div>
+
+       <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/462/original/Songkran2017_Banner.jpg?1487305672"/>
+       <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329"/>
+
      </div>
-   </div>
    <div className="row isotopeContainer">
        {
          this.state.activity.map((value , index) => {
            return(
                   <PopularActivities name={value.activity_name} cover={value.cover_photo} key={index} province={value.province} />
+           
            )
          })
        }
    </div>
-
 </section>
-
+ <Footer />
+</div>
     )
   }
 }

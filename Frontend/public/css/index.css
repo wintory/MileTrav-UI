@@ -1,135 +1,219 @@
-
-
-.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 20%;
-      max-height: 300px;
-      margin: auto;
-  }
-
-div.b{
-   background-color: #330072;
-   color: white;
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    width: 20%;
+    max-height: 400px;
+    margin: auto;
 }
 
-
-section{
- margin-top: 3%;
- background-color: inherit;
-    margin-right: auto;
-     margin-left: auto;
-      width: 85%;
-      height: 70px;
-}
-
-h2{
+div.b {
+    background-color: #330072;
     color: white;
 }
 
-section.search{
+.text-center-right {
+    text-align: center;
+}
+
+div.bgwhite {
+    background-color: white;
+}
+
+section {
+    margin-top: 3%;
+    background-color: inherit;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+    height: 70px;
+}
+
+h2 {
+    color: white;
+}
+
+section.search {
     margin-top: -0.5px;
     background-color: white;
 }
 
-
-div{
-    background-color:inherit; 
+div {
+    background-color: inherit;
     color: white;
 }
 
-header.btm{
+header.btm {
+    margin-top: -2%;
     margin-bottom: -3%;
 }
 
-
-img.logo{
+img.logo {
     height: 70px;
     width: auto;
 }
-img.detail{
+
+img.detail {
     width: 85%;
 }
 
-form.nav{
+form.nav {
     margin-top: 5%;
 }
 
-
 .img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  width: 100%;
-  height: auto;
+.thumbnail>img,
+.thumbnail a>img,
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-div.slideshow{
-    padding: 1%;
-    background-color:#B100A9;
+div.slideshow {
+    padding: 0.8%;
+    background-color: #6C0067;
 }
 
-div.nav{
-   margin-top: 3%;
+div.nav {
+    margin-top: 3%;
     margin-right: auto;
-     margin-left: auto;
-      width: 85%;
-      height: 70px;
+    margin-left: auto;
+    width: 85%;
+    height: 70px;
 }
 
-div.component{
-   margin-top: 3%;
+.padding{
+    padding: 3%;
+}
+
+div.component {
+    margin-top: 3%;
     margin-right: auto;
-     margin-left: 50%;
-      width: 85%;
+    margin-left: 50%;
+    width: 85%;
 }
 
-div.decresetop{
-   margin-top: -3%;
+div.decresetop {
+    margin-top: -3%;
 }
 
-div.bgsearch{
+div.bgsearch {
     background-color: white;
 }
 
-div.searchlogo{
-    background-color: #8A0084;
+div.searchlogo {
+    background-color: #CB325E;
 }
 
-div.searchdetail{
+div.searchdetail {
     background-color: white;
     padding-left: 2%;
     margin-right: -10%;
 }
 
-div.detailleft{
-   margin-top: 3%;
-    margin-right: 50%
-     margin-left: auto;
-      width: 40%;
+div.detailleft {
+    margin-top: 3%;
+    margin-right: 50% margin-left: auto;
+    width: 40%;
 }
 
-div.detailright{
-   margin-top: 3%;
+div.detailright {
+    margin-top: 3%;
     margin-right: auto;
-     margin-left: auto;
-      width: 40%;
+    margin-left: auto;
+    width: 40%;
 }
 
-div.component{
-   margin-top: 3%;
+div.component {
+    margin-top: 3%;
     margin-right: auto;
-     margin-left: auto;
-      width: 85%;
+    margin-left: auto;
+    width: 85%;
 }
 
-
-nav.nav{
-    background-color:inherit; 
-   margin-top: 5%;
+nav.nav {
+    background-color: inherit;
+    margin-top: 5%;
     margin-right: auto;
-     margin-left: auto;
-      width: 85%;
-      height: 70px;
+    margin-left: auto;
+    width: 85%;
+    height: 70px;
+}
+
+.login {
+    margin-top: 25px !important;
+    padding: 5px;
+    width: auto;
+    min-width: 320px;
+    max-width: 400px;
+    height: 400px;
+    background-color: #f3f3f3;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid ##c5c5c5;
+    text-align: center;
+}
+
+.login-inner {
+    margin: 0 auto;
+    max-width: 380px;
+    width: auto;
+}
+
+.login>h4 {
+    font-size: 20px;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.email {
+    margin-bottom: 5px;
+}
+
+.password {
+    margin-bottom: 5px;
+}
+
+.submit {
+    margin-top: 5px;
+}
+
+.forgot {
+    min-width: 50px;
+    width: 49%;
+    float: right;
+    margin-top: 20px;
+}
+
+.register {
+    width: 50%;
+    float: left;
+    margin-top: 20px;
+}
+
+@media (max-width: 320px) {
+    .forgot {
+        font-size: 9px;
+        font-weight: 700;
+        padding: 8px;
+    }
+}
+
+.bgblack {
+    background-color: black;
+}
+
+img.component {
+    width: 100%;
+    height: 100%;
+}
+
+body.landing-theme #content-blocks .events-block .events-block-subheading {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(236, 1, 134, 0.2);
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 500;
+    padding: 15px 10px;
 }

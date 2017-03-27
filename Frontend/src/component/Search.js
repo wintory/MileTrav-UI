@@ -21,7 +21,6 @@ class Search extends React.Component{
     return(
     
       <section className="search">
-            <div >
               <div className=" gridResize bgsearch ">
                 <div className="col-sm-3 col-xs-12 searchlogo slideshow">
                   <div className="sectionTitleDouble">
@@ -29,7 +28,7 @@ class Search extends React.Component{
                     <h2>Your City</h2>
                   </div>
                 </div>
-                <div className="col-md-8">
+                <div>
 
                     <div className="col-sm-4 col-xs-6">
                       <div className="searchTour">
@@ -53,9 +52,7 @@ class Search extends React.Component{
                      </div>
                   </div>
                 </div>
-              </div>
-     
-      
+          
           </section>
     )
   }

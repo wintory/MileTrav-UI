@@ -6,7 +6,7 @@ class Footer extends React.Component{
     return(
       <footer>
 
-     <div className="copyRight clearfix">
+     <div className="clearfix">
            <div className="container">
              <div className="row">
                <div className="col-sm-6 col-sm-push-6 col-xs-12">

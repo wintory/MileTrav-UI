@@ -17,8 +17,6 @@ class Home extends React.Component{
           <Nav/>
           <Header/>
           <Search/>
-          <PackageHome />
-          <Footer />
         </div>
 
 

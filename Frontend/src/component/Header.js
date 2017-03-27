@@ -13,24 +13,19 @@ class Header extends React.Component{
       <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <div className="carousel-inner" role="listbox">
       <div className="item active">
-        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Chania" />
+        <img src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/063/medium/89cec92df97787b6a47fcfbbf2ed6696c0786293.jpg?1487047329" alt="Chania" />
       </div>
 
       <div className="item">
-        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Chania" />
+        <img src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/072/medium/34373f91167ec53f77de9cbe252b3b2cc2f4a71e.jpg?1489659703" alt="Chania" />
       </div>
     
       <div className="item">
-        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Flower" />
-      </div>
-
-      <div className="item">
-        <img src="http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg" alt="Flower" />
+        <img src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/071/medium/6ae85e116963146930888881aab9766ef63145e5.png?1489388513" alt="Flower" />
       </div>
     </div>
 

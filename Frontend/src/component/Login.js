@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import Home from './Home'
 import Footer from './Footer'
 import 'whatwg-fetch'
 import {host} from './host'
@@ -59,11 +59,12 @@ class Login extends React.Component {
 
   render(){
     return(
+      <div className="b">
+        <Home/>
       <div className="main-wrapper">
-          <Nav />
-          <section className="mainContentSection singlePackage">
+          <section >
           <br/><br/>
-              <div className="container" style={{width: 720}}>
+              <div className="container">
                     <div className="col-sm-12 col-xs-12">
                     <center>
                         <div className="portlet light">
@@ -128,7 +129,8 @@ class Login extends React.Component {
                     </div>
               </div>
             </section>
-            <Footer />
+      </div>
+          <Footer />
       </div>
     )
   }
