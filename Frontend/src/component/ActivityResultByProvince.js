@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
-import Search from './Search'
+import Home from './Home'
 import CardActivityResult from './CardActivityResult'
 import 'whatwg-fetch'
 import Footer from './Footer'
@@ -63,11 +63,17 @@ class ActivityResultByProvince extends React.Component{
   render(){
 
     return(
-      <div className="main-wrapper">
-        <Nav /><section className="mainContentSection singlePackage">
-          <Search />
-            <div className="container" style={{marginTop: 30}}>
+      <div>
+            <Home/>
+      <div className="main-wrapper b padding">
+            <div className="container">
             <div className="row">
+            <h2 className="middle">Bangkok</h2>
+            <CardActivityResult/>
+            <CardActivityResult/>
+            <CardActivityResult/>
+            <CardActivityResult/>
+            <CardActivityResult/>
             {
               this.state.activity.map( (value, index) => {
                 return(
@@ -77,8 +83,8 @@ class ActivityResultByProvince extends React.Component{
             }
             </div>
             </div>
-            </section>
             <Footer />
+      </div>
       </div>
     )
   }

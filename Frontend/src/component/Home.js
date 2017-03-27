@@ -13,7 +13,6 @@ class Home extends React.Component{
   render(){
     return(
         <div className="main-wrapper b">
-
           <Nav/>
           <Header/>
           <Search/>

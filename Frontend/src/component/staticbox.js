@@ -26,7 +26,7 @@ export default class StaticBox extends Component{
   render(){
     let {user,activity,destination} = this.state
     return(
-      <div>
+      <div className="col-xs-12 col-sm-6">
      <section className="countUpSection bgblack">
       <div className="container">
         <div className="row">

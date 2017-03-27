@@ -7,7 +7,6 @@ import Home from './home'
 import Footer from './footer'
 import HomeCard from './homecard'
 import ActivityHome from './ActivityHome'
-import StaticBox from './staticbox'
 class PackageHome extends React.Component{
 
   constructor(props){
@@ -48,6 +47,7 @@ method: 'GET' }).then(
        <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329"/>
 
      </div>
+
    <div className="row isotopeContainer">
        {
          this.state.activity.map((value , index) => {
