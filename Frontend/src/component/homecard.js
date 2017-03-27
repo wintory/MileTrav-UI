@@ -6,13 +6,28 @@ class HomeCard extends React.Component{
   render(){
 
     return(
-    <div className="card">
-  <div className="card-block">
-    <h4 className="card-title">Special title treatment</h4>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+
+    <div className="events-block-subheading bgwhite">
+        <div className="text-center">
+          <h4 >Recommend</h4>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+          <p>Coming soon</p>
+
+        </div>
+      </div>
+
     )
   }
 }

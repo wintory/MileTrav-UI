@@ -2164,44 +2164,10 @@ var Footer = function (_React$Component) {
             _react2.default.createElement(
               "div",
               { className: "row" },
+              _react2.default.createElement("div", { className: "col-sm-6 col-sm-push-6 col-xs-12" }),
               _react2.default.createElement(
                 "div",
-                { className: "col-sm-6 col-sm-push-6 col-xs-12" },
-                _react2.default.createElement(
-                  "ul",
-                  { className: "list-inline" },
-                  _react2.default.createElement(
-                    "li",
-                    null,
-                    _react2.default.createElement(
-                      "a",
-                      { href: "#" },
-                      "Privacy Policy"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "li",
-                    null,
-                    _react2.default.createElement(
-                      "a",
-                      { href: "#" },
-                      "About Us"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "li",
-                    null,
-                    _react2.default.createElement(
-                      "a",
-                      { href: "#" },
-                      "Support"
-                    )
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "col-sm-6 col-sm-pull-6 col-xs-12" },
+                { className: "col-sm-6 col-sm-pull-6 col-xs-12  margintop" },
                 _react2.default.createElement(
                   "div",
                   { className: "copyRightText" },
@@ -6552,13 +6518,13 @@ var PackageHome = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-xs-12 col-sm-6' },
+              { className: 'col-xs-12 col-sm-6 margintop' },
               _react2.default.createElement(
                 'div',
                 { className: 'bgwhite' },
-                _react2.default.createElement('img', { className: 'component', src: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215' }),
-                _react2.default.createElement(_homecard2.default, null)
-              )
+                _react2.default.createElement('img', { className: 'component', src: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215' })
+              ),
+              _react2.default.createElement(_homecard2.default, null)
             ),
             _react2.default.createElement(_ActivityHome2.default, { pic: 'https://p-u.popcdn.net/events/covers/000/001/462/original/Songkran2017_Banner.jpg?1487305672' }),
             _react2.default.createElement(_ActivityHome2.default, { pic: 'https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329' })
@@ -14410,7 +14376,7 @@ var ActivityHome = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'col-xs-12 col-sm-6' },
+        { className: 'col-xs-12 col-sm-6 margintop' },
         _react2.default.createElement(
           'div',
           { className: 'bgwhite' },
@@ -17227,44 +17193,10 @@ var Footer = function (_React$Component) {
             _react2.default.createElement(
               "div",
               { className: "row" },
+              _react2.default.createElement("div", { className: "col-sm-6 col-sm-push-6 col-xs-12" }),
               _react2.default.createElement(
                 "div",
-                { className: "col-sm-6 col-sm-push-6 col-xs-12" },
-                _react2.default.createElement(
-                  "ul",
-                  { className: "list-inline" },
-                  _react2.default.createElement(
-                    "li",
-                    null,
-                    _react2.default.createElement(
-                      "a",
-                      { href: "#" },
-                      "Privacy Policy"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "li",
-                    null,
-                    _react2.default.createElement(
-                      "a",
-                      { href: "#" },
-                      "About Us"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "li",
-                    null,
-                    _react2.default.createElement(
-                      "a",
-                      { href: "#" },
-                      "Support"
-                    )
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "col-sm-6 col-sm-pull-6 col-xs-12" },
+                { className: "col-sm-6 col-sm-pull-6 col-xs-12  margintop" },
                 _react2.default.createElement(
                   "div",
                   { className: "copyRightText" },
@@ -17407,24 +17339,79 @@ var HomeCard = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'card' },
+        { className: 'events-block-subheading bgwhite' },
         _react2.default.createElement(
           'div',
-          { className: 'card-block' },
+          { className: 'text-center' },
           _react2.default.createElement(
             'h4',
-            { className: 'card-title' },
-            'Special title treatment'
+            null,
+            'Recommend'
           ),
           _react2.default.createElement(
             'p',
-            { className: 'card-text' },
-            'With supporting text below as a natural lead-in to additional content.'
+            null,
+            'Coming soon'
           ),
           _react2.default.createElement(
-            'a',
-            { href: '#', className: 'btn btn-primary' },
-            'Go somewhere'
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Coming soon'
           )
         )
       );

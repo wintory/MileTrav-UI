@@ -14,7 +14,7 @@ div.b {
     text-align: center;
 }
 
-div.bgwhite {
+.bgwhite {
     background-color: white;
 }
 
@@ -151,7 +151,7 @@ nav.nav {
     background-color: #f3f3f3;
     margin: 0 auto;
     border-radius: 10px;
-    border: 1px solid ##c5c5c5;
+    border: 1px solid #c5c5c5;
     text-align: center;
 }
 
@@ -216,4 +216,22 @@ body.landing-theme #content-blocks .events-block .events-block-subheading {
     line-height: 1.1;
     font-weight: 500;
     padding: 15px 10px;
+}
+
+.margintop{
+    margin-top: 3%;
+}
+
+.margin{
+    margin: 3%;
+}
+
+
+theme #content-blocks .events-block .events-block-subheading {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(236,1,134,0.2);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 2%;
+    height: 500%;
 }
