@@ -12,7 +12,7 @@ class Home extends React.Component{
   
   render(){
     return(
-        <div className="main-wrapper">
+        <div className="main-wrapper b">
 
           <Nav/>
           <Header/>

@@ -1,5 +1,14 @@
-body.b{
-   background-color: #800722;
+
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 30%;
+      max-height: 400px;
+      margin: auto;
+  }
+
+div.b{
+   background-color: #330072;
    color: white;
 }
 
@@ -40,6 +49,10 @@ form.nav{
   height: auto;
 }
 
+div.slideshow{
+    padding-bottom: 13%;
+    background-color:whitesmoke;
+}
 
 div.nav{
    margin-top: 3%;

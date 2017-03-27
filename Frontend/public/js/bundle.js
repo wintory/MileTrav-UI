@@ -2431,76 +2431,6 @@ var Footer = function (_React$Component) {
         null,
         _react2.default.createElement(
           "div",
-          { className: "footer clearfix" },
-          _react2.default.createElement(
-            "div",
-            { className: "container" },
-            _react2.default.createElement(
-              "div",
-              { className: "row" },
-              _react2.default.createElement(
-                "div",
-                { className: "col-sm-6 col-xs-12" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "footerContent" },
-                  _react2.default.createElement(
-                    "a",
-                    { href: "#", className: "footer-logo" },
-                    _react2.default.createElement("img", { src: "/img/logo-white.png", alt: "footer-logo" })
-                  ),
-                  _react2.default.createElement("p", null)
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "col-sm-6 col-xs-12" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "footerContent" },
-                  _react2.default.createElement(
-                    "h5",
-                    null,
-                    "Contact Us"
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "This website is MVP for INT353 at School project of Information Technology. We would like some feedback on us. If you have any suggestiong please send detail to "
-                  ),
-                  _react2.default.createElement(
-                    "ul",
-                    { className: "list-unstyled" },
-                    _react2.default.createElement(
-                      "li",
-                      null,
-                      _react2.default.createElement("i", { className: "fa fa-home", "aria-hidden": "true" }),
-                      "SIT KMUTT"
-                    ),
-                    _react2.default.createElement(
-                      "li",
-                      null,
-                      _react2.default.createElement("i", { className: "fa fa-phone", "aria-hidden": "true" }),
-                      "[+66]97 234 7282"
-                    ),
-                    _react2.default.createElement(
-                      "li",
-                      null,
-                      _react2.default.createElement("i", { className: "fa fa-envelope-o", "aria-hidden": "true" }),
-                      _react2.default.createElement(
-                        "a",
-                        { href: "mailTo:patcharaleelalumplert@gmail.com" },
-                        "patcharaleelalumplert@gmail.com"
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "div",
           { className: "copyRight clearfix" },
           _react2.default.createElement(
             "div",
@@ -15393,36 +15323,58 @@ var Header = function (_React$Component) {
         backgroundImage: 'url(' + '/img/cover/home.jpg' + ')'
       };
       return _react2.default.createElement(
-        'section',
-        { className: 'pageTitle', style: divStyle },
+        'div',
+        { id: 'myCarousel', className: 'carousel slide slideshow component', 'data-ride': 'carousel' },
+        _react2.default.createElement(
+          'ol',
+          { className: 'carousel-indicators' },
+          _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '0', className: 'active' }),
+          _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '1' }),
+          _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '2' }),
+          _react2.default.createElement('li', { 'data-target': '#myCarousel', 'data-slide-to': '3' })
+        ),
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'carousel-inner', role: 'listbox' },
           _react2.default.createElement(
             'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-xs-12' },
-              _react2.default.createElement(
-                'div',
-                { className: 'titleTable' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'titleTableInner' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'pageTitleInfo' },
-                    _react2.default.createElement(
-                      'h1',
-                      null,
-                      'Where ever you go is a part of you somehow'
-                    ),
-                    _react2.default.createElement('div', { className: 'under-border' })
-                  )
-                )
-              )
-            )
+            { className: 'item active' },
+            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Chania', width: '460', height: '345' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'item' },
+            _react2.default.createElement('img', { src: 'http://www.thailandoutlook.tv/wp-content/uploads/2016/09/shutterstock-bangkok-thailand.jpg', alt: 'Chania', width: '460', height: '345' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'item' },
+            _react2.default.createElement('img', { src: 'img_flower.jpg', alt: 'Flower', width: '460', height: '345' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'item' },
+            _react2.default.createElement('img', { src: 'img_flower2.jpg', alt: 'Flower', width: '460', height: '345' })
+          )
+        ),
+        _react2.default.createElement(
+          'a',
+          { className: 'left carousel-control', href: '#myCarousel', role: 'button', 'data-slide': 'prev' },
+          _react2.default.createElement('span', { className: 'glyphicon glyphicon-chevron-left', 'aria-hidden': 'true' }),
+          _react2.default.createElement(
+            'span',
+            { className: 'sr-only' },
+            'Previous'
+          )
+        ),
+        _react2.default.createElement(
+          'a',
+          { className: 'right carousel-control', href: '#myCarousel', role: 'button', 'data-slide': 'next' },
+          _react2.default.createElement('span', { className: 'glyphicon glyphicon-chevron-right', 'aria-hidden': 'true' }),
+          _react2.default.createElement(
+            'span',
+            { className: 'sr-only' },
+            'Next'
           )
         )
       );
@@ -15587,7 +15539,7 @@ var Home = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'main-wrapper' },
+        { className: 'main-wrapper b' },
         _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(_Search2.default, null),
