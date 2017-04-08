@@ -3647,8 +3647,8 @@ var Nav = function (_React$Component) {
                     'form',
                     { id: 'signup' },
                     _react2.default.createElement(
-                      'h1',
-                      null,
+                      'h2',
+                      { className: 'h2login' },
                       'login'
                     ),
                     _react2.default.createElement(
@@ -3668,14 +3668,14 @@ var Nav = function (_React$Component) {
                       'div',
                       { className: 'text-center' },
                       _react2.default.createElement(
-                        'a',
-                        { href: '#', id: '' },
+                        _reactRouter.Link,
+                        { to: '/register' },
                         'create an account'
                       ),
                       ' - ',
                       _react2.default.createElement(
-                        'a',
-                        { href: '#', id: '' },
+                        _reactRouter.Link,
+                        { to: '/forgotpass' },
                         'forgot password'
                       )
                     )
@@ -3683,15 +3683,23 @@ var Nav = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'li',
-                  { onClick: this.openModal },
-                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
-                  'Sign Up'
+                  null,
+                  _react2.default.createElement(
+                    _reactRouter.Link,
+                    { to: '/register' },
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
+                    'Sign Up'
+                  )
                 ),
                 _react2.default.createElement(
                   'li',
-                  { onClick: this.openModal },
-                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
-                  ' Login'
+                  null,
+                  _react2.default.createElement(
+                    _reactRouter.Link,
+                    { to: '', onClick: this.openModal },
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
+                    ' Login'
+                  )
                 )
               )
             )
@@ -10620,7 +10628,7 @@ var Login = function (_React$Component) {
                               _react2.default.createElement('i', { className: 'fa fa-facebook-official', 'aria-hidden': 'true' }),
                               _react2.default.createElement(
                                 'span',
-                                null,
+                                { style: { marginLeft: 7 } },
                                 'Log In with Facebook'
                               )
                             )
@@ -15431,9 +15439,7 @@ exports.default = _react2.default.createElement(
        '-           ',
        _react2.default.createElement(_reactRouter.Route, { path: '/CreateActivity/:step', component: _CreateActivity2.default }),
        '+           ',
-       _react2.default.createElement(_reactRouter.Route, { path: '/Profile', component: _Profile2.default }),
-       '+           ',
-       _react2.default.createElement(_reactRouter.Route, { path: '/CreateActivity/:step', component: _CreateActivity2.default })
+       _react2.default.createElement(_reactRouter.Route, { path: '/Profile', component: _Profile2.default })
 );
 
 /***/ }),
@@ -17526,6 +17532,8 @@ var Register = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         { className: 'b' },
@@ -17534,146 +17542,38 @@ var Register = function (_Component) {
           'div',
           { className: 'main-wrapper' },
           _react2.default.createElement(
-            'section',
-            null,
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
+            'div',
+            { className: 'container' },
             _react2.default.createElement(
               'div',
-              { className: 'container' },
+              { className: 'col-md-6' },
               _react2.default.createElement(
                 'div',
-                { className: 'col-sm-12 col-xs-12' },
+                { id: 'logbox' },
                 _react2.default.createElement(
-                  'center',
-                  null,
+                  'form',
+                  { id: 'signup', method: 'post', action: '/signup' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'create an account'
+                  ),
+                  _react2.default.createElement('input', { onChange: this.setUsername, type: 'text', placeholder: 'What\'s your username?', pattern: '^[\\w]{3,16}$', autofocus: 'autofocus', required: 'required', className: 'input pass' }),
+                  _react2.default.createElement('input', { onChange: this.setPassword, type: 'password', placeholder: 'Choose a password', required: 'required', className: 'input pass' }),
+                  _react2.default.createElement('input', { type: 'password', placeholder: 'Confirm password', required: 'required', className: 'input pass' }),
+                  _react2.default.createElement('input', { onChange: this.setName, type: 'text', placeholder: 'Name', className: 'input pass', required: 'required' }),
+                  _react2.default.createElement('input', { onChange: this.setSurname, type: 'text', placeholder: 'Surname', className: 'input pass', required: 'required' }),
+                  _react2.default.createElement('input', { type: 'submit', onClick: this.register, value: 'Sign me up!', className: 'inputButton' }),
                   _react2.default.createElement(
                     'div',
-                    { className: 'portlet light' },
+                    { className: 'text-center' },
+                    'already have an account? ',
                     _react2.default.createElement(
-                      'div',
-                      { className: 'portlet-title' },
-                      _react2.default.createElement(
-                        'center',
-                        null,
-                        _react2.default.createElement(
-                          'div',
-                          { className: 'caption font-kademy' },
-                          _react2.default.createElement(
-                            'h3',
-                            null,
-                            'Register'
-                          )
-                        )
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'portlet-body' },
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                          'center',
-                          null,
-                          _react2.default.createElement('br', null),
-                          _react2.default.createElement('br', null),
-                          _react2.default.createElement('br', null),
-                          _react2.default.createElement(
-                            'div',
-                            { className: 'col-md-12' },
-                            _react2.default.createElement(
-                              'form',
-                              { className: 'form-horizontal' },
-                              _react2.default.createElement(
-                                'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                  'label',
-                                  { className: 'control-label col-sm-2' },
-                                  'username:'
-                                ),
-                                _react2.default.createElement(
-                                  'div',
-                                  { className: 'col-sm-10' },
-                                  _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setUsername, placeholder: 'Enter username' })
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                  'label',
-                                  { className: 'control-label col-sm-2' },
-                                  'Password:'
-                                ),
-                                _react2.default.createElement(
-                                  'div',
-                                  { className: 'col-sm-10' },
-                                  _react2.default.createElement('input', { type: 'password', className: 'form-control', onChange: this.setPassword, placeholder: 'Enter password' })
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                  'label',
-                                  { className: 'control-label col-sm-2' },
-                                  'Confirm Password:'
-                                ),
-                                _react2.default.createElement(
-                                  'div',
-                                  { className: 'col-sm-10' },
-                                  _react2.default.createElement('input', { type: 'password', className: 'form-control', placeholder: 'Confirm password' })
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                  'label',
-                                  { className: 'control-label col-sm-2' },
-                                  'Name :'
-                                ),
-                                _react2.default.createElement(
-                                  'div',
-                                  { className: 'col-sm-10' },
-                                  _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setName, placeholder: 'Enter name' })
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                  'label',
-                                  { className: 'control-label col-sm-2' },
-                                  'Surname :'
-                                ),
-                                _react2.default.createElement(
-                                  'div',
-                                  { className: 'col-sm-10' },
-                                  _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setSurname, placeholder: 'Enter surname' })
-                                )
-                              ),
-                              _react2.default.createElement(
-                                'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                  'div',
-                                  { className: 'col-sm-offset-2 col-sm-2' },
-                                  _react2.default.createElement(
-                                    'button',
-                                    { type: 'button', className: 'btn btn-block buttonCustomPrimary', onClick: this.register },
-                                    'Submit'
-                                  )
-                                )
-                              )
-                            )
-                          )
-                        )
-                      )
+                      'a',
+                      { href: '#', onClick: function onClick() {
+                          return _this2.openModal;
+                        } },
+                      'login'
                     )
                   )
                 )

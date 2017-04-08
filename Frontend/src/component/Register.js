@@ -78,78 +78,32 @@ class Register extends Component {
        <div className="b">
          <Home/> 
       <div className="main-wrapper">
-          <section >
-          <br/><br/>
-              <div className="container" >
-                    <div className="col-sm-12 col-xs-12">
-                    <center>
-                        <div className="portlet light">
-                          <div className="portlet-title">
-                              <center>
-                                <div className="caption font-kademy">
-                                  <h3>Register</h3>
-                                </div>
-                              </center>
-                            </div>
-                            <div className="portlet-body">
-                              <div className="row">
-                              <br/>
-                              <br/>
-                                <center>
-                                <br/>
-                                <br/>
-                                <br/>
-                                    <div className="col-md-12">
-                                    <form className="form-horizontal">
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">username:</label>
-                                              <div className="col-sm-10">
-                                                <input type="text" className="form-control" onChange={this.setUsername} placeholder="Enter username" />
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Password:</label>
-                                              <div className="col-sm-10">
-                                                <input type="password" className="form-control" onChange={this.setPassword} placeholder="Enter password"/>
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Confirm Password:</label>
-                                              <div className="col-sm-10">
-                                                <input type="password" className="form-control"  placeholder="Confirm password"/>
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Name :</label>
-                                              <div className="col-sm-10">
-                                                <input type="text" className="form-control" onChange={this.setName}  placeholder="Enter name"/>
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <label className="control-label col-sm-2">Surname :</label>
-                                              <div className="col-sm-10">
-                                                <input type="text" className="form-control" onChange={this.setSurname} placeholder="Enter surname"/>
-                                              </div>
-                                            </div>
-                                            <div className="form-group">
-                                              <div className="col-sm-offset-2 col-sm-2">
-                                                <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.register}>Submit</button>
-                                              </div>
-                                            </div>
-                                            </form>
-
-                                    </div>
-                                </center>
-                              </div>
-                            </div>
-                        </div>
-                        </center>
-                    </div>
-              </div>
-            </section>
+          
+          
+       <div className="container">
+    <div className="col-md-6">
+    <div id="logbox">
+      <form id="signup" method="post" action="/signup">
+        <h2>create an account</h2>
+        <input onChange={this.setUsername} type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" className="input pass"/>
+        <input onChange={this.setPassword} type="password" placeholder="Choose a password" required="required" className="input pass"/>
+        <input  type="password" placeholder="Confirm password" required="required" className="input pass"/>
+        <input onChange={this.setName} type="text" placeholder="Name" className="input pass" required="required"/>
+        <input onChange={this.setSurname} type="text" placeholder="Surname" className="input pass" required="required"/>
+        <input type="submit" onClick={this.register} value="Sign me up!" className="inputButton"/>
+        <div className="text-center">
+            already have an account? <a href="#" onClick={()=>this.openModal}>login</a>
+        </div>
+      </form>
+    </div>
+   </div>
+   </div>
+            
             <Footer />
       </div>
       </div>
+
+
     )
   }
 }

@@ -81,7 +81,7 @@ class Login extends React.Component {
                                 <p>Login with Social</p>
                                 <br/>
                                     <div className="col-md-12">
-                                    <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span>Log In with Facebook</span></button>
+                                    <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span style={{marginLeft: 7}}>Log In with Facebook</span></button>
                                     </div>
                                 </center>
                               </div>
