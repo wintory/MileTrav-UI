@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{Component} from 'react'
 import 'whatwg-fetch';
 import Home from './Home'
 import Footer from './Footer'
 import {host} from './host'
 import {browserHistory} from 'react-router'
 
-class Register extends React.Component {
+class Register extends Component {
 
                   constructor(props){
                     super(props);
@@ -76,7 +76,7 @@ class Register extends React.Component {
   render(){
     return(
        <div className="b">
-        <Home/>
+         <Home/> 
       <div className="main-wrapper">
           <section >
           <br/><br/>

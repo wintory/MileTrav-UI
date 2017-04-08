@@ -32,7 +32,7 @@ method: 'GET' }).then(
   render(){
     return(
       <div className="b">
-        <Home/>
+      <Home/>
 <section>
    <div className="row">
      <div className="col-xs-12 col-sm-6 margintop">

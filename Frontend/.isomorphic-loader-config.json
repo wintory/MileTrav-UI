@@ -1,19 +1,17 @@
 {
   "valid": true,
   "version": "1.6.2",
-  "timestamp": 1490640065222,
+  "timestamp": 1491677649717,
   "context": "",
   "output": {
     "path": "public\\js",
     "filename": "bundle.js",
     "publicPath": ""
   },
-  "assetsFile": "public\\js\\isomorphic-assets.json"
-}
-main": [
-        "bundle.js",
-        "0.9ffab6400443898843fc.hot-update.js"
-      ]
+  "assets": {
+    "marked": {},
+    "chunks": {
+      "main": "bundle.js"
     }
   },
   "webpackDev": {

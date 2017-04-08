@@ -1,17 +1,92 @@
 import React from 'react'
 import Loading from 'react-loading'
 import { Router, Link, browserHistory } from 'react-router'
+import App from './Login'
+import Modal from 'react-modal'
+
+
+const appElement = document.getElementById('your-app-element');
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 class Nav extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLogin: false,
-      username: ""
+      username: "",
+       modalIsOpen: false,
+      password : ""
     }
+      this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.logout = this.logout.bind(this);
+     this.setPassword = this.setPassword.bind(this);
+          this.setUsername = this.setUsername.bind(this);
+          this.login = this.login.bind(this);
   }
 
+  
+      setPassword(e){
+          this.setState({
+            password : e.target.value
+          })
+      }
+      setUsername(e){
+        this.setState({
+          username : e.target.value
+        })
+      }
+
+      login(e){
+        e.preventDefault();
+        fetch(host+"api/user/login" , {
+          method: 'POST',
+           headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+           },
+           body: JSON.stringify({
+                username: this.state.username,
+                password: this.state.password,
+              })
+        }).then( (res) => {
+          return res.json()
+        }).then((res) => {
+          localStorage.setItem("token" , res.token);
+          localStorage.setItem("username" , res.username);
+          browserHistory.push('/');
+        }).catch((err) =>{
+          console.log(err)
+        })
+      }
+
+    static contextTypes : {
+        router: React.PropTypes.func.isRequired
+      }
+  
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    this.refs.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
   componentDidMount() {
     console.log(localStorage.getItem("token"));
@@ -37,6 +112,8 @@ class Nav extends React.Component {
 
 
   render() {
+   let props = null
+
     if ((!this.state.isLogin) || this.state.username == "") {
       return (
 
@@ -47,12 +124,35 @@ class Nav extends React.Component {
       <Link to="/" className="navbar-brand"></Link>
     </div>
     <ul className="nav navbar-nav navbar-right">
-      <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-      <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+
+         <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+      <form id="signup">
+        <h1>login</h1>
+        <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span >Log In with Facebook</span></button>
+        <input onChange={this.setUsername} placeholder="enter your username" className="input pass"/>
+        <input onChange={this.setPassword}  type="password" placeholder="enter your password" required="required" className="input pass"/>
+        <input type="button" onClick={this.login} value="Sign me in!" className="inputButton"/>
+        <div className="text-center">
+                    <a href="#" id="">create an account</a> - <a href="#" id="">forgot password</a>
+                </div>
+      </form>
+    
+        </Modal>
+
+      <li  onClick={this.openModal}><span className="glyphicon glyphicon-user"></span>Sign Up</li>
+      <li onClick={this.openModal}><span className="glyphicon glyphicon-log-in"></span> Login</li>
         </ul>
         </div>
         </nav>
         </header>
+
+          
       )
 
     } else {
@@ -93,4 +193,5 @@ class Nav extends React.Component {
 
   }
 }
-export default Nav
+export default Nav 
+

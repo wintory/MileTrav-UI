@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{Component} from 'react'
 import Home from './Home'
 import Footer from './Footer'
 import 'whatwg-fetch'
 import {host} from './host'
 import {browserHistory} from 'react-router'
+import Modal from 'react-modal';
 class Login extends React.Component {
 
 
@@ -60,7 +61,6 @@ class Login extends React.Component {
   render(){
     return(
       <div className="b">
-        <Home/>
       <div className="main-wrapper">
           <section >
           <br/><br/>
@@ -81,7 +81,7 @@ class Login extends React.Component {
                                 <p>Login with Social</p>
                                 <br/>
                                     <div className="col-md-12">
-                                    <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span style={{marginLeft: 7}}>Log In with Facebook</span></button>
+                                    <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span>Log In with Facebook</span></button>
                                     </div>
                                 </center>
                               </div>
@@ -137,3 +137,70 @@ class Login extends React.Component {
 }
 
 export default Login
+
+
+const appElement = document.getElementById('your-app-element');
+
+
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+
+export class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      modalIsOpen: false
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    this.refs.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+  render() {
+    return (
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+
+          <h2 ref="subtitle">Hello</h2>
+          <button onClick={this.closeModal}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </Modal>
+    );
+  }
+}

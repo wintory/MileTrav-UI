@@ -2,7 +2,7 @@ import React from 'react'
 import Loading from 'react-loading'
 import {host} from './host'
 import 'whatwg-fetch';
-import Nav from './Nav'
+import Home from './Home'
 import Footer from './Footer'
 import DropzoneComponent from 'react-dropzone-component/lib/react-dropzone';
 import firebase from 'firebase'
@@ -43,7 +43,7 @@ class CreateActivity extends React.Component {
 
               componentDidMount(){
                 if (localStorage.getItem("username") == null || localStorage.getItem("token") == null) {
-                    browserHistory.replace("/login")
+                    browserHistory.replace(alert("please login"))
                 }else{
                   var config = {
                       apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
@@ -320,9 +320,9 @@ class CreateActivity extends React.Component {
 
    if(this.state.onLoad){
      return(
-       <div className="main-wrapper">
-           <Nav />
-           <section className="mainContentSection singlePackage">
+       <div className="main-wrapper b">
+           <Home />
+           <section className="mainContentSection singlePackage b">
               <center>
                     <div className="container" style={{marginTop : 300 , marginBottom: 300}}>
                           <Loading type='bars' color="#26A65B" style={{width: 200 , height: 100}}/>
@@ -335,9 +335,9 @@ class CreateActivity extends React.Component {
 
    }else{
      return(
-       <div className="main-wrapper">
-           <Nav />
-           <section className="mainContentSection singlePackage">
+       <div className="main-wrapper b">
+           <Home />
+           <section className="mainContentSection singlePackage b">
            <br/><br/>
                <div className="container" style={{width: 1024}}>
                      <div className="col-sm-12 col-xs-12">
