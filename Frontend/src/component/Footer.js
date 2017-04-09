@@ -14,7 +14,7 @@ class Footer extends React.Component{
                </div>
                <div className="col-sm-6 col-sm-pull-6 col-xs-12  margintop">
                  <div className="copyRightText">
-                   <p>Copyright © 2017. All Rights Reserved by <a>MileTrav</a>.</p>
+                   <p>Copyright © 2017 All Rights Reserved by MileTrav</p>
                  </div>
                </div>
              </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import Loading from 'react-loading'
 import { Router, Link, browserHistory } from 'react-router'
-import App from './Login'
 import ModalLogin from 'react-modal'
 import ModalRegister from 'react-modal'
 
@@ -14,7 +13,8 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    color : 'black'
   }
 };
 
@@ -196,7 +196,7 @@ class Nav extends React.Component {
       return (
 
         <header className="btm">
-          <nav className="navbar">
+          <nav className="navbar navbar-default bg-faded">
             <div className="container-fluid nav">
               <div className="navbar-header">
                 <Link to="/" className="navbar-brand"></Link>
@@ -217,7 +217,7 @@ class Nav extends React.Component {
                     <input onChange={this.setPassword} type="password" placeholder="enter your password" required="required" className="input pass" />
                     <input type="button" onClick={this.login} value="Sign me in!" className="inputButton" />
                     <div className="text-center">
-                      <Link to="" onClick={this.goToRegister}>create an account</Link> - <Link to="/forgotpass">forgot password</Link>
+                      <Link to="" onClick={this.goToRegister}>create an account</Link> - <Link to="/forgetpass" onClick={this.closeModalLogin}>forgot password</Link>
                     </div>
                   </form>
                 </ModalLogin>
@@ -230,7 +230,7 @@ class Nav extends React.Component {
                   style={customStyles}
                   contentLabel="Example Modal"
                 >
-                  <form id="signup" method="post" action="/signup">
+                  <form id="signup">
                     <h2 className="h2login">create an account</h2>
                     <input onChange={this.setUsername} type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" className="input pass" />
                     <input onChange={this.setPassword} type="password" placeholder="Choose a password" required="required" className="input pass" />
@@ -243,9 +243,9 @@ class Nav extends React.Component {
                     </div>
                   </form>
                 </ModalRegister>
-
-                <li><Link to="" onClick={this.openModalRegister}><span className="glyphicon glyphicon-user"></span>Sign Up</Link></li>
-                <li><Link to="" onClick={this.openModalLogin}><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                
+                <li className="nav-item"><Link to="" onClick={this.openModalRegister}><span className="glyphicon glyphicon-user"></span>Sign Up</Link></li>
+                <li className="nav-item"><Link to="" onClick={this.openModalLogin}><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
               </ul>
             </div>
           </nav>

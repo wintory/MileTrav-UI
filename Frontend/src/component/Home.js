@@ -6,7 +6,6 @@ import PackageHome from './PackageHome'
 import Footer from './Footer'
 import Modal from 'react-modal'
 
-
 class Home extends React.Component{
   constructor(props){
     super(props);

@@ -43,7 +43,7 @@ method: 'GET' }).then(
 
        </div>
 
-       <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/462/original/Songkran2017_Banner.jpg?1487305672"/>
+       <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/599/original/RADWIMPS_1720x800_Cover.jpg?1491017932"/>
        <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329"/>
 
      </div>

@@ -4,9 +4,11 @@ class Search extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      city : "Bangkok"
+      city : "Bangkok",
+      price : "0-500"
     }
     this.setCity = this.setCity.bind(this)
+    this.setPrice = this.setPrice.bind(this)
   }
 
   setCity(e){
@@ -15,10 +17,19 @@ class Search extends React.Component{
       })
   }
 
+  
+  setPrice(e){
+      this.setState({
+        price : e.target.value
+      })
+  }
+
   render(){
     const city = ['Bangkok' ,'Chiangmai' , 'Phuket', 'Krabi', 'Chaingrai' ,'Chonburi', 'Ayutthaya' , 'Karnchanaburi' ]
+    const price = ['0-500' ,'500-1000' , '1000-2500', '2500-5000', '5000-10000']
 
     return(
+      
     
       <section className="search">
               <div className=" gridResize bgsearch ">
@@ -30,7 +41,7 @@ class Search extends React.Component{
                 </div>
                 <div>
 
-                    <div className="col-sm-4 col-xs-6">
+                    <div className="col-6 col-sm-3">
                       <div className="searchTour">
                           <span className='white'>Province</span>
                         <select onChange={this.setCity} className="form-control">
@@ -44,7 +55,21 @@ class Search extends React.Component{
                         </select>
                       </div>
                     </div>
-                     <div className="col-sm-4 col-xs-6">
+                    <div className="col-6 col-sm-3">
+                      <div className="searchTour">
+                          <span className='white'>Province</span>
+                        <select onChange={this.setPrice} className="form-control">
+                          {
+                            price.map((value , index) => {
+                              return(
+                                  <option key={index} value={value}>{value}</option>
+                              )
+                            })
+                          }
+                        </select>
+                      </div>
+                    </div>
+                     <div className="col-6 col-sm-3">
                      <div className="searchTour">
                       <br/>
                        <Link to={'/to/'+this.state.city}><button type="button" className="btn btn-block buttonCustomPrimary">Search</button></Link>

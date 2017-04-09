@@ -15,7 +15,7 @@ export default (
             <Route path="/" component={PackageHome}> </Route>
             <Route path="/to/:province" component={ActivityResultByProvince} ></Route>
              <Route path="/activity/:activity_name" component={ActivityDetail}></Route>
-             <Route path="/register" component={Forgetpass}></Route>
+             <Route path="/forgetpass" component={Forgetpass}></Route>
  -           <Route path="/Profile" component={Profile}></Route>
  -           <Route path="/CreateActivity/:step" component={CreateActivity}></Route>
  +           <Route path="/Profile" component={Profile} ></Route>

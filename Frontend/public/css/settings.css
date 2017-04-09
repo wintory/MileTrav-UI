@@ -16,6 +16,11 @@ website:   	http://www.themepunch.com
 /*************************
 	-	CAPTIONS	-
 **************************/
+*, *:before, *:after {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
 
 .tp-static-layers	{	position:absolute; z-index:505; top:0px;left:0px}
 
