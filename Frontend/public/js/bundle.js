@@ -3521,16 +3521,28 @@ var Nav = function (_React$Component) {
     _this.state = {
       isLogin: false,
       username: "",
-      modalIsOpen: false,
-      password: ""
+      modalLoginIsOpen: false,
+      modalRegisterIsOpen: false,
+      password: "",
+      name: "",
+      surname: "",
+      canRegist: true
     };
-    _this.openModal = _this.openModal.bind(_this);
-    _this.afterOpenModal = _this.afterOpenModal.bind(_this);
-    _this.closeModal = _this.closeModal.bind(_this);
+    _this.goToLogin = _this.goToLogin.bind(_this);
+    _this.goToRegister = _this.goToRegister.bind(_this);
+    _this.openModalRegister = _this.openModalRegister.bind(_this);
+    _this.afterOpenModalRegister = _this.afterOpenModalRegister.bind(_this);
+    _this.closeModalRegister = _this.closeModalRegister.bind(_this);
+    _this.openModalLogin = _this.openModalLogin.bind(_this);
+    _this.afterOpenModalLogin = _this.afterOpenModalLogin.bind(_this);
+    _this.closeModalLogin = _this.closeModalLogin.bind(_this);
     _this.logout = _this.logout.bind(_this);
     _this.setPassword = _this.setPassword.bind(_this);
     _this.setUsername = _this.setUsername.bind(_this);
     _this.login = _this.login.bind(_this);
+    _this.setName = _this.setName.bind(_this);
+    _this.setSurname = _this.setSurname.bind(_this);
+    _this.register = _this.register.bind(_this);
     return _this;
   }
 
@@ -3546,6 +3558,49 @@ var Nav = function (_React$Component) {
     value: function setUsername(e) {
       this.setState({
         username: e.target.value
+      });
+    }
+  }, {
+    key: 'setName',
+    value: function setName(e) {
+      this.setState({
+        name: e.target.value
+      });
+    }
+  }, {
+    key: 'setSurname',
+    value: function setSurname(e) {
+      this.setState({
+        surname: e.target.value
+      });
+    }
+  }, {
+    key: 'register',
+    value: function register() {
+      console.log('sending');
+
+      fetch(host + "api/user/register", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          username: this.state.username,
+          password: this.state.password,
+          name: this.state.name,
+          surname: this.state.surname
+        })
+      }).then(function (res) {
+        console.log("res.json()");
+        return res.json();
+      }).then(function (res) {
+        console.log(res);
+        localStorage.setItem("token", res.token);
+        localStorage.setItem("username", res.username);
+        _reactRouter.browserHistory.push('/');
+      }).catch(function (err) {
+        console.log(err);
       });
     }
   }, {
@@ -3573,19 +3628,46 @@ var Nav = function (_React$Component) {
       });
     }
   }, {
-    key: 'openModal',
-    value: function openModal() {
-      this.setState({ modalIsOpen: true });
+    key: 'goToLogin',
+    value: function goToLogin() {
+      this.setState({ modalRegisterIsOpen: false });
+      this.setState({ modalLoginIsOpen: true });
     }
   }, {
-    key: 'afterOpenModal',
-    value: function afterOpenModal() {
+    key: 'goToRegister',
+    value: function goToRegister() {
+      this.setState({ modalLoginIsOpen: false });
+      this.setState({ modalRegisterIsOpen: true });
+    }
+  }, {
+    key: 'openModalLogin',
+    value: function openModalLogin() {
+      this.setState({ modalLoginIsOpen: true });
+    }
+  }, {
+    key: 'afterOpenModalLogin',
+    value: function afterOpenModalLogin() {
       this.refs.subtitle.style.color = '#f00';
     }
   }, {
-    key: 'closeModal',
-    value: function closeModal() {
-      this.setState({ modalIsOpen: false });
+    key: 'closeModalLogin',
+    value: function closeModalLogin() {
+      this.setState({ modalLoginIsOpen: false });
+    }
+  }, {
+    key: 'openModalRegister',
+    value: function openModalRegister() {
+      this.setState({ modalRegisterIsOpen: true });
+    }
+  }, {
+    key: 'afterOpenModalRegister',
+    value: function afterOpenModalRegister() {
+      this.refs.subtitle.style.color = '#f00';
+    }
+  }, {
+    key: 'closeModalRegister',
+    value: function closeModalRegister() {
+      this.setState({ modalRegisterIsOpen: false });
     }
   }, {
     key: 'componentDidMount',
@@ -3637,9 +3719,9 @@ var Nav = function (_React$Component) {
                 _react2.default.createElement(
                   _reactModal2.default,
                   {
-                    isOpen: this.state.modalIsOpen,
-                    onAfterOpen: this.afterOpenModal,
-                    onRequestClose: this.closeModal,
+                    isOpen: this.state.modalLoginIsOpen,
+                    onAfterOpen: this.afterOpenModalLogin,
+                    onRequestClose: this.closeModalLogin,
                     style: customStyles,
                     contentLabel: 'Example Modal'
                   },
@@ -3669,7 +3751,7 @@ var Nav = function (_React$Component) {
                       { className: 'text-center' },
                       _react2.default.createElement(
                         _reactRouter.Link,
-                        { to: '/register' },
+                        { to: '', onClick: this.goToRegister },
                         'create an account'
                       ),
                       ' - ',
@@ -3682,11 +3764,51 @@ var Nav = function (_React$Component) {
                   )
                 ),
                 _react2.default.createElement(
+                  _reactModal2.default,
+                  {
+                    isOpen: this.state.modalRegisterIsOpen,
+                    onAfterOpen: this.afterOpenModalRegister,
+                    onRequestClose: this.closeModalRegister,
+                    style: customStyles,
+                    contentLabel: 'Example Modal'
+                  },
+                  _react2.default.createElement(
+                    'form',
+                    { id: 'signup', method: 'post', action: '/signup' },
+                    _react2.default.createElement(
+                      'h2',
+                      { className: 'h2login' },
+                      'create an account'
+                    ),
+                    _react2.default.createElement('input', { onChange: this.setUsername, type: 'text', placeholder: 'What\'s your username?', pattern: '^[\\w]{3,16}$', autofocus: 'autofocus', required: 'required', className: 'input pass' }),
+                    _react2.default.createElement('input', { onChange: this.setPassword, type: 'password', placeholder: 'Choose a password', required: 'required', className: 'input pass' }),
+                    _react2.default.createElement('input', { type: 'password', placeholder: 'Confirm password', required: 'required', className: 'input pass' }),
+                    _react2.default.createElement('input', { onChange: this.setName, type: 'text', placeholder: 'Name', className: 'input pass', required: 'required' }),
+                    _react2.default.createElement('input', { onChange: this.setSurname, type: 'text', placeholder: 'Surname', className: 'input pass', required: 'required' }),
+                    _react2.default.createElement('input', { type: 'submit', onClick: this.register, value: 'Sign me up!', className: 'inputButton' }),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'text-center' },
+                      _react2.default.createElement(
+                        'p',
+                        null,
+                        'already have an account?'
+                      ),
+                      ' ',
+                      _react2.default.createElement(
+                        _reactRouter.Link,
+                        { to: '', onClick: this.goToLogin },
+                        'login'
+                      )
+                    )
+                  )
+                ),
+                _react2.default.createElement(
                   'li',
                   null,
                   _react2.default.createElement(
                     _reactRouter.Link,
-                    { to: '/register' },
+                    { to: '', onClick: this.openModalRegister },
                     _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
                     'Sign Up'
                   )
@@ -3696,7 +3818,7 @@ var Nav = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     _reactRouter.Link,
-                    { to: '', onClick: this.openModal },
+                    { to: '', onClick: this.openModalLogin },
                     _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
                     ' Login'
                   )
