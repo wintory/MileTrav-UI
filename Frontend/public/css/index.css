@@ -544,3 +544,7 @@ h1, input {
     width: 50%;
     height: auto;
 }
+
+div.searchbox{
+    margin: 0.6%;
+}

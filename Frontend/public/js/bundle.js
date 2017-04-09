@@ -10652,7 +10652,7 @@ var Search = function (_React$Component) {
           { className: ' gridResize bgsearch ' },
           _react2.default.createElement(
             'div',
-            { className: 'col-sm-3 searchlogo slideshow' },
+            { className: 'col-sm-4 searchlogo slideshow' },
             _react2.default.createElement(
               'div',
               { className: 'sectionTitleDouble' },
@@ -10673,7 +10673,7 @@ var Search = function (_React$Component) {
             null,
             _react2.default.createElement(
               'div',
-              { className: 'col-sm-4' },
+              { className: 'col-sm-3' },
               _react2.default.createElement(
                 'div',
                 { className: 'searchTour' },
@@ -10697,7 +10697,7 @@ var Search = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-sm-4' },
+              { className: 'col-sm-3' },
               _react2.default.createElement(
                 'div',
                 { className: 'searchTour' },
@@ -10721,19 +10721,15 @@ var Search = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-sm-4 ' },
+              { className: 'col-sm-3 ' },
+              _react2.default.createElement('br', null),
               _react2.default.createElement(
-                'div',
-                { className: 'searchTour' },
-                _react2.default.createElement('br', null),
+                _reactRouter.Link,
+                { to: '/to/' + this.state.city },
                 _react2.default.createElement(
-                  _reactRouter.Link,
-                  { to: '/to/' + this.state.city },
-                  _react2.default.createElement(
-                    'button',
-                    { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
-                    'Search'
-                  )
+                  'button',
+                  { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
+                  'Search'
                 )
               )
             )

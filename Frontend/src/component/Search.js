@@ -33,7 +33,7 @@ class Search extends React.Component{
     
       <section className="search">
               <div className=" gridResize bgsearch ">
-                <div className="col-sm-3 searchlogo slideshow">
+                <div className="col-sm-4 searchlogo slideshow">
                   <div className="sectionTitleDouble">
                     <p>Choose</p>
                     <h2>Your Activity</h2>
@@ -41,7 +41,7 @@ class Search extends React.Component{
                 </div>
                 <div>
 
-                    <div className="col-sm-4">
+                    <div className="col-sm-3">
                       <div className="searchTour">
                           <span className='white'>Province</span>
                         <select onChange={this.setCity} className="form-control">
@@ -55,7 +55,7 @@ class Search extends React.Component{
                         </select>
                       </div>
                     </div>
-                    <div className="col-sm-4">
+                    <div className="col-sm-3">
                       <div className="searchTour">
                           <span className='white'>Province</span>
                         <select onChange={this.setPrice} className="form-control">
@@ -69,11 +69,11 @@ class Search extends React.Component{
                         </select>
                       </div>
                     </div>
-                     <div className="col-sm-4 ">
-                     <div className="searchTour">
+                     <div className="col-sm-3 ">
+       
                       <br/>
                        <Link to={'/to/'+this.state.city}><button type="button" className="btn btn-block buttonCustomPrimary">Search</button></Link>
-                       </div>
+                  
                      </div>
                   </div>
                 </div>
