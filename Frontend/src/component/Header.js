@@ -9,8 +9,6 @@ class Header extends React.Component{
       return(
         <div id="myCarousel" className="carousel slide slideshow component header" data-ride="carousel">
 
-
-
     <div className="carousel-inner" role="listbox">
       <div className="item active">
         <img src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/063/medium/89cec92df97787b6a47fcfbbf2ed6696c0786293.jpg?1487047329" alt="Chania" />
@@ -36,6 +34,7 @@ class Header extends React.Component{
     </a>
 
   </div>
+
 
 
       )

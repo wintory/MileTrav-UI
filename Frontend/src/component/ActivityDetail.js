@@ -1,5 +1,5 @@
 import React , {props} from 'react'
-import Nav from './Nav'
+import Home from './Home'
 import CardActivityDetail from './CardActivityDetail'
 import HeaderActivity from './HeaderActivity'
 import Footer from './Footer'
@@ -13,7 +13,7 @@ class ActivityDetail extends React.Component{
   render(){
       return(
         <div className="main-wrapper" style={{backgroundColor : '#fafafa'}}>
-          <Nav />
+          <Home />
           <HeaderActivity activity={this.state.name}/>
           <div className="container" style={{width : 820 , marginTop: 50}}>
                 <div className="row">

@@ -194,42 +194,71 @@ class Nav extends React.Component {
 
         if ((!this.state.isLogin) || this.state.username == "") {
             return (
-   <nav className="navbar navbar-default">
-      <div className="container">
-       
-        <div className="navbar-header">
-          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-          <a className="navbar-brand" href="#">Brand</a>
-        </div>
-    
-        <div className="collapse navbar-collapse" id="navbar-collapse-1">
-          <ul className="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Contact</a></li>
-            <li>
-              <a className="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Categories</a>
-            </li>
-          </ul>
-          <ul className="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
-            <li><a href="#">Web design</a></li>
-            <li><a href="#">Development</a></li>
-            <li><a href="#">Graphic design</a></li>
-            <li><a href="#">Print</a></li>
-            <li><a href="#">Motion</a></li>
-            <li><a href="#">Mobile apps</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+                <nav className="navbar navbar-default">
+                    <div className="container-fluid nav">
+
+                        <div className="navbar-header ">
+                            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span className="sr-only">Toggle navigation</span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                            </button>
+                            <Link to="/" className="navbar-brand"></Link>
+                        </div>
+
+                        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul className="nav navbar-nav navbar-right">
+                                <li className="nav-item"><Link to="" onClick={this.openModalRegister}><span className="glyphicon glyphicon-user"></span>Sign Up</Link></li>
+                                <li className="nav-item"><Link to="" onClick={this.openModalLogin}><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <ModalLogin
+                        isOpen={this.state.modalLoginIsOpen}
+                        onAfterOpen={this.afterOpenModalLogin}
+                        onRequestClose={this.closeModalLogin}
+                        style={customStyles}
+                        contentLabel="Example Modal"
+                    >
+                        <form id="signup">
+                            <h2 className="h2login">login</h2>
+                            <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span >Log In with Facebook</span></button>
+                            <input onChange={this.setUsername} placeholder="enter your username" className="input pass" />
+                            <input onChange={this.setPassword} type="password" placeholder="enter your password" required="required" className="input pass" />
+                            <input type="button" onClick={this.login} value="Sign me in!" className="inputButton" />
+                            <div className="text-center">
+                                <Link to="" onClick={this.goToRegister}>create an account</Link> - <Link to="/forgetpass" onClick={this.closeModalLogin}>forgot password</Link>
+                            </div>
+                        </form>
+                    </ModalLogin>
+
+
+                    <ModalRegister
+                        isOpen={this.state.modalRegisterIsOpen}
+                        onAfterOpen={this.afterOpenModalRegister}
+                        onRequestClose={this.closeModalRegister}
+                        style={customStyles}
+                        contentLabel="Example Modal"
+                    >
+                        <form id="signup">
+                            <h2 className="h2login">create an account</h2>
+                            <input onChange={this.setUsername} type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" className="input pass" />
+                            <input onChange={this.setPassword} type="password" placeholder="Choose a password" required="required" className="input pass" />
+                            <input type="password" placeholder="Confirm password" required="required" className="input pass" />
+                            <input onChange={this.setName} type="text" placeholder="Name" className="input pass" required="required" />
+                            <input onChange={this.setSurname} type="text" placeholder="Surname" className="input pass" required="required" />
+                            <input type="submit" onClick={this.register} value="Sign me up!" className="inputButton" />
+                            <div className="text-center">
+                                <p>already have an account?</p> <Link to="" onClick={this.goToLogin}>login</Link>
+                            </div>
+                        </form>
+                    </ModalRegister>
+                </nav>
+
+
             )
 
         } else {

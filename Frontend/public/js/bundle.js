@@ -5230,109 +5230,34 @@ var Nav = function (_React$Component) {
 
       if (!this.state.isLogin || this.state.username == "") {
         return _react2.default.createElement(
-          'header',
-          { className: 'btm' },
+          'nav',
+          { className: 'navbar navbar-default' },
           _react2.default.createElement(
-            'nav',
-            { className: 'navbar navbar-default bg-faded' },
+            'div',
+            { className: 'container-fluid nav' },
             _react2.default.createElement(
               'div',
-              { className: 'container-fluid nav' },
+              { className: 'navbar-header ' },
               _react2.default.createElement(
-                'div',
-                { className: 'navbar-header' },
-                _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
+                'button',
+                { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'sr-only' },
+                  'Toggle navigation'
+                ),
+                _react2.default.createElement('span', { className: 'icon-bar' }),
+                _react2.default.createElement('span', { className: 'icon-bar' }),
+                _react2.default.createElement('span', { className: 'icon-bar' })
               ),
+              _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'navbar-brand' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
               _react2.default.createElement(
                 'ul',
                 { className: 'nav navbar-nav navbar-right' },
-                _react2.default.createElement(
-                  _reactModal2.default,
-                  {
-                    isOpen: this.state.modalLoginIsOpen,
-                    onAfterOpen: this.afterOpenModalLogin,
-                    onRequestClose: this.closeModalLogin,
-                    style: customStyles,
-                    contentLabel: 'Example Modal'
-                  },
-                  _react2.default.createElement(
-                    'form',
-                    { id: 'signup' },
-                    _react2.default.createElement(
-                      'h2',
-                      { className: 'h2login' },
-                      'login'
-                    ),
-                    _react2.default.createElement(
-                      'button',
-                      { className: 'btn btn-facebook' },
-                      _react2.default.createElement('i', { className: 'fa fa-facebook-official', 'aria-hidden': 'true' }),
-                      _react2.default.createElement(
-                        'span',
-                        null,
-                        'Log In with Facebook'
-                      )
-                    ),
-                    _react2.default.createElement('input', { onChange: this.setUsername, placeholder: 'enter your username', className: 'input pass' }),
-                    _react2.default.createElement('input', { onChange: this.setPassword, type: 'password', placeholder: 'enter your password', required: 'required', className: 'input pass' }),
-                    _react2.default.createElement('input', { type: 'button', onClick: this.login, value: 'Sign me in!', className: 'inputButton' }),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'text-center' },
-                      _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: '', onClick: this.goToRegister },
-                        'create an account'
-                      ),
-                      ' - ',
-                      _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: '/forgetpass', onClick: this.closeModalLogin },
-                        'forgot password'
-                      )
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  _reactModal2.default,
-                  {
-                    isOpen: this.state.modalRegisterIsOpen,
-                    onAfterOpen: this.afterOpenModalRegister,
-                    onRequestClose: this.closeModalRegister,
-                    style: customStyles,
-                    contentLabel: 'Example Modal'
-                  },
-                  _react2.default.createElement(
-                    'form',
-                    { id: 'signup' },
-                    _react2.default.createElement(
-                      'h2',
-                      { className: 'h2login' },
-                      'create an account'
-                    ),
-                    _react2.default.createElement('input', { onChange: this.setUsername, type: 'text', placeholder: 'What\'s your username?', pattern: '^[\\w]{3,16}$', autofocus: 'autofocus', required: 'required', className: 'input pass' }),
-                    _react2.default.createElement('input', { onChange: this.setPassword, type: 'password', placeholder: 'Choose a password', required: 'required', className: 'input pass' }),
-                    _react2.default.createElement('input', { type: 'password', placeholder: 'Confirm password', required: 'required', className: 'input pass' }),
-                    _react2.default.createElement('input', { onChange: this.setName, type: 'text', placeholder: 'Name', className: 'input pass', required: 'required' }),
-                    _react2.default.createElement('input', { onChange: this.setSurname, type: 'text', placeholder: 'Surname', className: 'input pass', required: 'required' }),
-                    _react2.default.createElement('input', { type: 'submit', onClick: this.register, value: 'Sign me up!', className: 'inputButton' }),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'text-center' },
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'already have an account?'
-                      ),
-                      ' ',
-                      _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: '', onClick: this.goToLogin },
-                        'login'
-                      )
-                    )
-                  )
-                ),
                 _react2.default.createElement(
                   'li',
                   { className: 'nav-item' },
@@ -5352,6 +5277,93 @@ var Nav = function (_React$Component) {
                     _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
                     ' Login'
                   )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactModal2.default,
+            {
+              isOpen: this.state.modalLoginIsOpen,
+              onAfterOpen: this.afterOpenModalLogin,
+              onRequestClose: this.closeModalLogin,
+              style: customStyles,
+              contentLabel: 'Example Modal'
+            },
+            _react2.default.createElement(
+              'form',
+              { id: 'signup' },
+              _react2.default.createElement(
+                'h2',
+                { className: 'h2login' },
+                'login'
+              ),
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-facebook' },
+                _react2.default.createElement('i', { className: 'fa fa-facebook-official', 'aria-hidden': 'true' }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Log In with Facebook'
+                )
+              ),
+              _react2.default.createElement('input', { onChange: this.setUsername, placeholder: 'enter your username', className: 'input pass' }),
+              _react2.default.createElement('input', { onChange: this.setPassword, type: 'password', placeholder: 'enter your password', required: 'required', className: 'input pass' }),
+              _react2.default.createElement('input', { type: 'button', onClick: this.login, value: 'Sign me in!', className: 'inputButton' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'text-center' },
+                _react2.default.createElement(
+                  _reactRouter.Link,
+                  { to: '', onClick: this.goToRegister },
+                  'create an account'
+                ),
+                ' - ',
+                _react2.default.createElement(
+                  _reactRouter.Link,
+                  { to: '/forgetpass', onClick: this.closeModalLogin },
+                  'forgot password'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactModal2.default,
+            {
+              isOpen: this.state.modalRegisterIsOpen,
+              onAfterOpen: this.afterOpenModalRegister,
+              onRequestClose: this.closeModalRegister,
+              style: customStyles,
+              contentLabel: 'Example Modal'
+            },
+            _react2.default.createElement(
+              'form',
+              { id: 'signup' },
+              _react2.default.createElement(
+                'h2',
+                { className: 'h2login' },
+                'create an account'
+              ),
+              _react2.default.createElement('input', { onChange: this.setUsername, type: 'text', placeholder: 'What\'s your username?', pattern: '^[\\w]{3,16}$', autofocus: 'autofocus', required: 'required', className: 'input pass' }),
+              _react2.default.createElement('input', { onChange: this.setPassword, type: 'password', placeholder: 'Choose a password', required: 'required', className: 'input pass' }),
+              _react2.default.createElement('input', { type: 'password', placeholder: 'Confirm password', required: 'required', className: 'input pass' }),
+              _react2.default.createElement('input', { onChange: this.setName, type: 'text', placeholder: 'Name', className: 'input pass', required: 'required' }),
+              _react2.default.createElement('input', { onChange: this.setSurname, type: 'text', placeholder: 'Surname', className: 'input pass', required: 'required' }),
+              _react2.default.createElement('input', { type: 'submit', onClick: this.register, value: 'Sign me up!', className: 'inputButton' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'text-center' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'already have an account?'
+                ),
+                ' ',
+                _react2.default.createElement(
+                  _reactRouter.Link,
+                  { to: '', onClick: this.goToLogin },
+                  'login'
                 )
               )
             )
@@ -7039,7 +7051,7 @@ var PackageHome = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'b' },
+        { className: 'main-wrapper b' },
         _react2.default.createElement(_home2.default, null),
         _react2.default.createElement(
           'section',
@@ -7049,7 +7061,7 @@ var PackageHome = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-xs-12 col-sm-6 margintop' },
+              { className: 'col-sm-5 col-md-6 margintop' },
               _react2.default.createElement(
                 'div',
                 { className: 'bgwhite' },
@@ -10640,7 +10652,7 @@ var Search = function (_React$Component) {
           { className: ' gridResize bgsearch ' },
           _react2.default.createElement(
             'div',
-            { className: 'col-sm-3 col-xs-12 searchlogo slideshow' },
+            { className: 'col-sm-3 searchlogo slideshow' },
             _react2.default.createElement(
               'div',
               { className: 'sectionTitleDouble' },
@@ -10652,7 +10664,7 @@ var Search = function (_React$Component) {
               _react2.default.createElement(
                 'h2',
                 null,
-                'Your City'
+                'Your Activity'
               )
             )
           ),
@@ -10661,7 +10673,7 @@ var Search = function (_React$Component) {
             null,
             _react2.default.createElement(
               'div',
-              { className: 'col-6 col-sm-3' },
+              { className: 'col-sm-4' },
               _react2.default.createElement(
                 'div',
                 { className: 'searchTour' },
@@ -10685,7 +10697,7 @@ var Search = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-6 col-sm-3' },
+              { className: 'col-sm-4' },
               _react2.default.createElement(
                 'div',
                 { className: 'searchTour' },
@@ -10709,7 +10721,7 @@ var Search = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-6 col-sm-3' },
+              { className: 'col-sm-4 ' },
               _react2.default.createElement(
                 'div',
                 { className: 'searchTour' },
@@ -15217,9 +15229,9 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Nav = __webpack_require__(42);
+var _Home = __webpack_require__(41);
 
-var _Nav2 = _interopRequireDefault(_Nav);
+var _Home2 = _interopRequireDefault(_Home);
 
 var _CardActivityDetail = __webpack_require__(135);
 
@@ -15261,7 +15273,7 @@ var ActivityDetail = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'main-wrapper', style: { backgroundColor: '#fafafa' } },
-        _react2.default.createElement(_Nav2.default, null),
+        _react2.default.createElement(_Home2.default, null),
         _react2.default.createElement(_HeaderActivity2.default, { activity: this.state.name }),
         _react2.default.createElement(
           'div',
@@ -15358,7 +15370,7 @@ var ActivityHome = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'col-xs-12 col-sm-6 margintop' },
+        { className: 'col-sm-5 col-md-6 margintop' },
         _react2.default.createElement(
           'div',
           { className: 'bgwhite' },
@@ -15488,11 +15500,11 @@ var ActivityResultByProvince = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'main-wrapper b' },
         _react2.default.createElement(_Home2.default, null),
         _react2.default.createElement(
           'div',
-          { className: 'main-wrapper b padding' },
+          { className: ' padding' },
           _react2.default.createElement(
             'div',
             { className: 'container' },
@@ -15700,8 +15712,8 @@ var CardActivityResult = function (_React$Component) {
         { className: 'col-md-4 col-xs-12' },
         _react2.default.createElement(
           'div',
-          { className: 'thumbnail deals' },
-          _react2.default.createElement('img', { src: 'http://theartmad.com/wp-content/uploads/2015/08/Nike-Football-Wallpaper-2013-3.jpg', alt: 'deal-image' }),
+          { className: 'thumbnail' },
+          _react2.default.createElement('img', { src: 'https://p-u.popcdn.net/events/posters/000/001/284/large/Poster_02_KK_1x.jpg?1490249252', alt: 'deal-image' }),
           _react2.default.createElement(_reactRouter.Link, { to: '/activity/' + this.props.name, className: 'pageLink' }),
           _react2.default.createElement(
             'div',
@@ -15712,7 +15724,7 @@ var CardActivityResult = function (_React$Component) {
               _react2.default.createElement(
                 _reactRouter.Link,
                 { to: '{\'/activity/\'+this.props.name}', className: 'captionTitle' },
-                'football night club'
+                'Zaap'
               )
             ),
             _react2.default.createElement(

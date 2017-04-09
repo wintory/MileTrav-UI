@@ -63,9 +63,9 @@ class ActivityResultByProvince extends React.Component{
   render(){
 
     return(
-      <div>
+      <div className="main-wrapper b">
             <Home/>
-      <div className="main-wrapper b padding">
+      <div className=" padding">
             <div className="container">
             <div className="row">
             <h2 className="middle">Bangkok</h2>

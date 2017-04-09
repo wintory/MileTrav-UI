@@ -91,7 +91,6 @@ section {
     margin-right: auto;
     margin-left: auto;
     width: 85%;
-    height: 70px;
 }
 
 h2 {
@@ -137,16 +136,18 @@ form.nav {
 }
 
 div.slideshow {
-    padding: 0.8%;
+    
+    padding: 1%;
     background-color: #6C0067;
 }
+
 
 div.nav {
     margin-top: 3%;
     margin-right: auto;
     margin-left: auto;
     width: 85%;
-    height: 70px;
+    height: auto;
 }
 
 .padding{
@@ -192,7 +193,7 @@ div.detailright {
 }
 
 div.component {
-    margin-top: 3%;
+    margin-top: -1%;
     margin-right: auto;
     margin-left: auto;
     width: 85%;

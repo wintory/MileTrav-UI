@@ -31,11 +31,11 @@ method: 'GET' }).then(
 
   render(){
     return(
-      <div className="b">
+      <div className="main-wrapper b">
       <Home/>
 <section>
    <div className="row">
-     <div className="col-xs-12 col-sm-6 margintop">
+     <div className="col-sm-5 col-md-6 margintop">
        <div className="bgwhite">
          <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215"/>
          </div>  
