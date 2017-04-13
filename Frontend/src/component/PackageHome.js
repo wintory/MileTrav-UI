@@ -39,7 +39,7 @@ method: 'GET' }).then(
        <div className="bgwhite">
          <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215"/>
          </div>  
-          <HomeCard/>
+          <PopularActivities/>
 
        </div>
 

@@ -18,6 +18,6 @@ export default (
              <Route path="/forgetpass" component={Forgetpass}></Route>
  -           <Route path="/Profile" component={Profile}></Route>
  -           <Route path="/CreateActivity/:step" component={CreateActivity}></Route>
- +           <Route path="/Profile" component={Profile} ></Route>
+
         </Route>
 )

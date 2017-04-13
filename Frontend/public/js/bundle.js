@@ -4596,12 +4596,20 @@ var Nav = function (_React$Component) {
               isOpen: this.state.modalLoginIsOpen,
               onAfterOpen: this.afterOpenModalLogin,
               onRequestClose: this.closeModalLogin,
-              style: customStyles,
-              contentLabel: 'Example Modal'
+              style: customStyles
             },
             _react2.default.createElement(
               'form',
               { id: 'signup' },
+              _react2.default.createElement(
+                'button',
+                { type: 'button', className: 'close', 'aria-label': 'Close', onClick: this.closeModalLogin },
+                _react2.default.createElement(
+                  'span',
+                  { 'aria-hidden': 'true' },
+                  '\xD7'
+                )
+              ),
               _react2.default.createElement(
                 'h2',
                 { className: 'h2login' },
@@ -4643,12 +4651,20 @@ var Nav = function (_React$Component) {
               isOpen: this.state.modalRegisterIsOpen,
               onAfterOpen: this.afterOpenModalRegister,
               onRequestClose: this.closeModalRegister,
-              style: customStyles,
-              contentLabel: 'Example Modal'
+              style: customStyles
             },
             _react2.default.createElement(
               'form',
               { id: 'signup' },
+              _react2.default.createElement(
+                'button',
+                { type: 'button', className: 'close', 'aria-label': 'Close', onClick: this.closeModalRegister },
+                _react2.default.createElement(
+                  'span',
+                  { 'aria-hidden': 'true' },
+                  '\xD7'
+                )
+              ),
               _react2.default.createElement(
                 'h2',
                 { className: 'h2login' },
@@ -6790,7 +6806,7 @@ var PackageHome = function (_React$Component) {
                 { className: 'bgwhite' },
                 _react2.default.createElement('img', { className: 'component', src: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215' })
               ),
-              _react2.default.createElement(_homecard2.default, null)
+              _react2.default.createElement(_PopularActivities2.default, null)
             ),
             _react2.default.createElement(_ActivityHome2.default, { pic: 'https://p-u.popcdn.net/events/covers/000/001/599/original/RADWIMPS_1720x800_Cover.jpg?1491017932' }),
             _react2.default.createElement(_ActivityHome2.default, { pic: 'https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329' })
@@ -15141,7 +15157,7 @@ module.exports = ReactPropTypesSecret;
 
 
 Object.defineProperty(exports, "__esModule", {
-       value: true
+  value: true
 });
 
 var _react = __webpack_require__(1);
@@ -15189,22 +15205,20 @@ var _Profile2 = _interopRequireDefault(_Profile);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createElement(
-       _reactRouter.Route,
-       null,
-       _react2.default.createElement(
-              _reactRouter.Route,
-              { path: '/', component: _PackageHome2.default },
-              ' '
-       ),
-       _react2.default.createElement(_reactRouter.Route, { path: '/to/:province', component: _ActivityResultByProvince2.default }),
-       _react2.default.createElement(_reactRouter.Route, { path: '/activity/:activity_name', component: _ActivityDetail2.default }),
-       _react2.default.createElement(_reactRouter.Route, { path: '/forgetpass', component: _Forgetpass2.default }),
-       '-           ',
-       _react2.default.createElement(_reactRouter.Route, { path: '/Profile', component: _Profile2.default }),
-       '-           ',
-       _react2.default.createElement(_reactRouter.Route, { path: '/CreateActivity/:step', component: _CreateActivity2.default }),
-       '+           ',
-       _react2.default.createElement(_reactRouter.Route, { path: '/Profile', component: _Profile2.default })
+  _reactRouter.Route,
+  null,
+  _react2.default.createElement(
+    _reactRouter.Route,
+    { path: '/', component: _PackageHome2.default },
+    ' '
+  ),
+  _react2.default.createElement(_reactRouter.Route, { path: '/to/:province', component: _ActivityResultByProvince2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/activity/:activity_name', component: _ActivityDetail2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/forgetpass', component: _Forgetpass2.default }),
+  '-           ',
+  _react2.default.createElement(_reactRouter.Route, { path: '/Profile', component: _Profile2.default }),
+  '-           ',
+  _react2.default.createElement(_reactRouter.Route, { path: '/CreateActivity/:step', component: _CreateActivity2.default })
 );
 
 /***/ }),
@@ -16801,42 +16815,38 @@ var PopularActivities = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'col-sm-4 isotopeSelector' },
+        { className: 'isotopeSelector' },
         _react2.default.createElement(
-          'article',
+          'figure',
           null,
+          _react2.default.createElement('img', { src: '{this.props.cover}', alt: '' }),
           _react2.default.createElement(
-            'figure',
+            'h4',
             null,
-            _react2.default.createElement('img', { src: this.props.cover, alt: '' }),
+            this.props.name
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'overlay-background' },
+            _react2.default.createElement('div', { className: 'inner' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'overlay' },
             _react2.default.createElement(
-              'h4',
-              null,
-              this.props.name
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'overlay-background' },
-              _react2.default.createElement('div', { className: 'inner' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'overlay' },
+              _reactRouter.Link,
+              { className: 'fancybox-pop', to: '/activity/' + this.props.name },
               _react2.default.createElement(
-                _reactRouter.Link,
-                { className: 'fancybox-pop', to: '/activity/' + this.props.name },
+                'div',
+                { className: 'overlayInfo' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'overlayInfo' },
+                  'h5',
+                  null,
+                  'from ',
                   _react2.default.createElement(
-                    'h5',
+                    'span',
                     null,
-                    'from ',
-                    _react2.default.createElement(
-                      'span',
-                      null,
-                      this.props.province
-                    )
+                    this.props.province
                   )
                 )
               )
@@ -17870,80 +17880,7 @@ var HomeCard = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'events-block-subheading bgwhite' },
-        _react2.default.createElement(
-          'div',
-          { className: 'text-center' },
-          _react2.default.createElement(
-            'h4',
-            null,
-            'Recommend'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Coming soon'
-          )
-        )
+        _react2.default.createElement('div', { className: 'text-center' })
       );
     }
   }]);

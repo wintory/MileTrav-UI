@@ -554,3 +554,7 @@ h1, input {
     width: 50%;
     height: auto;
 }
+
+button.close{
+    color: #330072;
+}

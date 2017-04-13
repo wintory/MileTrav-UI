@@ -1,12 +1,27 @@
 {
   "valid": true,
   "version": "1.6.2",
-  "timestamp": 1492107290833,
+  "timestamp": 1492111657574,
   "context": "",
   "output": {
     "path": "public\\js",
     "filename": "bundle.js",
     "publicPath": ""
   },
+  "assets": {
+    "marked": {},
+    "chunks": {
+      "main": [
+        "bundle.js",
+        "0.3f829206b2704bb77bb6.hot-update.js"
+      ]
+    }
+  },
+  "webpackDev": {
+    "skipSetEnv": false,
+    "url": "http://localhost:8080",
+    "addUrl": true
+  },
+  "isWebpackDev": true,
   "assetsFile": "public\\js\\isomorphic-assets.json"
 }

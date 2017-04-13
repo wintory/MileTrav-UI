@@ -11,10 +11,10 @@ class PopularActivities extends React.Component{
       var url = '/img/cover/'+path+'.jpg';*/
 
       return(
-         <div className="col-sm-4 isotopeSelector">
-        <article>
+         <div className="isotopeSelector">
+
           <figure>
-            <img src={this.props.cover} alt=""/>
+            <img src="{this.props.cover}" alt=""/>
             <h4>{this.props.name}</h4>
             <div className="overlay-background">
               <div className="inner"></div>
@@ -27,7 +27,7 @@ class PopularActivities extends React.Component{
               </Link>
             </div>
           </figure>
-        </article>
+
         </div>
       )
     }
