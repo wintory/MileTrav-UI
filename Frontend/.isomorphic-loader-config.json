@@ -1,7 +1,7 @@
 {
   "valid": true,
   "version": "1.6.2",
-  "timestamp": 1491818564634,
+  "timestamp": 1492106435148,
   "context": "",
   "output": {
     "path": "public\\js",
@@ -11,7 +11,10 @@
   "assets": {
     "marked": {},
     "chunks": {
-      "main": "bundle.js"
+      "main": [
+        "bundle.js",
+        "0.4b1c3d328a55a141ca1e.hot-update.js"
+      ]
     }
   },
   "webpackDev": {

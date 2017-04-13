@@ -41,7 +41,7 @@ class Search extends React.Component{
                 </div>
                 <div>
 
-                    <div className="col-sm-3">
+                    <div className="col-sm-3 searchbar">
                       <div className="searchTour">
                           <span className='white'>Province</span>
                         <select onChange={this.setCity} className="form-control">
@@ -55,7 +55,7 @@ class Search extends React.Component{
                         </select>
                       </div>
                     </div>
-                    <div className="col-sm-3">
+                    <div className="col-sm-3 searchbar">
                       <div className="searchTour">
                           <span className='white'>Province</span>
                         <select onChange={this.setPrice} className="form-control">
@@ -69,7 +69,7 @@ class Search extends React.Component{
                         </select>
                       </div>
                     </div>
-                     <div className="col-sm-3 ">
+                     <div className="col-sm-2 searchbar">
        
                       <br/>
                        <Link to={'/to/'+this.state.city}><button type="button" className="btn btn-block buttonCustomPrimary">Search</button></Link>

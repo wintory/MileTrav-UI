@@ -12,7 +12,7 @@ class ActivityDetail extends React.Component{
   }
   render(){
       return(
-        <div className="main-wrapper" style={{backgroundColor : '#fafafa'}}>
+        <div className="main-wrapper b" style={{backgroundColor : '#fafafa'}}>
           <Home />
           <HeaderActivity activity={this.state.name}/>
           <div className="container" style={{width : 820 , marginTop: 50}}>

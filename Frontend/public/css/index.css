@@ -141,6 +141,12 @@ div.slideshow {
     background-color: #6C0067;
 }
 
+div.searchbar {
+    
+    padding: 0.9%;
+    background-color: white;
+}
+
 
 div.nav {
     margin-top: 3%;
@@ -543,8 +549,4 @@ h1, input {
 .login{
     width: 50%;
     height: auto;
-}
-
-div.searchbox{
-    margin: 0.6%;
 }
