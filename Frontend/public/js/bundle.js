@@ -15498,17 +15498,17 @@ var ActivityResultByProvince = function (_React$Component) {
         { className: 'main-wrapper b' },
         _react2.default.createElement(_Home2.default, null),
         _react2.default.createElement(
-          'div',
-          { className: ' padding' },
+          'section',
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: ' margintopprovince' },
             _react2.default.createElement(
               'div',
-              { className: 'row' },
+              { className: 'row ' },
               _react2.default.createElement(
                 'h2',
-                { className: 'middle' },
+                { className: 'middle ' },
                 'Bangkok'
               ),
               _react2.default.createElement(_CardActivityResult2.default, null),
