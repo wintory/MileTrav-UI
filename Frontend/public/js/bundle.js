@@ -15512,6 +15512,7 @@ var ActivityResultByProvince = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this4 = this;
 
       return _react2.default.createElement(
         'div',
@@ -15529,15 +15530,10 @@ var ActivityResultByProvince = function (_React$Component) {
               _react2.default.createElement(
                 'h2',
                 { className: 'middle ' },
-                'Bangkok'
+                this.props.params.province
               ),
-              _react2.default.createElement(_CardActivityResult2.default, null),
-              _react2.default.createElement(_CardActivityResult2.default, null),
-              _react2.default.createElement(_CardActivityResult2.default, null),
-              _react2.default.createElement(_CardActivityResult2.default, null),
-              _react2.default.createElement(_CardActivityResult2.default, null),
               this.state.activity.map(function (value, index) {
-                return _react2.default.createElement(_CardActivityResult2.default, { key: index, pic: value.cover_photo, name: value.activity_name, desc: value.activity_desc });
+                return _react2.default.createElement(_CardActivityResult2.default, { key: index, province: _this4.props.params.province, pic: value.cover_photo, name: value.activity_name, desc: value.activity_desc });
               })
             )
           ),
@@ -15728,7 +15724,7 @@ var CardActivityResult = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'thumbnail' },
-          _react2.default.createElement('img', { src: 'https://p-u.popcdn.net/events/posters/000/001/284/large/Poster_02_KK_1x.jpg?1490249252', alt: 'deal-image' }),
+          _react2.default.createElement('img', { src: this.props.pic, alt: 'deal-image', style: { height: 300 } }),
           _react2.default.createElement(_reactRouter.Link, { to: '/activity/' + this.props.name, className: 'pageLink' }),
           _react2.default.createElement(
             'div',
@@ -15739,13 +15735,20 @@ var CardActivityResult = function (_React$Component) {
               _react2.default.createElement(
                 _reactRouter.Link,
                 { to: '{\'/activity/\'+this.props.name}', className: 'captionTitle' },
-                'Zaap'
+                this.props.name
               )
             ),
             _react2.default.createElement(
               'p',
-              null,
-              'description'
+              { style: { color: '#262a2e' } },
+              'From : ',
+              this.props.province
+            ),
+            _react2.default.createElement(
+              'p',
+              { style: { color: '#262a2e' } },
+              'description : ',
+              this.props.desc
             )
           )
         )
@@ -16150,7 +16153,7 @@ var CreateActivity = function (_React$Component) {
       };
 
       var city = ['Bangkok', 'Chiangmai', 'Phuket', 'Krabi', 'Chaingrai', 'Chonburi', 'Ayutthaya', 'Karnchanaburi'];
-      var cate = ['Appearance or Signing', 'Attraction', 'Camp, Trip, or Retreat', 'Class, Training, or Workshop', 'Game or Competition', 'Rally', 'Party or Social Gathering', 'Other'];
+      var cate = ['Appearance or Signing', 'Attraction', 'Camp, Trip, or Retreat', 'className, Training, or Workshop', 'Game or Competition', 'Rally', 'Party or Social Gathering', 'Other'];
       var hour = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00'];
       var minute = ['00', '15', '30', '45'];
 
@@ -16186,7 +16189,7 @@ var CreateActivity = function (_React$Component) {
             _react2.default.createElement('br', null),
             _react2.default.createElement(
               'div',
-              { className: 'container', style: { width: 1024 } },
+              { className: 'container b', style: { width: 1024 } },
               _react2.default.createElement(
                 'div',
                 { className: 'col-sm-12 col-xs-12' },

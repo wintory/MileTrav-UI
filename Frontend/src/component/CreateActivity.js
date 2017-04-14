@@ -310,7 +310,7 @@ class CreateActivity extends React.Component {
   }
 
   const city = ['Bangkok' ,'Chiangmai' , 'Phuket', 'Krabi', 'Chaingrai' ,'Chonburi', 'Ayutthaya' , 'Karnchanaburi' ]
-  const cate = ['Appearance or Signing' , 'Attraction' , 'Camp, Trip, or Retreat' , 'Class, Training, or Workshop' , 'Game or Competition' , 'Rally' , 'Party or Social Gathering' , 'Other']
+  const cate = ['Appearance or Signing' , 'Attraction' , 'Camp, Trip, or Retreat' , 'className, Training, or Workshop' , 'Game or Competition' , 'Rally' , 'Party or Social Gathering' , 'Other']
   const hour = [ '01', '02' , '03' , '04' , '05' ,'06' , '07' ,'08' ,'09' ,'10' ,'11','12','13','14','15', '16', '17' ,'18'
    ,'19' ,'20' , '21' ,'22' ,'23' ,'00']
    const minute = ['00' , '15' ,'30' ,'45'];
@@ -339,7 +339,7 @@ class CreateActivity extends React.Component {
            <Home />
            <section className="mainContentSection singlePackage b">
            <br/><br/>
-               <div className="container" style={{width: 1024}}>
+               <div className="container b" style={{width: 1024}}>
                      <div className="col-sm-12 col-xs-12">
                          <div className="portlet light">
                            <div className="portlet-title">

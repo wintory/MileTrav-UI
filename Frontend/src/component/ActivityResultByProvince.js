@@ -67,16 +67,11 @@ class ActivityResultByProvince extends React.Component {
         <section>
            <div className=" margintopprovince">
           <div className="row ">
-            <h2 className="middle ">Bangkok</h2>
-            <CardActivityResult />
-            <CardActivityResult />
-            <CardActivityResult />
-            <CardActivityResult />
-            <CardActivityResult />
+            <h2 className="middle ">{this.props.params.province}</h2>
             {
               this.state.activity.map((value, index) => {
                 return (
-                  <CardActivityResult key={index} pic={value.cover_photo} name={value.activity_name} desc={value.activity_desc} />
+                  <CardActivityResult key={index} province={this.props.params.province} pic={value.cover_photo} name={value.activity_name} desc={value.activity_desc} />
                 )
               })
             }
