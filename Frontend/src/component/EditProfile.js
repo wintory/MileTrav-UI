@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import Home from './Home'
 import { browserHistory} from 'react-router'
 import 'whatwg-fetch'
 import Footer from './Footer'
@@ -7,7 +7,7 @@ import DropzoneComponent from 'react-dropzone-component/lib/react-dropzone';
 import {host} from './host'
 import firebase from 'firebase'
 
-class Profile extends React.Component{
+class EditProfile extends React.Component{
 
           constructor(props){
             super(props)
@@ -194,15 +194,15 @@ class Profile extends React.Component{
     }
 
     return(
-      <div className="main-wrapper">
-        <Nav />
-        <div className="container" style={{marginTop: 100 , width: 1024}}>
-          <center>
-          <img className="img-circle img-responsive img-hovers" src={this.state.cover_photo == ""? '/img/cover/incognito.png': this.state.cover_photo} style={{padding: 10,marginBottom: 50,height: 140 , width : 140  }}/>
-          </center>
+      <div className="main-wrapper b">
+        <Home />
+        <section className="mainContentSection singlePackage b">
+        <div className="container b" >
+          <div className="col-sm-12 col-xs-12 ">
           <div className="portlet light">
             <div className="portlet-title">
                 <center>
+                   <img className="img-circle img-responsive img-hovers" src={this.state.cover_photo == ""? '/img/cover/incognito.png': this.state.cover_photo} style={{padding: 10,marginBottom: 50,height: 140 , width : 140  }}/>
                   <div className="caption font-kademy">
                     <h3>Your profile</h3>
                   </div>
@@ -257,11 +257,14 @@ class Profile extends React.Component{
               </div>
           </div>
         </div>
+        </div>
+        </section>
         <Footer />
+
       </div>
     )
   }
 
 
 }
-export default Profile
+export default EditProfile

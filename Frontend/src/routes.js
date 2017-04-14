@@ -8,7 +8,7 @@ import ActivityResultByProvince from './component/ActivityResultByProvince'
 import Forgetpass from './component/Forgetpass'
 import PackageHome from './component/PackageHome'
 import CreateActivity from './component/CreateActivity';
-import Profile from './component/Profile'
+import EditProfile from './component/EditProfile'
 
 export default (
        <Route>
@@ -16,7 +16,7 @@ export default (
             <Route path="/to/:province" component={ActivityResultByProvince} ></Route>
              <Route path="/activity/:activity_name" component={ActivityDetail}></Route>
              <Route path="/forgetpass" component={Forgetpass}></Route>
- -           <Route path="/Profile" component={Profile}></Route>
+ -           <Route path="/EditProfile" component={EditProfile}></Route>
  -           <Route path="/CreateActivity/:step" component={CreateActivity}></Route>
 
         </Route>
