@@ -15871,7 +15871,7 @@ var CreateActivity = function (_React$Component) {
         var config = {
           apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
           authDomain: "miletrav-4f855.firebaseapp.com",
-          databaseURL: "https://miletrav-4f855.firebaseio.com",
+          /*  databaseURL: "https://miletrav-4f855.firebaseio.com",*/
           storageBucket: "miletrav-4f855.appspot.com",
           messagingSenderId: "469316737513"
         };
@@ -16139,7 +16139,8 @@ var CreateActivity = function (_React$Component) {
         showFiletypeIcon: true,
         postUrl: 'no-url'
       };
-      var djsConfig = { autoProcessQueue: false, addRemoveLinks: true, uploadMultiple: false, maxFiles: 1
+      var djsConfig = {
+        autoProcessQueue: false, addRemoveLinks: true, uploadMultiple: false, maxFiles: 1
       };
       var eventHandlers = {
         addedfile: function addedfile(file) {
@@ -16166,13 +16167,9 @@ var CreateActivity = function (_React$Component) {
             'section',
             { className: 'mainContentSection singlePackage b' },
             _react2.default.createElement(
-              'center',
-              null,
-              _react2.default.createElement(
-                'div',
-                { className: 'container', style: { marginTop: 300, marginBottom: 300 } },
-                _react2.default.createElement(_reactLoading2.default, { type: 'bars', color: '#26A65B', style: { width: 200, height: 100 } })
-              )
+              'div',
+              { align: 'center', className: ' loading' },
+              _react2.default.createElement(_reactLoading2.default, { type: 'bars', color: '#26A65B', style: { width: 200, height: 100 } })
             )
           ),
           _react2.default.createElement(_Footer2.default, null)
@@ -16185,14 +16182,12 @@ var CreateActivity = function (_React$Component) {
           _react2.default.createElement(
             'section',
             { className: 'mainContentSection singlePackage b' },
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
             _react2.default.createElement(
               'div',
-              { className: 'container b', style: { width: 1024 } },
+              { className: 'container b createac' },
               _react2.default.createElement(
                 'div',
-                { className: 'col-sm-12 col-xs-12' },
+                { className: 'col-sm-12 col-xs-12 ' },
                 _react2.default.createElement(
                   'div',
                   { className: 'portlet light' },
@@ -16205,6 +16200,7 @@ var CreateActivity = function (_React$Component) {
                       _react2.default.createElement(
                         'div',
                         { className: 'caption font-kademy' },
+                        _react2.default.createElement('br', null),
                         _react2.default.createElement(
                           'h3',
                           null,
@@ -16224,9 +16220,6 @@ var CreateActivity = function (_React$Component) {
                       _react2.default.createElement(
                         'center',
                         null,
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
                         _react2.default.createElement(
                           'div',
                           { className: 'col-md-12' },
@@ -16234,17 +16227,12 @@ var CreateActivity = function (_React$Component) {
                             'form',
                             { className: 'form-horizontal' },
                             _react2.default.createElement(
-                              'h3',
-                              null,
-                              'Activity Detail'
-                            ),
-                            _react2.default.createElement(
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'label',
+                                'p',
                                 { className: 'control-label col-sm-2' },
-                                'Activity name:'
+                                'Activity name :'
                               ),
                               _react2.default.createElement(
                                 'div',
@@ -16256,9 +16244,9 @@ var CreateActivity = function (_React$Component) {
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'label',
+                                'p',
                                 { className: 'control-label col-sm-2' },
-                                'Activity Description:'
+                                'Activity Description :'
                               ),
                               _react2.default.createElement(
                                 'div',
@@ -16270,7 +16258,7 @@ var CreateActivity = function (_React$Component) {
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'label',
+                                'h5',
                                 { className: 'control-label col-sm-2' },
                                 'Cover image here'
                               ),
@@ -16286,9 +16274,9 @@ var CreateActivity = function (_React$Component) {
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'label',
+                                'p',
                                 { className: 'control-label col-sm-2' },
-                                'Province'
+                                'Province :'
                               ),
                               _react2.default.createElement(
                                 'div',
@@ -16310,7 +16298,7 @@ var CreateActivity = function (_React$Component) {
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'label',
+                                'p',
                                 { className: 'control-label col-sm-2' },
                                 'Location :'
                               ),
@@ -16324,7 +16312,7 @@ var CreateActivity = function (_React$Component) {
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'label',
+                                'p',
                                 { className: 'control-label col-sm-2' },
                                 'Category :'
                               ),
@@ -16344,6 +16332,7 @@ var CreateActivity = function (_React$Component) {
                                 )
                               )
                             ),
+                            _react2.default.createElement('br', null),
                             _react2.default.createElement(
                               'h3',
                               null,
@@ -16370,17 +16359,20 @@ var CreateActivity = function (_React$Component) {
                                         _react2.default.createElement(
                                           'td',
                                           null,
-                                          'Ticket Name'
+                                          _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            'Ticket Name'
+                                          )
                                         ),
                                         _react2.default.createElement(
                                           'td',
                                           null,
-                                          'Price'
-                                        ),
-                                        _react2.default.createElement(
-                                          'td',
-                                          null,
-                                          'Action'
+                                          _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            'Price'
+                                          )
                                         )
                                       )
                                     ),
@@ -16420,13 +16412,21 @@ var CreateActivity = function (_React$Component) {
                                           _react2.default.createElement(
                                             'td',
                                             null,
-                                            value.name,
+                                            _react2.default.createElement(
+                                              'h4',
+                                              null,
+                                              value.name
+                                            ),
                                             ' '
                                           ),
                                           _react2.default.createElement(
                                             'td',
                                             null,
-                                            value.price
+                                            _react2.default.createElement(
+                                              'h4',
+                                              null,
+                                              value.price
+                                            )
                                           ),
                                           _react2.default.createElement(
                                             'td',
@@ -16470,22 +16470,29 @@ var CreateActivity = function (_React$Component) {
                                         _react2.default.createElement(
                                           'td',
                                           null,
-                                          'Hour'
+                                          _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            'Hour'
+                                          )
                                         ),
                                         _react2.default.createElement(
                                           'td',
                                           null,
-                                          'Minute'
+                                          _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            'Minute'
+                                          )
                                         ),
                                         _react2.default.createElement(
                                           'td',
                                           null,
-                                          'Activity'
-                                        ),
-                                        _react2.default.createElement(
-                                          'td',
-                                          null,
-                                          'Action'
+                                          _react2.default.createElement(
+                                            'p',
+                                            null,
+                                            'Activity'
+                                          )
                                         )
                                       )
                                     ),
@@ -16549,14 +16556,22 @@ var CreateActivity = function (_React$Component) {
                                           _react2.default.createElement(
                                             'td',
                                             { colSpan: '2' },
-                                            value.time,
-                                            ' '
+                                            _react2.default.createElement(
+                                              'h4',
+                                              null,
+                                              value.time,
+                                              ' '
+                                            )
                                           ),
                                           _react2.default.createElement(
                                             'td',
                                             null,
-                                            value.desc,
-                                            ' '
+                                            _react2.default.createElement(
+                                              'h4',
+                                              null,
+                                              value.desc,
+                                              ' '
+                                            )
                                           ),
                                           _react2.default.createElement(
                                             'td',
@@ -16574,12 +16589,14 @@ var CreateActivity = function (_React$Component) {
                                 )
                               )
                             ),
+                            _react2.default.createElement('div', { className: 'col-sm-3' }),
+                            _react2.default.createElement('div', { className: 'col-sm-2' }),
                             _react2.default.createElement(
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-offset-2 col-sm-2' },
+                                { className: 'col-sm-2' },
                                 _react2.default.createElement(
                                   'button',
                                   { type: 'button', className: 'btn btn-block buttonCustomPrimary', onClick: this.create },

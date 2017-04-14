@@ -568,6 +568,12 @@ section.b{
     background-color:#330072; 
 }
 
-createac{
-    width: 60%;
+div.createac{
+    width: 83%;
+    color: black;
+}
+
+div.loading{
+    position: absolute;
+  left: 50%;
 }
