@@ -2373,8 +2373,8 @@ header {
 }
 
 .isotopeSelector img {
-  width: auto;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;

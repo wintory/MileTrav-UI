@@ -84,6 +84,11 @@ div.b {
     background-color: white;
 }
 
+div.bgwhite {
+    background-color: white;
+}
+
+
 section {
     margin-top: 3%;
     background-color: inherit;
@@ -558,3 +563,4 @@ h1, input {
 button.close{
     color: #330072;
 }
+

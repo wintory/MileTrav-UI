@@ -221,6 +221,7 @@ class Nav extends React.Component {
             onAfterOpen={this.afterOpenModalLogin}
             onRequestClose={this.closeModalLogin}
             style={customStyles}
+            contentLabel="Login"
           >
             <form id="signup">
               <button type="button" className="close" aria-label="Close" onClick={this.closeModalLogin}>
@@ -243,6 +244,7 @@ class Nav extends React.Component {
             onAfterOpen={this.afterOpenModalRegister}
             onRequestClose={this.closeModalRegister}
             style={customStyles}
+            contentLabel="Register"
           >
             <form id="signup">
               <button type="button" className="close" aria-label="Close" onClick={this.closeModalRegister}>

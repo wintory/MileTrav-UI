@@ -11,18 +11,16 @@ class PopularActivities extends React.Component{
       var url = '/img/cover/'+path+'.jpg';*/
 
       return(
-         <div className="isotopeSelector">
+         <div className="isotopeSelector bgwhite">
 
-          <figure>
-            <img src="{this.props.cover}" alt=""/>
-            <h4>{this.props.name}</h4>
-            <div className="overlay-background">
-              <div className="inner"></div>
-            </div>
-            <div className="overlay">
+          <figure className=" bgwhite">
+            <img className="col-sm-3" src="http://www.thaiticketmajor.com/imgUpload/images/p3(183).jpg" alt=""/>
+            <h4>{this.props.name} name</h4>
+          
+            <div >
             <Link className="fancybox-pop" to={'/activity/'+this.props.name} >
               <div className="overlayInfo">
-                <h5>from <span>{this.props.province}</span></h5>
+                <h5 className="col-sm-3">from <span>{this.props.province}</span></h5>
               </div>
               </Link>
             </div>

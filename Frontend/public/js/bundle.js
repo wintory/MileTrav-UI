@@ -4596,7 +4596,8 @@ var Nav = function (_React$Component) {
               isOpen: this.state.modalLoginIsOpen,
               onAfterOpen: this.afterOpenModalLogin,
               onRequestClose: this.closeModalLogin,
-              style: customStyles
+              style: customStyles,
+              contentLabel: 'Login'
             },
             _react2.default.createElement(
               'form',
@@ -4651,7 +4652,8 @@ var Nav = function (_React$Component) {
               isOpen: this.state.modalRegisterIsOpen,
               onAfterOpen: this.afterOpenModalRegister,
               onRequestClose: this.closeModalRegister,
-              style: customStyles
+              style: customStyles,
+              contentLabel: 'Register'
             },
             _react2.default.createElement(
               'form',
@@ -16815,24 +16817,20 @@ var PopularActivities = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'isotopeSelector' },
+        { className: 'isotopeSelector bgwhite' },
         _react2.default.createElement(
           'figure',
-          null,
-          _react2.default.createElement('img', { src: '{this.props.cover}', alt: '' }),
+          { className: ' bgwhite' },
+          _react2.default.createElement('img', { className: 'col-sm-3', src: 'http://www.thaiticketmajor.com/imgUpload/images/p3(183).jpg', alt: '' }),
           _react2.default.createElement(
             'h4',
             null,
-            this.props.name
+            this.props.name,
+            ' name'
           ),
           _react2.default.createElement(
             'div',
-            { className: 'overlay-background' },
-            _react2.default.createElement('div', { className: 'inner' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'overlay' },
+            null,
             _react2.default.createElement(
               _reactRouter.Link,
               { className: 'fancybox-pop', to: '/activity/' + this.props.name },
@@ -16841,7 +16839,7 @@ var PopularActivities = function (_React$Component) {
                 { className: 'overlayInfo' },
                 _react2.default.createElement(
                   'h5',
-                  null,
+                  { className: 'col-sm-3' },
                   'from ',
                   _react2.default.createElement(
                     'span',
