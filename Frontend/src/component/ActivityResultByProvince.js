@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from './Nav'
 import Home from './Home'
 import CardActivityResult from './CardActivityResult'
 import 'whatwg-fetch'

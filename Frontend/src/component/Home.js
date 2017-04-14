@@ -16,6 +16,7 @@ class Home extends React.Component{
     return(
         <div className="main-wrapper b">
           <Nav/>
+          <div>    </div>
           <Header/>
           <Search/>
 

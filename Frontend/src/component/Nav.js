@@ -3,7 +3,7 @@ import Loading from 'react-loading'
 import { Router, Link, browserHistory } from 'react-router'
 import ModalLogin from 'react-modal'
 import ModalRegister from 'react-modal'
-import {host} from './Host'
+import { host } from './Host'
 
 const appElement = document.getElementById('your-app-element');
 
@@ -105,8 +105,8 @@ class Nav extends React.Component {
   }
 
   login(e) {
-     console.log(this.state.username)
-        console.log(this.state.password)
+    console.log(this.state.username)
+    console.log(this.state.password)
     e.preventDefault();
     fetch(host + "api/user/login", {
       method: 'POST',
@@ -128,6 +128,7 @@ class Nav extends React.Component {
     }).catch((err) => {
       console.log(err)
     })
+    location.reload();
   }
 
   static contextTypes: {
@@ -190,6 +191,7 @@ class Nav extends React.Component {
     localStorage.removeItem('username');
     localStorage.removeItem('token');
     browserHistory.replace('/');
+    location.reload();
   }
 
 
@@ -275,7 +277,7 @@ class Nav extends React.Component {
       return (
 
 
- <nav className="navbar navbar-default">
+        <nav className="navbar navbar-default">
           <div className="container-fluid nav">
 
             <div className="navbar-header ">
@@ -288,29 +290,22 @@ class Nav extends React.Component {
               <Link to="/" className="navbar-brand"></Link>
             </div>
 
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div className="collapse navbar-collapse marg" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
-                 <li className="dropdown nav-item">
-                    <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
-                    <ul className="dropdown-menu">
-                      <li><Link to="/Profile">Profile</Link></li>
-                      <li><Link to="/Dashboard">Dashboard</Link></li>
-                      <li><Link to="/Wishlist">Wishlist</Link></li>
-                      <li><Link onClick={this.logout}>Logout</Link></li>
-                    </ul>
-                  </li>
-                  <li className="active dropdown singleDrop nav-item">
-                    <Link to={"/CreateActivity/" + 1}>Create Activity</Link>
-                  </li>
+                <li className="dropdown singleDrop">
+                  <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
+                  <ul className="dropdown-menu dropdown-menu-left">
+                    <li><Link to="/Dashboard">Dashboard</Link></li>
+                    <li><Link to={"/CreateActivity/" + 1}>Create Activity</Link></li>
+                    <li><Link to="/Wishlist">Wishlist</Link></li>
+                    <li><Link to="/Profile">Edit Profile</Link></li>
+                  </ul>
+                </li>
+                <li><Link onClick={this.logout}>Logout</Link></li>
               </ul>
             </div>
           </div>
-
         </nav>
-
-
-
-
 
       )
     }
