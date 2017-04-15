@@ -172,6 +172,13 @@ div.component {
     width: 85%;
 }
 
+div.componentt {
+    margin-top: 3%;
+    margin-right: auto;
+    margin-left: 5%;
+    width: 90%;
+}
+
 div.decresetop {
     margin-top: -3%;
 }
@@ -192,7 +199,8 @@ div.searchdetail {
 
 div.detailleft {
     margin-top: 3%;
-    margin-right: 50% margin-left: auto;
+    margin-right: 50%;
+     margin-left: auto;
     width: 40%;
 }
 
@@ -591,9 +599,20 @@ p.actopic{
     text-align: center;
 }
 
-div.center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+p.paytopic{
+    color: palevioletred;
 }
 
+
+div.recom{
+    margin-right: 5%;
+}
+
+div.headerpic{
+    margin-left: -0.8%;
+}
+
+input.bg{
+    background-color: white;
+    border: #000;
+}

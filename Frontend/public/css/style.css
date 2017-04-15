@@ -4093,7 +4093,6 @@ header {
   background-color: whitesmoke;
   border-color: #eeeeee;
   box-shadow: none;
-  padding: 30px;
   margin-bottom: 70px;
 }
 .singlePackage .well .infoImage {
@@ -4485,7 +4484,7 @@ header {
   margin-right: 10px;
 }
 .countryTabs .tab-content .well .buttonCustomPrimary {
-  padding: 0 20px;
+
 }
 .countryTabs .tab-content .well .buttonCustomPrimary:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value)";

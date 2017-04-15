@@ -264,7 +264,7 @@ class Nav extends React.Component {
               <input onChange={this.setSurname} type="text" placeholder="Surname" className="input pass" required="required" />
               <input type="submit" onClick={this.register} value="Sign me up!" className="inputButton" />
               <div className="text-center">
-                <p>already have an account?</p> <Link to="" onClick={this.goToLogin}>login</Link>
+                <p>already have an account?   <Link to="" onClick={this.goToLogin}> <span className="glyphicon glyphicon-log-in"/> login</Link></p>
               </div>
             </form>
           </ModalRegister>
@@ -293,15 +293,15 @@ class Nav extends React.Component {
             <div className="collapse navbar-collapse marg" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
                 <li className="dropdown singleDrop">
-                  <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
+                  <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span className="glyphicon glyphicon-user"/> {this.state.username}</Link>
                   <ul className="dropdown-menu dropdown-menu-left">
                     <li><Link to="/Dashboard"><span className="glyphicon glyphicon-list-alt"/> Dashboard</Link></li>
-                    <li><Link to="/EditProfile"><span className="glyphicon glyphicon-user"/> Edit Profile</Link></li>
+                    <li><Link to="/EditProfile"><span className="	glyphicon glyphicon-wrench"/> Edit Profile</Link></li>
                     <li><Link to={"/CreateActivity/" + 1}><span className="glyphicon glyphicon-file"/> Create Activity</Link></li>
                     <li><Link to="/Wishlist"><span className="glyphicon glyphicon-stats"/> Wishlist</Link></li>
                   </ul>
                 </li>
-                <li><Link onClick={this.logout}>Logout</Link></li>
+                <li><Link onClick={this.logout}><span className="glyphicon glyphicon-log-out"/>Logout</Link></li>
               </ul>
             </div>
           </div>

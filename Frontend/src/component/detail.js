@@ -1,10 +1,11 @@
 import React from 'react'
 import Tickets from './Tickets'
 import Schedule from './Schedule'
+import {Link} from 'react-router'
 class Detail extends React.Component {
     render() {
         return (
-            <div className="col-sm-12">
+            <div >
                 <div className="well">
                     <div className="row">
                         <div className="col-sm-12">
@@ -14,7 +15,7 @@ class Detail extends React.Component {
                             <br/>
                             <div className="col-sm-3"/>
                             <div className="col-sm-5">
-                                <button type="button" className="btn btn-block buttonCustomPrimary" >Booking Now</button>
+                                <Link to="/Booking"><button type="button" className="btn btn-block buttonCustomPrimary" >Booking Now</button></Link>
                               </div>
                          <div className="col-sm-4"/>
                              <br />

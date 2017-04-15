@@ -7,8 +7,8 @@ class Recommend extends React.Component{
       return(
             
 
-         <div className=" row">
-          <div className="margintop col-sm-6 well">
+         <div className=" row componentt">
+          <div className="margintop col-sm-6  well">
               <h4>Activity You May know</h4>
             <div role="tabpanel" >   
               <div className="tab-content">

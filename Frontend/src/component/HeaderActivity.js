@@ -28,7 +28,7 @@ class HeaderActivity extends React.Component{
 
 
       return(
-        <div className="col-sm-6 margintop">
+        <div className="col-sm-6 margintop headerpic">
             {
               this.state.url.map((value , index)=> {
                 return(
