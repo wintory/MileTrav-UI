@@ -6661,7 +6661,8 @@ var Nav = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouter.Link,
                         { to: '/Dashboard' },
-                        'Dashboard'
+                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-list-alt' }),
+                        ' Dashboard'
                       )
                     ),
                     _react2.default.createElement(
@@ -6670,7 +6671,8 @@ var Nav = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouter.Link,
                         { to: '/EditProfile' },
-                        'Edit Profile'
+                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
+                        ' Edit Profile'
                       )
                     ),
                     _react2.default.createElement(
@@ -6679,7 +6681,8 @@ var Nav = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouter.Link,
                         { to: "/CreateActivity/" + 1 },
-                        'Create Activity'
+                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-file' }),
+                        ' Create Activity'
                       )
                     ),
                     _react2.default.createElement(
@@ -6688,7 +6691,8 @@ var Nav = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouter.Link,
                         { to: '/Wishlist' },
-                        'Wishlist'
+                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-stats' }),
+                        ' Wishlist'
                       )
                     )
                   )
@@ -15526,11 +15530,14 @@ var ActivityResultByProvince = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'row ' },
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
               _react2.default.createElement(
-                'h2',
+                'h3',
                 { className: 'middle ' },
                 this.props.params.province
               ),
+              _react2.default.createElement('br', null),
               this.state.activity.map(function (value, index) {
                 return _react2.default.createElement(_CardActivityResult2.default, { key: index, province: _this4.props.params.province, pic: value.cover_photo, name: value.activity_name, desc: value.activity_desc });
               })
@@ -15729,11 +15736,11 @@ var CardActivityResult = function (_React$Component) {
             'div',
             { className: 'caption' },
             _react2.default.createElement(
-              'h4',
+              'h5',
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '{\'/activity/\'+this.props.name}', className: 'captionTitle' },
+                { to: '/activity/' + this.props.name, className: 'captionTitle' },
                 this.props.name
               )
             ),

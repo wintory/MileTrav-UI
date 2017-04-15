@@ -65,18 +65,22 @@ class ActivityResultByProvince extends React.Component {
       <div className="main-wrapper b">
         <Home />
         <section>
-           <div className=" margintopprovince">
-          <div className="row ">
-            <h2 className="middle ">{this.props.params.province}</h2>
-            {
-              this.state.activity.map((value, index) => {
-                return (
-                  <CardActivityResult key={index} province={this.props.params.province} pic={value.cover_photo} name={value.activity_name} desc={value.activity_desc} />
-                )
-              })
-            }
+          <div className=" margintopprovince">
+            <div className="row ">
+              <br />
+              <br />
+              <h3 className="middle ">{this.props.params.province}</h3>
+              <br />
+
+              {
+                this.state.activity.map((value, index) => {
+                  return (
+                    <CardActivityResult key={index} province={this.props.params.province} pic={value.cover_photo} name={value.activity_name} desc={value.activity_desc} />
+                  )
+                })
+              }
+            </div>
           </div>
-          </div>      
           <Footer />
         </section>
       </div>

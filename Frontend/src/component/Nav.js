@@ -295,10 +295,10 @@ class Nav extends React.Component {
                 <li className="dropdown singleDrop">
                   <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}</Link>
                   <ul className="dropdown-menu dropdown-menu-left">
-                    <li><Link to="/Dashboard">Dashboard</Link></li>
-                    <li><Link to="/EditProfile">Edit Profile</Link></li>
-                    <li><Link to={"/CreateActivity/" + 1}>Create Activity</Link></li>
-                    <li><Link to="/Wishlist">Wishlist</Link></li>
+                    <li><Link to="/Dashboard"><span className="glyphicon glyphicon-list-alt"/> Dashboard</Link></li>
+                    <li><Link to="/EditProfile"><span className="glyphicon glyphicon-user"/> Edit Profile</Link></li>
+                    <li><Link to={"/CreateActivity/" + 1}><span className="glyphicon glyphicon-file"/> Create Activity</Link></li>
+                    <li><Link to="/Wishlist"><span className="glyphicon glyphicon-stats"/> Wishlist</Link></li>
                   </ul>
                 </li>
                 <li><Link onClick={this.logout}>Logout</Link></li>

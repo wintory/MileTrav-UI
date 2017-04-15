@@ -13,7 +13,7 @@ class CardActivityResult extends React.Component{
             <img src={this.props.pic} alt="deal-image" style={{height: 300}}/>
             <Link to={'/activity/'+this.props.name} className="pageLink"></Link>
             <div className="caption">
-              <h4><Link to="{'/activity/'+this.props.name}" className="captionTitle">{this.props.name}</Link></h4>
+              <h5><Link to={'/activity/'+this.props.name} className="captionTitle">{this.props.name}</Link></h5>
               <p style={{color: '#262a2e'}}>From : {this.props.province}</p>
               <p style={{color: '#262a2e'}}>description : {this.props.desc}</p>
             </div>
