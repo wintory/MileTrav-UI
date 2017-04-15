@@ -198,7 +198,7 @@ class EditProfile extends React.Component{
         <section className="mainContentSection singlePackage b">
         <div className="container b" >
           <div className="col-sm-12 col-xs-12 ">
-          <div className="portlet light">
+          <div className="portlet light well">
             <div className="portlet-title">
                 <center>
                    <img className="img-circle img-responsive img-hovers" src={this.state.cover_photo == ""? '/img/cover/incognito.png': this.state.cover_photo} style={{padding: 10,marginBottom: 50,height: 140 , width : 140  }}/>
@@ -210,7 +210,7 @@ class EditProfile extends React.Component{
               <div className="portlet-body">
               <form className="form-horizontal">
               <div className="form-group">
-                <p className="control-label col-sm-2">Cover Photo:</p>
+                <p className="control-label col-sm-2 actopic">Cover Photo</p>
                 <div className="col-sm-10">
                 <DropzoneComponent style={{width: 100 , height : 25}} config={componentConfig}
                     eventHandlers={eventHandlers}
@@ -218,31 +218,31 @@ class EditProfile extends React.Component{
                   </div>
               </div>
                     <div className="form-group">
-                      <p className="control-label col-sm-2">First name:</p>
+                      <p className="control-label col-sm-2 actopic">First name </p>
                       <div className="col-sm-10">
                         <input type="text" className="form-control" onChange={this.setName} value={this.state.name} placeholder="First Name" />
                       </div>
                     </div>
                     <div className="form-group">
-                      <p className="control-label col-sm-2">Last name:</p>
+                      <p className="control-label col-sm-2 actopic">Last name </p>
                       <div className="col-sm-10">
                         <input type="text" className="form-control" onChange={this.setSurname} value={this.state.surname} placeholder="Last Name" />
                       </div>
                     </div>
                     <div className="form-group">
-                      <p className="control-label col-sm-2">Email :</p>
+                      <p className="control-label col-sm-2 actopic">Email </p>
                       <div className="col-sm-10">
                         <input type="tel" className="form-control" onChange={this.setEmail} value={this.state.email} placeholder="Email" />
                       </div>
                     </div>
                     <div className="form-group">
-                      <p className="control-label col-sm-2">Telephone :</p>
+                      <p className="control-label col-sm-2 actopic">Telephone </p>
                       <div className="col-sm-10">
                         <input type="tel" className="form-control" onChange={this.setTel} value={this.state.tel} placeholder="Telephone No." />
                       </div>
                     </div>
                     <div className="form-group">
-                      <p className="control-label col-sm-2">Nationality :</p>
+                      <p className="control-label col-sm-2 actopic">Nationality </p>
                       <div className="col-sm-10">
                         <input type="tel" className="form-control" onChange={this.setNation} value={this.state.nation} placeholder="Your Nationality" />
                       </div>

@@ -48,7 +48,7 @@ class CreateActivity extends React.Component {
       var config = {
         apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
         authDomain: "miletrav-4f855.firebaseapp.com",
-        /*  databaseURL: "https://miletrav-4f855.firebaseio.com",*/
+       databaseURL: "https://miletrav-4f855.firebaseio.com",
         storageBucket: "miletrav-4f855.appspot.com",
         messagingSenderId: "469316737513"
       };
@@ -340,8 +340,8 @@ class CreateActivity extends React.Component {
           <Home />
           <section className="mainContentSection singlePackage b">
             <div className="container b createac">
-              <div className="col-sm-12 col-xs-12 ">
-                <div className="portlet light">
+              <div className="col-sm-12 col-xs-12">
+                <div className="portlet light well">
                   <div className="portlet-title">
                     <center>
                       <div className="caption font-kademy">
@@ -358,20 +358,20 @@ class CreateActivity extends React.Component {
                         <div className="col-md-12">
                           <form className="form-horizontal">
                             <div className="form-group">
-                              <p className="control-label col-sm-2">Activity name :</p>
+                              <p className="control-label col-sm-2 actopic">Activity name </p>
                               <div className="col-sm-10">
                                 <input type="text" className="form-control" onChange={this.setName} placeholder="Activity name" />
                               </div>
                             </div>
 
                             <div className="form-group">
-                              <p className="control-label col-sm-2">Activity Description :</p>
+                              <p className="control-label col-sm-2 actopic">Activity Description </p>
                               <div className="col-sm-10">
                                 <textarea className="form-control" onChange={this.setDesc} placeholder="description here" />
                               </div>
                             </div>
                             <div className="form-group">
-                              <p className="control-label col-sm-2">Cover image :</p>
+                              <p className="control-label col-sm-2 actopic">Cover image </p>
                               <div className="col-sm-10">
                                 <DropzoneComponent config={componentConfig}
                                   eventHandlers={eventHandlers}
@@ -379,7 +379,7 @@ class CreateActivity extends React.Component {
                               </div>
                             </div>
                             <div className="form-group">
-                              <p className="control-label col-sm-2">Province :</p>
+                              <p className="control-label col-sm-2 actopic">Province </p>
                               <div className="col-sm-10">
                                 <select onChange={this.setCity} className="form-control">
                                   {
@@ -393,13 +393,13 @@ class CreateActivity extends React.Component {
                               </div>
                             </div>
                             <div className="form-group">
-                              <p className="control-label col-sm-2">Location :</p>
+                              <p className="control-label col-sm-2 actopic">Location </p>
                               <div className="col-sm-10">
                                 <input type="text" className="form-control" onChange={this.setLocation} placeholder="location here" />
                               </div>
                             </div>
                             <div className="form-group">
-                              <p className="control-label col-sm-2">Category :</p>
+                              <p className="control-label col-sm-2 actopic">Category </p>
                               <div className="col-sm-10">
                                 <select onChange={this.setType} className="form-control">
                                   {
@@ -420,8 +420,8 @@ class CreateActivity extends React.Component {
                                   <table className="table">
                                     <thead>
                                       <tr>
-                                        <td><p>Ticket Name</p></td>
-                                        <td><p>Price</p></td>
+                                        <td><p className=" actopic">Ticket Name</p></td>
+                                        <td><p className=" actopic">Price</p></td>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -466,9 +466,9 @@ class CreateActivity extends React.Component {
                                   <table className="table">
                                     <thead>
                                       <tr>
-                                        <td><p>Hour</p></td>
-                                        <td><p>Minute</p></td>
-                                        <td><p>Activity</p></td>
+                                        <td><p className=" actopic">Hour</p></td>
+                                        <td><p className=" actopic">Minute</p></td>
+                                        <td><p className=" actopic">Activity</p></td>
                                       </tr>
                                     </thead>
                                     <tbody>

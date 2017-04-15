@@ -32,15 +32,12 @@ class HeaderActivity extends React.Component{
             {
               this.state.url.map((value , index)=> {
                 return(
-                     <div key={index} className="container" style={{marginTop: 200}}>
-                       <div className="row">
-                         <div className="col-xs-12 col-md-12">
+                     <div key={index} className="well col-sm-5 col-md-6 margintop" >
                          <center>
-                            <img className="img-responsive img-hovers" src={value.cover_photo} style={{height: 300 , width : 500  }}/>
+                            <img className="img-responsive img-hovers" src={value.cover_photo} style={{width : 500 }}/>
                             </center>
                          </div>
-                       </div>
-                     </div>
+             
                 )
               })
 

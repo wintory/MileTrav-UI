@@ -76,7 +76,7 @@ class CardActivityDetail extends React.Component {
   }
     render(){
       return(
-        <div>
+        <div className="col-sm-12">
         {
           this.state.activity.map((value , index) => {
             return(
@@ -85,6 +85,7 @@ class CardActivityDetail extends React.Component {
           })
         }
         </div>
+
       )
     }
 }

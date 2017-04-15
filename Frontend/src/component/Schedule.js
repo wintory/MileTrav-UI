@@ -26,16 +26,14 @@ class Schedule extends React.Component{
   render(){
     return(
       <div>
-      <div className="thumbnail blogSinglePost img-hovers" style={{marginTop: 20}}>
-        <div className="caption">
-        <h3>Itinerary</h3>
+        <h4>Itinerary</h4>
           <hr/>
               <center>
                     <table className="table">
                         <thead>
                           <tr>
-                            <td>Time</td>
-                            <td>Activity</td>
+                            <td><p className="actopic">Time</p></td>
+                            <td><p className="actopic">Activity</p></td>
                           </tr>
                         </thead>
                         <tbody>
@@ -43,8 +41,8 @@ class Schedule extends React.Component{
                             this.state.schedules.map((value , index) =>{
                               return(
                                 <tr key={index}>
-                                  <td>{value.times}</td>
-                                  <td>{value.itinerary_desc}</td>
+                                  <td><p>{value.times}</p></td>
+                                  <td><p>{value.itinerary_desc}</p></td>
                                 </tr>
                               )
                             })
@@ -52,8 +50,6 @@ class Schedule extends React.Component{
                         </tbody>
                     </table>
             </center>
-        </div>
-      </div>
       </div>
     )
   }

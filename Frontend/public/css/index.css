@@ -577,3 +577,11 @@ div.loading{
     position: absolute;
   left: 50%;
 }
+
+p.actopic{
+    color: palevioletred;
+}
+
+p.acdesc{
+    text-align: center;
+}
