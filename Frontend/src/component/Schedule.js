@@ -32,8 +32,8 @@ class Schedule extends React.Component{
                     <table className="table">
                         <thead>
                           <tr>
-                            <td><p className="actopic">Time</p></td>
-                            <td><p className="actopic">Activity</p></td>
+                            <td><p className="topic">Time</p></td>
+                            <td><p className="topic">Activity</p></td>
                           </tr>
                         </thead>
                         <tbody>

@@ -67,8 +67,6 @@ class ActivityResultByProvince extends React.Component {
         <section>
           <div className=" margintopprovince">
             <div className="row ">
-              <br />
-              <br />
               <h3 className="middle ">{this.props.params.province}</h3>
               <br />
 

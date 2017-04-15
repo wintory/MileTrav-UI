@@ -578,10 +578,15 @@ div.loading{
   left: 50%;
 }
 
-p.actopic{
+p.topic{
     color: palevioletred;
 }
 
 p.acdesc{
+    text-align: center;
+}
+
+p.actopic{
+    color: palevioletred;
     text-align: center;
 }

@@ -25,21 +25,21 @@ class Tickets extends React.Component{
   render(){
     return(
       <div>
+        <h4>Ticket</h4>
       {
         this.state.tickets.map((value , index)=>{
           return(
-            <div key={index} className="thumbnail blogSinglePost img-hovers" style={{marginTop: 20}}>
+            <div key={index}  style={{marginTop: 20}}>
               <div className="caption">
-                  <h3>Ticket</h3>
                   <hr/>
                   <div className="row">
                     <div className="col-md-4">
-                        <h5>{value.ticket_name}</h5>
+                        <p className="acdesc">{value.ticket_name}</p>
                     </div>
                     <div className="col-md-3">
-                        <h5>{value.price} Baht</h5>
+                        <p className="acdesc">{value.price} Baht</p>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                         <select className="form-control">
                           <option value={1}>1 ticket</option>
                           <option value={2}>2 tickets</option>

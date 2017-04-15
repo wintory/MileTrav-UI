@@ -28,20 +28,35 @@ class HeaderActivity extends React.Component{
 
 
       return(
-        <div>
+        <div className="col-sm-6 margintop">
             {
               this.state.url.map((value , index)=> {
                 return(
-                     <div key={index} className="well col-sm-5 col-md-6 margintop" >
-                         <center>
-                            <img className="img-responsive img-hovers" src={value.cover_photo} style={{width : 500 }}/>
-                            </center>
-                         </div>
+
+                   <div id="myCarousel" className=" carousel" data-ride="carousel">
+
+    <div key={index} className="carousel-inner" role="listbox">
+      <div className="item active">
+        <img src={value.cover_photo} style={{width :800 }} />
+      </div>
+    </div>
+
+
+    <a className="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span className="sr-only">Previous</span>
+    </a>
+    <a className="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span className="sr-only">Next</span>
+    </a>
+  </div>
              
                 )
               })
 
               }
+
               </div>
       )
     }

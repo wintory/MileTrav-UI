@@ -1,5 +1,7 @@
 import React , {props} from 'react'
 import Nav from './Nav'
+import Recommend from './Recommend'
+import Search from './Search'
 import CardActivityDetail from './CardActivityDetail'
 import HeaderActivity from './HeaderActivity'
 import Footer from './Footer'
@@ -15,14 +17,19 @@ class ActivityDetail extends React.Component{
 
          <div className="main-wrapper b">
       <Nav/>
+      <Search/>
 <section>
    <div className="row">
-     <HeaderActivity activity={this.state.name}/>
-     <div className="col-sm-5 col-md-6 margintop">
+     <div className="col-sm-6 col-md-6 margintop">
        <div >
        <CardActivityDetail activity={this.state.name}/>
          </div>  
        </div>
+        <HeaderActivity activity={this.state.name}/>
+        <br/>
+        <br/>
+        <br/>
+        <Recommend/>
      </div>
      
 </section>

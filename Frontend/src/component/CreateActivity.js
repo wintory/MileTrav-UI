@@ -420,8 +420,8 @@ class CreateActivity extends React.Component {
                                   <table className="table">
                                     <thead>
                                       <tr>
-                                        <td><p className=" actopic">Ticket Name</p></td>
-                                        <td><p className=" actopic">Price</p></td>
+                                        <td><p className=" topic">Ticket Name</p></td>
+                                        <td><p className=" topic">Price</p></td>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -466,9 +466,9 @@ class CreateActivity extends React.Component {
                                   <table className="table">
                                     <thead>
                                       <tr>
-                                        <td><p className=" actopic">Hour</p></td>
-                                        <td><p className=" actopic">Minute</p></td>
-                                        <td><p className=" actopic">Activity</p></td>
+                                        <td><p className=" topic">Hour</p></td>
+                                        <td><p className=" topic">Minute</p></td>
+                                        <td><p className=" topic">Activity</p></td>
                                       </tr>
                                     </thead>
                                     <tbody>

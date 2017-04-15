@@ -36,7 +36,7 @@ class Search extends React.Component{
                 <div className="col-sm-4 searchlogo slideshow">
                   <div className="sectionTitleDouble">
                     <p>Choose</p>
-                    <h2>Your Activity</h2>
+                    <h2>Your Activities</h2>
                   </div>
                 </div>
                 <div>
