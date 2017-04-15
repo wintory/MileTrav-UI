@@ -16878,134 +16878,140 @@ var EditProfile = function (_React$Component) {
         _react2.default.createElement(_Home2.default, null),
         _react2.default.createElement(
           'section',
-          null,
+          { className: 'mainContentSection singlePackage b' },
           _react2.default.createElement(
             'div',
             { className: 'container b' },
-            _react2.default.createElement('center', null),
             _react2.default.createElement(
               'div',
-              { className: 'portlet light' },
+              { className: 'col-sm-12 col-xs-12 ' },
               _react2.default.createElement(
                 'div',
-                { className: 'portlet-title' },
+                { className: 'portlet light' },
                 _react2.default.createElement(
-                  'center',
-                  null,
-                  _react2.default.createElement('img', { className: 'img-circle img-responsive img-hovers', src: this.state.cover_photo == "" ? '/img/cover/incognito.png' : this.state.cover_photo, style: { padding: 10, marginBottom: 50, height: 140, width: 140 } }),
+                  'div',
+                  { className: 'portlet-title' },
                   _react2.default.createElement(
-                    'div',
-                    { className: 'caption font-kademy' },
+                    'center',
+                    null,
+                    _react2.default.createElement('img', { className: 'img-circle img-responsive img-hovers', src: this.state.cover_photo == "" ? '/img/cover/incognito.png' : this.state.cover_photo, style: { padding: 10, marginBottom: 50, height: 140, width: 140 } }),
                     _react2.default.createElement(
-                      'h3',
-                      null,
-                      'Your profile'
+                      'div',
+                      { className: 'caption font-kademy' },
+                      _react2.default.createElement(
+                        'h3',
+                        null,
+                        'Your profile'
+                      )
                     )
                   )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'portlet-body' },
+                ),
                 _react2.default.createElement(
-                  'form',
-                  { className: 'form-horizontal' },
+                  'div',
+                  { className: 'portlet-body' },
                   _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'label',
-                      { className: 'control-label col-sm-2' },
-                      'Cover Photo:'
-                    ),
+                    'form',
+                    { className: 'form-horizontal' },
                     _react2.default.createElement(
                       'div',
-                      { className: 'col-sm-10' },
-                      _react2.default.createElement(_reactDropzone2.default, { style: { width: 100, height: 25 }, config: componentConfig,
-                        eventHandlers: eventHandlers,
-                        djsConfig: djsConfig })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'label',
-                      { className: 'control-label col-sm-2' },
-                      'First name:'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-10' },
-                      _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setName, value: this.state.name, placeholder: 'First Name' })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'label',
-                      { className: 'control-label col-sm-2' },
-                      'Last name:'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-10' },
-                      _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setSurname, value: this.state.surname, placeholder: 'Last Name' })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'label',
-                      { className: 'control-label col-sm-2' },
-                      'Email :'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-10' },
-                      _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setEmail, value: this.state.email, placeholder: 'Email' })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'label',
-                      { className: 'control-label col-sm-2' },
-                      'Telephone :'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-10' },
-                      _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setTel, value: this.state.tel, placeholder: 'Telephone No.' })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'label',
-                      { className: 'control-label col-sm-2' },
-                      'Nationality :'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-10' },
-                      _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setNation, value: this.state.nation, placeholder: 'Your Nationality' })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-offset-2 col-sm-2' },
+                      { className: 'form-group' },
                       _react2.default.createElement(
-                        'button',
-                        { type: 'button', className: 'btn btn-block buttonCustomPrimary', onClick: this.update },
-                        'Update Profile'
+                        'p',
+                        { className: 'control-label col-sm-2' },
+                        'Cover Photo:'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-10' },
+                        _react2.default.createElement(_reactDropzone2.default, { style: { width: 100, height: 25 }, config: componentConfig,
+                          eventHandlers: eventHandlers,
+                          djsConfig: djsConfig })
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'form-group' },
+                      _react2.default.createElement(
+                        'p',
+                        { className: 'control-label col-sm-2' },
+                        'First name:'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-10' },
+                        _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setName, value: this.state.name, placeholder: 'First Name' })
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'form-group' },
+                      _react2.default.createElement(
+                        'p',
+                        { className: 'control-label col-sm-2' },
+                        'Last name:'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-10' },
+                        _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setSurname, value: this.state.surname, placeholder: 'Last Name' })
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'form-group' },
+                      _react2.default.createElement(
+                        'p',
+                        { className: 'control-label col-sm-2' },
+                        'Email :'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-10' },
+                        _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setEmail, value: this.state.email, placeholder: 'Email' })
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'form-group' },
+                      _react2.default.createElement(
+                        'p',
+                        { className: 'control-label col-sm-2' },
+                        'Telephone :'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-10' },
+                        _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setTel, value: this.state.tel, placeholder: 'Telephone No.' })
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'form-group' },
+                      _react2.default.createElement(
+                        'p',
+                        { className: 'control-label col-sm-2' },
+                        'Nationality :'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-10' },
+                        _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setNation, value: this.state.nation, placeholder: 'Your Nationality' })
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'form-group' },
+                      _react2.default.createElement('div', { className: 'col-sm-2' }),
+                      _react2.default.createElement('div', { className: 'col-sm-2' }),
+                      _react2.default.createElement('div', { className: 'col-sm-1' }),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-sm-2' },
+                        _react2.default.createElement(
+                          'button',
+                          { type: 'button', className: 'btn btn-block buttonCustomPrimary', onClick: this.update },
+                          'Update Profile'
+                        )
                       )
                     )
                   )
