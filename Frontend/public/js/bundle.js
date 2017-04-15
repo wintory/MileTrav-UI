@@ -15747,13 +15747,15 @@ var CardActivityResult = function (_React$Component) {
             _react2.default.createElement(
               'p',
               { style: { color: '#262a2e' } },
-              'From : ',
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-pushpin' }),
+              ' Location : ',
               this.props.province
             ),
             _react2.default.createElement(
               'p',
               { style: { color: '#262a2e' } },
-              'description : ',
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-paperclip' }),
+              ' Description :  ',
               this.props.desc
             )
           )
@@ -16264,9 +16266,9 @@ var CreateActivity = function (_React$Component) {
                               'div',
                               { className: 'form-group' },
                               _react2.default.createElement(
-                                'h5',
+                                'p',
                                 { className: 'control-label col-sm-2' },
-                                'Cover image here'
+                                'Cover image :'
                               ),
                               _react2.default.createElement(
                                 'div',

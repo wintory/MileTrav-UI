@@ -14,8 +14,8 @@ class CardActivityResult extends React.Component{
             <Link to={'/activity/'+this.props.name} className="pageLink"></Link>
             <div className="caption">
               <h5><Link to={'/activity/'+this.props.name} className="captionTitle">{this.props.name}</Link></h5>
-              <p style={{color: '#262a2e'}}>From : {this.props.province}</p>
-              <p style={{color: '#262a2e'}}>description : {this.props.desc}</p>
+              <p style={{color: '#262a2e'}}><span className="glyphicon glyphicon-pushpin"/> Location : {this.props.province}</p>
+              <p style={{color: '#262a2e'}}><span className="glyphicon glyphicon-paperclip"/> Description :  {this.props.desc}</p>
             </div>
         </div>
       </div>

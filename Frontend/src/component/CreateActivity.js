@@ -371,7 +371,7 @@ class CreateActivity extends React.Component {
                               </div>
                             </div>
                             <div className="form-group">
-                              <h5 className="control-label col-sm-2">Cover image here</h5>
+                              <p className="control-label col-sm-2">Cover image :</p>
                               <div className="col-sm-10">
                                 <DropzoneComponent config={componentConfig}
                                   eventHandlers={eventHandlers}
