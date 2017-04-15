@@ -20,15 +20,13 @@ class ActivityDetail extends React.Component{
       <Search/>
 <section>
    <div className="row">
-     <div className="col-sm-6 col-md-6 margintop">
+     <div className="col-sm-6 margintop">
        <div >
        <CardActivityDetail activity={this.state.name}/>
          </div>  
        </div>
         <HeaderActivity activity={this.state.name}/>
-        <br/>
-        <br/>
-        <br/>
+
         <Recommend/>
      </div>
      

@@ -14,7 +14,7 @@ class Detail extends React.Component {
                             <br/>
                             <div className="col-sm-3"/>
                             <div className="col-sm-5">
-                                <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.create}>Create Activity</button>
+                                <button type="button" className="btn btn-block buttonCustomPrimary" >Booking Now</button>
                               </div>
                          <div className="col-sm-4"/>
                              <br />
