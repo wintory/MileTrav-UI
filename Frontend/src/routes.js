@@ -7,7 +7,7 @@ import PackageHome from './component/PackageHome'
 import CreateActivity from './component/CreateActivity';
 import EditProfile from './component/EditProfile'
 import Booking from './component/Booking'
-
+import EditActivity from './component/EditActivity'
 export default (
         <Route>
                 <Route path="/" component={PackageHome}> </Route>
@@ -17,5 +17,7 @@ export default (
                 <Route path="/EditProfile" component={EditProfile}></Route>
                 <Route path="/CreateActivity/:step" component={CreateActivity}></Route>
                 <Route path="/Booking" component={Booking}/>
+                <Route path="/EditActivity" component={EditActivity}/>
+
         </Route>
 )
