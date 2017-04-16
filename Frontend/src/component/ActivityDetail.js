@@ -1,7 +1,8 @@
 import React, { props } from 'react'
 import Home from './Home'
 import Recommend from './Recommend'
-import CardActivityDetail from './CardActivityDetail'
+import CardActivityDetailRight from './CardActivityDetailRight'
+import CardActivityDetailLeft from './CardActivityDetailLeft'
 import HeaderActivity from './HeaderActivity'
 import Footer from './Footer'
 class ActivityDetail extends React.Component {
@@ -18,16 +19,21 @@ class ActivityDetail extends React.Component {
         <Home />
         <section>
           <div className="row">
-            <div className="col-sm-6 margintop">
-              <div >
-                <CardActivityDetail activity={this.state.name} />
+            <div className="col-sm-7 margintop">
+              <div >       
+               <HeaderActivity activity={this.state.name} />  
+                <CardActivityDetailLeft activity={this.state.name} />
               </div>
             </div>
-            <HeaderActivity activity={this.state.name} />
-
-            <Recommend />
+            <div className="row">
+            <div className="col-sm-5 margintop">
+              <div >         
+            <CardActivityDetailRight activity={this.state.name} />
+            <Recommend topic="Activity You May Know"/>
+              </div>
+            </div>
           </div>
-
+          </div>
         </section>
         <Footer />
       </div>

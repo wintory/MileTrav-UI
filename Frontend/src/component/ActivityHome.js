@@ -6,9 +6,9 @@ class ActivityHome extends React.Component{
   render(){
 
     return(
-     <div className="col-sm-5 col-md-6 margintop">
+     <div className="col-xs-12 col-sm-6 margintop">
        <div className="bgwhite">
-        <img className="component" src={this.props.pic}/>
+        <img className="component" src={this.props.pic} style={{height:210}}/>
          </div>
        </div>
 

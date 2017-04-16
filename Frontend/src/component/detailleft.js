@@ -10,17 +10,6 @@ class Detail extends React.Component {
                     <div className="row">
                         <div className="col-sm-12">
                             <h3>{this.props.activity_name}</h3> 
-                            <br />
-                            <Tickets aid={this.props.aid} />
-                            <br/>
-                            <div className="col-sm-3"/>
-                            <div className="col-sm-5">
-                                <Link to="/Booking"><button type="button" className="btn btn-block buttonCustomPrimary" >Booking Now</button></Link>
-                              </div>
-                         <div className="col-sm-4"/>
-                             <br />
-                              <br />
-                               <br />
                             <h4>Information</h4>
                             <dl className="dl-horizontal">
                                 <dt><p className="actopic">Host</p></dt>
@@ -43,11 +32,6 @@ class Detail extends React.Component {
                             <p>{this.props.activity_desc}</p>
                         </div>
                     </div>
-
-                    <br />
-
-                    <Schedule aid={this.props.aid} />
-              
                     </div>
             </div>
         )

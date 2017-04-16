@@ -6,13 +6,14 @@ class Recommend extends React.Component{
     render(){
       return(
             
+        
 
-         <div className=" row componentt">
-          <div className="margintop col-sm-6  well">
-              <h4>Activity You May know</h4>
+      <div className="col-sm-12 well ">
+              <h4>{this.props.topic}</h4>
             <div role="tabpanel" >   
-              <div className="tab-content">
+              <div className="tab-content ">
                 <div role="tabpanel" className="tab-pane active" id="recent">
+                <RecommendCard/>
                 <RecommendCard/>
                 <RecommendCard/>
                 <RecommendCard/>
@@ -20,7 +21,7 @@ class Recommend extends React.Component{
               </div>
             </div>
           </div>
-          </div>
+
       )
     }
 }
