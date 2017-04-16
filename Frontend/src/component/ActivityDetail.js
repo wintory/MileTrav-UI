@@ -29,7 +29,7 @@ class ActivityDetail extends React.Component {
             <div className="col-sm-5 margintop">
               <div >         
             <CardActivityDetailRight activity={this.state.name} />
-            <Recommend topic="Activity You May Know"/>
+            <Recommend topic="Activity You May Know" outborder="col-sm-12 " inborder="well"/>
               </div>
             </div>
           </div>

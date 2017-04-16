@@ -8,8 +8,10 @@ class Recommend extends React.Component{
             
         
 
-      <div className="col-sm-12 well ">
-              <h4>{this.props.topic}</h4>
+      <div className={this.props.outborder}>
+        <div className={this.props.inborder}>
+            <div className="row">
+            <h4>{this.props.topic}</h4>
             <div role="tabpanel" >   
               <div className="tab-content ">
                 <div role="tabpanel" className="tab-pane active" id="recent">
@@ -20,6 +22,8 @@ class Recommend extends React.Component{
                 </div>
               </div>
             </div>
+          </div>
+          </div>
           </div>
 
       )

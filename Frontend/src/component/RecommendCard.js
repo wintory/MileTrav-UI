@@ -13,11 +13,8 @@ class RecommendCard extends React.Component {
                     <div className="media-body">
                         <Link to="#" className="media-heading">Activity Name : Coming Soon</Link>
                     </div>
-                    <br/>
                     <p><i className="fa fa-calendar" aria-hidden="true"></i>Location : Coming Soon</p>
-                    <p><i className="fa fa-calendar" aria-hidden="true"></i>Date : Coming Soon</p>
                 </div>
-                <br/>
                 <div className="col-sm-3">
                     <button type="button" className="btn btn-block buttonCustomPrimary" >Booking</button>
                 </div>

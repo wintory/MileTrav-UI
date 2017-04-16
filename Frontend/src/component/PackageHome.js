@@ -41,7 +41,7 @@ method: 'GET' }).then(
      <div className="col-xs-12 col-sm-6 content-block masonry-brick margintop">
        <div className="bgwhite">
          <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215"/>
-         <Recommend topic=""/>
+         <Recommend topic="" outborder="col-sm-12 well"/>
          </div>  
        </div>
 
@@ -51,7 +51,7 @@ method: 'GET' }).then(
             <div className="col-sm-6 col-xs-12 margintop">
        <div className="bgwhite">
          <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/002/original/UPC_EV_1_LINE-1.jpg?1485235233"/>
-         <Recommend topic=""/>
+         <Recommend topic="" outborder="col-sm-12 well"/>
          </div>  
        </div>
 
@@ -59,7 +59,7 @@ method: 'GET' }).then(
        <div className="col-sm-6 col-xs-12 margintop">
        <div className="bgwhite">
          <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/047/original/Artboard_Copy_4_%281%29.png?1490953082"/>
-         <Recommend topic=""/>
+         <Recommend topic="" outborder="col-sm-12 well"/>
          </div>  
        </div>
        

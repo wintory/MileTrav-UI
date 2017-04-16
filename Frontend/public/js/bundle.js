@@ -7345,7 +7345,7 @@ var PackageHome = function (_React$Component) {
                 'div',
                 { className: 'bgwhite' },
                 _react2.default.createElement('img', { className: 'component', src: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/003/original/REC_EV_1_LINE-1.jpg?1485235215' }),
-                _react2.default.createElement(_Recommend2.default, { topic: '' })
+                _react2.default.createElement(_Recommend2.default, { topic: '', outborder: 'col-sm-12 well' })
               )
             ),
             _react2.default.createElement(_ActivityHome2.default, { pic: 'http://slovakia-explorer.com/uploads/tours/winter-activity-holiday-high-tatras/_tourThumbnail/winter-walking-snowshoeing-tatras.jpg' }),
@@ -7358,7 +7358,7 @@ var PackageHome = function (_React$Component) {
                 'div',
                 { className: 'bgwhite' },
                 _react2.default.createElement('img', { className: 'component', src: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/002/original/UPC_EV_1_LINE-1.jpg?1485235233' }),
-                _react2.default.createElement(_Recommend2.default, { topic: '' })
+                _react2.default.createElement(_Recommend2.default, { topic: '', outborder: 'col-sm-12 well' })
               )
             ),
             _react2.default.createElement(
@@ -7368,7 +7368,7 @@ var PackageHome = function (_React$Component) {
                 'div',
                 { className: 'bgwhite' },
                 _react2.default.createElement('img', { className: 'component', src: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/047/original/Artboard_Copy_4_%281%29.png?1490953082' }),
-                _react2.default.createElement(_Recommend2.default, { topic: '' })
+                _react2.default.createElement(_Recommend2.default, { topic: '', outborder: 'col-sm-12 well' })
               )
             )
           ),
@@ -10731,25 +10731,33 @@ var Recommend = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'col-sm-12 well ' },
-        _react2.default.createElement(
-          'h4',
-          null,
-          this.props.topic
-        ),
+        { className: this.props.outborder },
         _react2.default.createElement(
           'div',
-          { role: 'tabpanel' },
+          { className: this.props.inborder },
           _react2.default.createElement(
             'div',
-            { className: 'tab-content ' },
+            { className: 'row' },
+            _react2.default.createElement(
+              'h4',
+              null,
+              this.props.topic
+            ),
             _react2.default.createElement(
               'div',
-              { role: 'tabpanel', className: 'tab-pane active', id: 'recent' },
-              _react2.default.createElement(_RecommendCard2.default, null),
-              _react2.default.createElement(_RecommendCard2.default, null),
-              _react2.default.createElement(_RecommendCard2.default, null),
-              _react2.default.createElement(_RecommendCard2.default, null)
+              { role: 'tabpanel' },
+              _react2.default.createElement(
+                'div',
+                { className: 'tab-content ' },
+                _react2.default.createElement(
+                  'div',
+                  { role: 'tabpanel', className: 'tab-pane active', id: 'recent' },
+                  _react2.default.createElement(_RecommendCard2.default, null),
+                  _react2.default.createElement(_RecommendCard2.default, null),
+                  _react2.default.createElement(_RecommendCard2.default, null),
+                  _react2.default.createElement(_RecommendCard2.default, null)
+                )
+              )
             )
           )
         )
@@ -15795,7 +15803,7 @@ var ActivityDetail = function (_React$Component) {
                   'div',
                   null,
                   _react2.default.createElement(_CardActivityDetailRight2.default, { activity: this.state.name }),
-                  _react2.default.createElement(_Recommend2.default, { topic: 'Activity You May Know' })
+                  _react2.default.createElement(_Recommend2.default, { topic: 'Activity You May Know', outborder: 'col-sm-12 ', inborder: 'well' })
                 )
               )
             )
@@ -19286,21 +19294,13 @@ var RecommendCard = function (_React$Component) {
                             'Activity Name : Coming Soon'
                         )
                     ),
-                    _react2.default.createElement('br', null),
                     _react2.default.createElement(
                         'p',
                         null,
                         _react2.default.createElement('i', { className: 'fa fa-calendar', 'aria-hidden': 'true' }),
                         'Location : Coming Soon'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        _react2.default.createElement('i', { className: 'fa fa-calendar', 'aria-hidden': 'true' }),
-                        'Date : Coming Soon'
                     )
                 ),
-                _react2.default.createElement('br', null),
                 _react2.default.createElement(
                     'div',
                     { className: 'col-sm-3' },
