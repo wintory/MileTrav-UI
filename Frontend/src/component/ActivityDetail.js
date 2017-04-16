@@ -5,6 +5,7 @@ import CardActivityDetailRight from './CardActivityDetailRight'
 import CardActivityDetailLeft from './CardActivityDetailLeft'
 import HeaderActivity from './HeaderActivity'
 import Footer from './Footer'
+import Comment from './Comment'
 class ActivityDetail extends React.Component {
   constructor(props) {
     super(props)
@@ -23,6 +24,7 @@ class ActivityDetail extends React.Component {
               <div >       
                <HeaderActivity activity={this.state.name} />  
                 <CardActivityDetailLeft activity={this.state.name} />
+                  <Comment/>
               </div>
             </div>
             <div className="row">
@@ -34,6 +36,7 @@ class ActivityDetail extends React.Component {
             </div>
           </div>
           </div>
+
         </section>
         <Footer />
       </div>
