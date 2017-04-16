@@ -25,11 +25,11 @@ class Booking extends React.Component {
                   <h3>Activity Name : AAA</h3>
                   <ul className="list-unstyled">
                     <li><i className="fa fa-calendar" aria-hidden="true"></i>Location :  <span>AAA</span></li>
-                    <li><i className="fa fa-calendar" aria-hidden="true"></i>Tickets :  แถวกลาง <span>1</span></li>
-                    <li><i className="fa fa-calendar" aria-hidden="true"></i>Tickets :  แถวหน้า <span>1</span></li>
+                    <li><i className="fa fa-calendar" aria-hidden="true"></i>Tickets :  <span>500 Baht</span></li>
+                    <li><i className="fa fa-calendar" aria-hidden="true"></i>Tickets :  <span>1500 Baht</span></li>
                   </ul>
                   <div className="priceTotal">
-                    <h2>Total: <span>6,500 Baht</span></h2>
+                    <h2>Total: <span>2000 Baht</span></h2>
                   </div>
                 </div>
               </div>

@@ -6664,7 +6664,7 @@ var Nav = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouter.Link,
                         { to: '/Dashboard' },
-                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-list-alt' }),
+                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-stats' }),
                         ' Dashboard'
                       )
                     ),
@@ -6694,7 +6694,7 @@ var Nav = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouter.Link,
                         { to: '/Wishlist' },
-                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-stats' }),
+                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-bookmark' }),
                         ' Wishlist'
                       )
                     )
@@ -15779,22 +15779,22 @@ var Booking = function (_React$Component) {
                           'li',
                           null,
                           _react2.default.createElement('i', { className: 'fa fa-calendar', 'aria-hidden': 'true' }),
-                          'Tickets :  \u0E41\u0E16\u0E27\u0E01\u0E25\u0E32\u0E07 ',
+                          'Tickets :  ',
                           _react2.default.createElement(
                             'span',
                             null,
-                            '1'
+                            '500 Baht'
                           )
                         ),
                         _react2.default.createElement(
                           'li',
                           null,
                           _react2.default.createElement('i', { className: 'fa fa-calendar', 'aria-hidden': 'true' }),
-                          'Tickets :  \u0E41\u0E16\u0E27\u0E2B\u0E19\u0E49\u0E32 ',
+                          'Tickets :  ',
                           _react2.default.createElement(
                             'span',
                             null,
-                            '1'
+                            '1500 Baht'
                           )
                         )
                       ),
@@ -15808,7 +15808,7 @@ var Booking = function (_React$Component) {
                           _react2.default.createElement(
                             'span',
                             null,
-                            '6,500 Baht'
+                            '2000 Baht'
                           )
                         )
                       )
