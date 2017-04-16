@@ -5,6 +5,7 @@ import ModalLogin from 'react-modal'
 import ModalRegister from 'react-modal'
 import { host } from './Host'
 
+
 const appElement = document.getElementById('your-app-element');
 
 const customStyles = {
