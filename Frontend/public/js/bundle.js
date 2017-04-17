@@ -884,6 +884,65 @@ exports.host = host;
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 (function(self) {
@@ -1348,65 +1407,6 @@ exports.host = host;
   self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
 
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  }
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-};
-
-module.exports = invariant;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 12 */
@@ -3546,7 +3546,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _invariant = __webpack_require__(11);
+var _invariant = __webpack_require__(10);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -3933,7 +3933,7 @@ module.exports = ReactReconciler;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(11);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_invariant__);
 /* unused harmony export compilePattern */
 /* harmony export (immutable) */ __webpack_exports__["c"] = matchPattern;
@@ -7312,7 +7312,7 @@ var _PopularActivities = __webpack_require__(152);
 
 var _PopularActivities2 = _interopRequireDefault(_PopularActivities);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _reactRouter = __webpack_require__(7);
 
@@ -7615,7 +7615,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10140,7 +10140,7 @@ var locationShape = shape({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(11);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
@@ -10808,7 +10808,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14474,7 +14474,7 @@ module.exports = findTabbableDescendants;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PropTypes__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ContextUtils__ = __webpack_require__(79);
@@ -14641,7 +14641,7 @@ function isPromise(obj) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RouteUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PatternUtils__ = __webpack_require__(30);
@@ -15930,7 +15930,7 @@ var _CardActivityResult = __webpack_require__(142);
 
 var _CardActivityResult2 = _interopRequireDefault(_CardActivityResult);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _Footer = __webpack_require__(14);
 
@@ -16069,7 +16069,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16221,7 +16221,7 @@ var Booking = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'bookDetailsInfo' },
-                    _react2.default.createElement('img', { src: 'img/booking/booking.png', alt: 'image' }),
+                    _react2.default.createElement('img', { src: 'https://firebasestorage.googleapis.com/v0/b/miletrav-4f855.appspot.com/o/activity_cover%2FKMUTT%20Cheer_activity_cover.jpg?alt=media&token=9ed81f42-e156-494f-aba3-15791e31bbfc', alt: 'image' }),
                     _react2.default.createElement(
                       'div',
                       { className: 'infoArea' },
@@ -16478,7 +16478,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _detailleft = __webpack_require__(155);
 
@@ -16608,7 +16608,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _detailright = __webpack_require__(156);
 
@@ -16947,7 +16947,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17055,7 +17055,7 @@ var _reactLoading2 = _interopRequireDefault(_reactLoading);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _Home = __webpack_require__(19);
 
@@ -17495,7 +17495,7 @@ var CreateActivity = function (_React$Component) {
                               ),
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-10' },
+                                { className: 'col-sm-9' },
                                 _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setName, placeholder: 'Activity name' })
                               )
                             ),
@@ -17509,7 +17509,7 @@ var CreateActivity = function (_React$Component) {
                               ),
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-10' },
+                                { className: 'col-sm-9' },
                                 _react2.default.createElement('textarea', { className: 'form-control', onChange: this.setDesc, placeholder: 'description here' })
                               )
                             ),
@@ -17523,7 +17523,7 @@ var CreateActivity = function (_React$Component) {
                               ),
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-10' },
+                                { className: 'col-sm-9' },
                                 _react2.default.createElement(_reactDropzone2.default, { config: componentConfig,
                                   eventHandlers: eventHandlers,
                                   djsConfig: djsConfig })
@@ -17539,7 +17539,7 @@ var CreateActivity = function (_React$Component) {
                               ),
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-10' },
+                                { className: 'col-sm-9' },
                                 _react2.default.createElement(
                                   'select',
                                   { onChange: this.setCity, className: 'form-control' },
@@ -17563,7 +17563,7 @@ var CreateActivity = function (_React$Component) {
                               ),
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-10' },
+                                { className: 'col-sm-9' },
                                 _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setLocation, placeholder: 'location here' })
                               )
                             ),
@@ -17577,7 +17577,7 @@ var CreateActivity = function (_React$Component) {
                               ),
                               _react2.default.createElement(
                                 'div',
-                                { className: 'col-sm-10' },
+                                { className: 'col-sm-9' },
                                 _react2.default.createElement(
                                   'select',
                                   { onChange: this.setType, className: 'form-control' },
@@ -17906,7 +17906,7 @@ var _reactLoading2 = _interopRequireDefault(_reactLoading);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _Home = __webpack_require__(19);
 
@@ -18757,7 +18757,7 @@ var _Home2 = _interopRequireDefault(_Home);
 
 var _reactRouter = __webpack_require__(7);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _Footer = __webpack_require__(14);
 
@@ -19033,7 +19033,7 @@ var EditProfile = function (_React$Component) {
                       ),
                       _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-10' },
+                        { className: 'col-sm-9' },
                         _react2.default.createElement(_reactDropzone2.default, { style: { width: 100, height: 25 }, config: componentConfig,
                           eventHandlers: eventHandlers,
                           djsConfig: djsConfig })
@@ -19049,7 +19049,7 @@ var EditProfile = function (_React$Component) {
                       ),
                       _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-10' },
+                        { className: 'col-sm-9' },
                         _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setName, value: this.state.name, placeholder: 'First Name' })
                       )
                     ),
@@ -19063,7 +19063,7 @@ var EditProfile = function (_React$Component) {
                       ),
                       _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-10' },
+                        { className: 'col-sm-9' },
                         _react2.default.createElement('input', { type: 'text', className: 'form-control', onChange: this.setSurname, value: this.state.surname, placeholder: 'Last Name' })
                       )
                     ),
@@ -19077,7 +19077,7 @@ var EditProfile = function (_React$Component) {
                       ),
                       _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-10' },
+                        { className: 'col-sm-9' },
                         _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setEmail, value: this.state.email, placeholder: 'Email' })
                       )
                     ),
@@ -19091,7 +19091,7 @@ var EditProfile = function (_React$Component) {
                       ),
                       _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-10' },
+                        { className: 'col-sm-9' },
                         _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setTel, value: this.state.tel, placeholder: 'Telephone No.' })
                       )
                     ),
@@ -19105,7 +19105,7 @@ var EditProfile = function (_React$Component) {
                       ),
                       _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-10' },
+                        { className: 'col-sm-9' },
                         _react2.default.createElement('input', { type: 'tel', className: 'form-control', onChange: this.setNation, value: this.state.nation, placeholder: 'Your Nationality' })
                       )
                     ),
@@ -19158,8 +19158,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(10);
-
 var _Home = __webpack_require__(19);
 
 var _Home2 = _interopRequireDefault(_Home);
@@ -19167,10 +19165,6 @@ var _Home2 = _interopRequireDefault(_Home);
 var _Footer = __webpack_require__(14);
 
 var _Footer2 = _interopRequireDefault(_Footer);
-
-var _host = __webpack_require__(9);
-
-var _reactRouter = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19183,13 +19177,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Forgetpass = function (_Component) {
   _inherits(Forgetpass, _Component);
 
-  function Forgetpass(props) {
+  function Forgetpass() {
     _classCallCheck(this, Forgetpass);
 
-    var _this = _possibleConstructorReturn(this, (Forgetpass.__proto__ || Object.getPrototypeOf(Forgetpass)).call(this, props));
-
-    _this.state = {};
-    return _this;
+    return _possibleConstructorReturn(this, (Forgetpass.__proto__ || Object.getPrototypeOf(Forgetpass)).apply(this, arguments));
   }
 
   _createClass(Forgetpass, [{
@@ -19201,60 +19192,97 @@ var Forgetpass = function (_Component) {
         _react2.default.createElement(_Home2.default, null),
         _react2.default.createElement(
           'section',
-          null,
+          { className: 'mainContentSection singlePackage b' },
           _react2.default.createElement(
             'div',
-            { className: 'row' },
-            _react2.default.createElement('div', { className: 'col-sm-3' }),
+            { className: 'container b createac' },
             _react2.default.createElement(
               'div',
-              { className: 'col-sm-5 col-md-6 margintop' },
+              { className: 'col-sm-12 col-xs-12' },
               _react2.default.createElement(
                 'div',
-                { className: 'bgwhite' },
+                { className: 'portlet light well' },
                 _react2.default.createElement(
-                  'form',
-                  { id: 'signup' },
+                  'div',
+                  { className: 'portlet-title' },
                   _react2.default.createElement(
-                    'button',
-                    { type: 'button', className: 'close', 'aria-label': 'Close', onClick: this.closeModalLogin },
+                    'center',
+                    null,
                     _react2.default.createElement(
-                      'span',
-                      { 'aria-hidden': 'true' },
-                      '\xD7'
+                      'div',
+                      { className: 'caption font-kademy' },
+                      _react2.default.createElement('br', null),
+                      _react2.default.createElement(
+                        'h3',
+                        null,
+                        'Forgot Password'
+                      )
                     )
-                  ),
-                  _react2.default.createElement(
-                    'h2',
-                    { className: 'h2login' },
-                    'login'
-                  ),
-                  _react2.default.createElement(
-                    'button',
-                    { className: 'btn btn-facebook' },
-                    _react2.default.createElement('i', { className: 'fa fa-facebook-official', 'aria-hidden': 'true' }),
-                    _react2.default.createElement(
-                      'span',
-                      null,
-                      'Log In with Facebook'
-                    )
-                  ),
-                  _react2.default.createElement('input', { placeholder: 'enter your username', className: 'input pass' }),
-                  _react2.default.createElement('input', { type: 'password', placeholder: 'enter your password', required: 'required', className: 'input pass' }),
-                  _react2.default.createElement('input', { type: 'button', value: 'Sign me in!', className: 'inputButton' }),
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'portlet-body' },
                   _react2.default.createElement(
                     'div',
-                    { className: 'text-center' },
+                    { className: 'row' },
+                    _react2.default.createElement('br', null),
+                    _react2.default.createElement('br', null),
                     _react2.default.createElement(
-                      Link,
-                      { to: '' },
-                      'create an account'
-                    ),
-                    ' - ',
-                    _react2.default.createElement(
-                      Link,
-                      { to: '/forgetpass', onClick: this.closeModalLogin },
-                      'forgot password'
+                      'center',
+                      null,
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-12' },
+                        _react2.default.createElement(
+                          'form',
+                          { className: 'form-horizontal' },
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                              'p',
+                              { className: 'control-label col-sm-2 actopic' },
+                              'User Name '
+                            ),
+                            _react2.default.createElement(
+                              'div',
+                              { className: 'col-sm-9' },
+                              _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'User Name ' })
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                              'p',
+                              { className: 'control-label col-sm-2 actopic' },
+                              'Email '
+                            ),
+                            _react2.default.createElement(
+                              'div',
+                              { className: 'col-sm-9' },
+                              _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Email ' })
+                            )
+                          ),
+                          _react2.default.createElement('br', null),
+                          _react2.default.createElement('div', { className: 'col-sm-3' }),
+                          _react2.default.createElement('div', { className: 'col-sm-1' }),
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                              'div',
+                              { className: 'col-sm-4' },
+                              _react2.default.createElement(
+                                'button',
+                                { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
+                                'Forgot Password'
+                              )
+                            )
+                          )
+                        )
+                      )
                     )
                   )
                 )
@@ -19289,7 +19317,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _reactRouter = __webpack_require__(7);
 
@@ -19370,7 +19398,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _host = __webpack_require__(9);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19673,7 +19701,7 @@ var _Home2 = _interopRequireDefault(_Home);
 
 var _reactRouter = __webpack_require__(7);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 var _Footer = __webpack_require__(14);
 
@@ -19697,13 +19725,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var EditProfile = function (_React$Component) {
-  _inherits(EditProfile, _React$Component);
+var Verify = function (_React$Component) {
+  _inherits(Verify, _React$Component);
 
-  function EditProfile(props) {
-    _classCallCheck(this, EditProfile);
+  function Verify(props) {
+    _classCallCheck(this, Verify);
 
-    var _this = _possibleConstructorReturn(this, (EditProfile.__proto__ || Object.getPrototypeOf(EditProfile)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Verify.__proto__ || Object.getPrototypeOf(Verify)).call(this, props));
 
     _this.state = {
       cover_photo: "",
@@ -19714,7 +19742,7 @@ var EditProfile = function (_React$Component) {
     return _this;
   }
 
-  _createClass(EditProfile, [{
+  _createClass(Verify, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -19881,10 +19909,10 @@ var EditProfile = function (_React$Component) {
     }
   }]);
 
-  return EditProfile;
+  return Verify;
 }(_react2.default.Component);
 
-exports.default = EditProfile;
+exports.default = Verify;
 
 /***/ }),
 /* 155 */
@@ -23946,7 +23974,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _invariant = __webpack_require__(11);
+var _invariant = __webpack_require__(10);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -24050,7 +24078,7 @@ var _warning = __webpack_require__(23);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _invariant = __webpack_require__(11);
+var _invariant = __webpack_require__(10);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -24204,7 +24232,7 @@ var _warning = __webpack_require__(23);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _invariant = __webpack_require__(11);
+var _invariant = __webpack_require__(10);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -35289,7 +35317,7 @@ var IndexLink = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routerWarning__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Redirect__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__InternalPropTypes__ = __webpack_require__(40);
@@ -35348,7 +35376,7 @@ var IndexRedirect = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routerWarning__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RouteUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__InternalPropTypes__ = __webpack_require__(40);
@@ -35405,7 +35433,7 @@ var IndexRoute = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RouteUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__InternalPropTypes__ = __webpack_require__(40);
@@ -35460,7 +35488,7 @@ var Route = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(11);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
@@ -36167,7 +36195,7 @@ function isActive(_ref, indexOnly, currentLocation, routes, params) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_history_lib_Actions__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_history_lib_Actions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_history_lib_Actions__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(127);
@@ -36496,7 +36524,7 @@ function matchRoutes(routes, location, callback, remainingPathname) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(11);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);

@@ -7,7 +7,7 @@ import DropzoneComponent from 'react-dropzone-component/lib/react-dropzone';
 import {host} from './host'
 import firebase from 'firebase'
 
-class EditProfile extends React.Component{
+class Verify extends React.Component{
 
           constructor(props){
             super(props)
@@ -147,4 +147,4 @@ class EditProfile extends React.Component{
 
 
 }
-export default EditProfile
+export default Verify

@@ -1,50 +1,65 @@
 import React, { Component } from 'react'
-import 'whatwg-fetch';
 import Home from './Home'
 import Footer from './Footer'
-import { host } from './host'
-import { browserHistory } from 'react-router'
 
 class Forgetpass extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
 
   render() {
     return (
-      <div className="main-wrapper b">
-        <Home />
-        <section>
-          <div className="row">
-            <div className="col-sm-3"/>
-            <div className="col-sm-5 col-md-6 margintop">
-              <div className="bgwhite">
+       <div className="main-wrapper b">
+          <Home />
+          <section className="mainContentSection singlePackage b">
+            <div className="container b createac">
+              <div className="col-sm-12 col-xs-12">
+                <div className="portlet light well">
+                  <div className="portlet-title">
+                    <center>
+                      <div className="caption font-kademy">
+                        <br />
+                        <h3>Forgot Password</h3>
+                      </div>
+                    </center>
+                  </div>
+                  <div className="portlet-body">
+                    <div className="row">
+                      <br />
+                      <br />
+                      <center>
+                        <div className="col-md-12">
+                          <form className="form-horizontal">
+                            <div className="form-group">
+                              <p className="control-label col-sm-2 actopic">User Name </p>
+                              <div className="col-sm-9">
+                                <input type="text" className="form-control"  placeholder="User Name " />
+                              </div>
+                            </div>
 
-                    <form id="signup">
-              <button type="button" className="close" aria-label="Close" onClick={this.closeModalLogin}>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h2 className="h2login">login</h2>
-              <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span >Log In with Facebook</span></button>
-              <input  placeholder="enter your username" className="input pass" />
-              <input type="password" placeholder="enter your password" required="required" className="input pass" />
-              <input type="button" value="Sign me in!" className="inputButton" />
-              <div className="text-center">
-                <Link to="" >create an account</Link> - <Link to="/forgetpass" onClick={this.closeModalLogin}>forgot password</Link>
-              </div>
-            </form>
-
-
+                            <div className="form-group">
+                              <p className="control-label col-sm-2 actopic">Email </p>
+                              <div className="col-sm-9">
+                                <input type="text" className="form-control"  placeholder="Email " />
+                              </div>
+                            </div>
+                           <br/>
+                            <div className="col-sm-3" />
+                            <div className="col-sm-1" />
+                            <div className="form-group">
+                              <div className="col-sm-4">
+                                <button type="button" className="btn btn-block buttonCustomPrimary" >Forgot Password</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </center>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <Footer />
-      </div>
+          </section>
+          <Footer />
+        </div>
     )
   }
 }

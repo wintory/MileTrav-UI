@@ -211,7 +211,7 @@ class EditProfile extends React.Component{
               <form className="form-horizontal">
               <div className="form-group">
                 <p className="control-label col-sm-2 actopic">Cover Photo</p>
-                <div className="col-sm-10">
+                <div className="col-sm-9">
                 <DropzoneComponent style={{width: 100 , height : 25}} config={componentConfig}
                     eventHandlers={eventHandlers}
                     djsConfig={djsConfig} />
@@ -219,31 +219,31 @@ class EditProfile extends React.Component{
               </div>
                     <div className="form-group">
                       <p className="control-label col-sm-2 actopic">First name </p>
-                      <div className="col-sm-10">
+                      <div className="col-sm-9">
                         <input type="text" className="form-control" onChange={this.setName} value={this.state.name} placeholder="First Name" />
                       </div>
                     </div>
                     <div className="form-group">
                       <p className="control-label col-sm-2 actopic">Last name </p>
-                      <div className="col-sm-10">
+                      <div className="col-sm-9">
                         <input type="text" className="form-control" onChange={this.setSurname} value={this.state.surname} placeholder="Last Name" />
                       </div>
                     </div>
                     <div className="form-group">
                       <p className="control-label col-sm-2 actopic">Email </p>
-                      <div className="col-sm-10">
+                      <div className="col-sm-9">
                         <input type="tel" className="form-control" onChange={this.setEmail} value={this.state.email} placeholder="Email" />
                       </div>
                     </div>
                     <div className="form-group">
                       <p className="control-label col-sm-2 actopic">Telephone </p>
-                      <div className="col-sm-10">
+                      <div className="col-sm-9">
                         <input type="tel" className="form-control" onChange={this.setTel} value={this.state.tel} placeholder="Telephone No." />
                       </div>
                     </div>
                     <div className="form-group">
                       <p className="control-label col-sm-2 actopic">Nationality </p>
-                      <div className="col-sm-10">
+                      <div className="col-sm-9">
                         <input type="tel" className="form-control" onChange={this.setNation} value={this.state.nation} placeholder="Your Nationality" />
                       </div>
                     </div>

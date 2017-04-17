@@ -359,20 +359,20 @@ class CreateActivity extends React.Component {
                           <form className="form-horizontal">
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Activity name </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <input type="text" className="form-control" onChange={this.setName} placeholder="Activity name" />
                               </div>
                             </div>
 
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Activity Description </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <textarea className="form-control" onChange={this.setDesc} placeholder="description here" />
                               </div>
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Cover image </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <DropzoneComponent config={componentConfig}
                                   eventHandlers={eventHandlers}
                                   djsConfig={djsConfig} />
@@ -380,7 +380,7 @@ class CreateActivity extends React.Component {
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Province </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <select onChange={this.setCity} className="form-control">
                                   {
                                     city.map((value, index) => {
@@ -394,13 +394,13 @@ class CreateActivity extends React.Component {
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Location </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <input type="text" className="form-control" onChange={this.setLocation} placeholder="location here" />
                               </div>
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Category </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <select onChange={this.setType} className="form-control">
                                   {
                                     cate.map((value, index) => {

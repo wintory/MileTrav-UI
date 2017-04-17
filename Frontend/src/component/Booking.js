@@ -20,7 +20,7 @@ class Booking extends React.Component {
                 <h4>Booking Details</h4>
               </div>
               <div className="bookDetailsInfo">
-                <img src="img/booking/booking.png" alt="image"/>
+                <img src="https://firebasestorage.googleapis.com/v0/b/miletrav-4f855.appspot.com/o/activity_cover%2FKMUTT%20Cheer_activity_cover.jpg?alt=media&token=9ed81f42-e156-494f-aba3-15791e31bbfc" alt="image"/>
                 <div className="infoArea">
                   <h3>Activity Name : AAA</h3>
                   <ul className="list-unstyled">
