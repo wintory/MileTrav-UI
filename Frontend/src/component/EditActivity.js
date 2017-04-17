@@ -323,7 +323,7 @@ class EditActivity extends React.Component {
       return (
         <div className="main-wrapper b">
           <Home />
-          <section className="mainContentSection singlePackage b">
+          <section className="margintop">
 
             <div align="center" className=" loading">
               <Loading type='bars' color="#26A65B" style={{ width: 200, height: 100 }} />
@@ -338,10 +338,10 @@ class EditActivity extends React.Component {
       return (
         <div className="main-wrapper b">
           <Home />
-          <section className="mainContentSection singlePackage b">
+          <section className="margintop">
             <div className="container b createac">
-              <div className="col-sm-12 col-xs-12">
-                <div className="portlet light well">
+              <div className="col-sm-12 col-xs-12 well">
+                <div className="portlet ">
                   <div className="portlet-title">
                     <center>
                       <div className="caption font-kademy">
@@ -359,20 +359,20 @@ class EditActivity extends React.Component {
                           <form className="form-horizontal">
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Activity name </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <input type="text" className="form-control" onChange={this.setName} placeholder="Activity name" />
                               </div>
                             </div>
 
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Activity Description </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <textarea className="form-control" onChange={this.setDesc} placeholder="description here" />
                               </div>
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Cover image </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <DropzoneComponent config={componentConfig}
                                   eventHandlers={eventHandlers}
                                   djsConfig={djsConfig} />
@@ -380,7 +380,7 @@ class EditActivity extends React.Component {
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Province </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <select onChange={this.setCity} className="form-control">
                                   {
                                     city.map((value, index) => {
@@ -394,13 +394,13 @@ class EditActivity extends React.Component {
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Location </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <input type="text" className="form-control" onChange={this.setLocation} placeholder="location here" />
                               </div>
                             </div>
                             <div className="form-group">
                               <p className="control-label col-sm-2 actopic">Category </p>
-                              <div className="col-sm-10">
+                              <div className="col-sm-9">
                                 <select onChange={this.setType} className="form-control">
                                   {
                                     cate.map((value, index) => {
@@ -524,10 +524,10 @@ class EditActivity extends React.Component {
                               </div>
                             </div>
                             <div className="col-sm-3" />
-                            <div className="col-sm-2" />
+                            <div className="col-sm-1" />
                             <div className="form-group">
-                              <div className="col-sm-2">
-                                <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.create}>Create Activity</button>
+                              <div className="col-sm-3">
+                                <button type="button" className="btn btn-block buttonCustomPrimary" >Update Activity</button>
                               </div>
                             </div>
                           </form>

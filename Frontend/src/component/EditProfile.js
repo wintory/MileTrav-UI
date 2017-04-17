@@ -195,10 +195,10 @@ class EditProfile extends React.Component{
     return(
       <div className="main-wrapper b">
         <Home />
-        <section className="mainContentSection singlePackage b">
+        <section className="margintop">
         <div className="container b" >
-          <div className="col-sm-12 col-xs-12 ">
-          <div className="portlet light well">
+          <div className="col-sm-12 col-xs-12 well">
+                <div className="portlet ">
             <div className="portlet-title">
                 <center>
                    <img className="img-circle img-responsive img-hovers" src={this.state.cover_photo == ""? '/img/cover/incognito.png': this.state.cover_photo} style={{padding: 10,marginBottom: 50,height: 140 , width : 140  }}/>

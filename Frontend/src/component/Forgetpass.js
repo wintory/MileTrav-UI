@@ -9,7 +9,7 @@ class Forgetpass extends Component {
     return (
        <div className="main-wrapper b">
           <Home />
-          <section className="mainContentSection singlePackage b">
+          <section className="margintop">
             <div className="container b createac">
               <div className="col-sm-12 col-xs-12">
                 <div className="portlet light well">

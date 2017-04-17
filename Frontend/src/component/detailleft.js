@@ -9,7 +9,7 @@ class Detail extends React.Component {
                 <div className="well">
                     <div className="row">
                         <div className="col-sm-12">
-                            <h3>{this.props.activity_name}</h3> 
+                            <h3>{this.props.activity_name} <Link to="/WishList"><span className="glyphicon glyphicon-bookmark"/></Link></h3>
                             <h4>Information</h4>
                             <dl className="dl-horizontal">
                                 <dt><p className="actopic">Host</p></dt>

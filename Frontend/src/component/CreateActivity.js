@@ -323,7 +323,7 @@ class CreateActivity extends React.Component {
       return (
         <div className="main-wrapper b">
           <Home />
-          <section className="mainContentSection singlePackage b">
+          <section className="margintop">
 
             <div align="center" className=" loading">
               <Loading type='bars' color="#26A65B" style={{ width: 200, height: 100 }} />
@@ -338,10 +338,10 @@ class CreateActivity extends React.Component {
       return (
         <div className="main-wrapper b">
           <Home />
-          <section className="mainContentSection singlePackage b">
+          <section className="margintop">
             <div className="container b createac">
-              <div className="col-sm-12 col-xs-12">
-                <div className="portlet light well">
+              <div className="col-sm-12 col-xs-12 well">
+                <div className="portlet ">
                   <div className="portlet-title">
                     <center>
                       <div className="caption font-kademy">
@@ -524,9 +524,9 @@ class CreateActivity extends React.Component {
                               </div>
                             </div>
                             <div className="col-sm-3" />
-                            <div className="col-sm-2" />
+                            <div className="col-sm-1" />
                             <div className="form-group">
-                              <div className="col-sm-2">
+                              <div className="col-sm-3">
                                 <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.create}>Create Activity</button>
                               </div>
                             </div>

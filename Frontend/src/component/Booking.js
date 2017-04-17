@@ -11,10 +11,10 @@ class Booking extends React.Component {
 
       <div className="main-wrapper b">
         <Home />
-         <section className="mainContentSection singlePackage b">
+         <section className="margintop">
       <div className="container component">
         <div className="row">
-          <div className="col-sm-4 col-sm-push-8 col-xs-12 well">
+          <div className="col-sm-4 col-sm-push-9 col-xs-12 well">
             <aside>
               <div className="infoTitle">
                 <h4>Booking Details</h4>
@@ -35,7 +35,7 @@ class Booking extends React.Component {
               </div>
             </aside>
           </div>
-          <div className="col-sm-7 col-sm-pull-4 col-xs-12 well">
+          <div className="col-sm-8 col-sm-pull-5 col-xs-12 well">
             <div className="infoTitle">
               <h4>billing address</h4>
             </div>
@@ -43,15 +43,15 @@ class Booking extends React.Component {
               <form action="" method="POST" role="form" className="form">
                 <div className="row">
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" >First Name</p>
+                    <p className="control-label col-sm-6 paytopic" >First Name</p>
                       <input type="text" className="form-control" placeholder="input First Name" />
                   </div>
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" for="">Last Name</p>
+                    <p className="control-label col-sm-6 paytopic" for="">Last Name</p>
                     <input type="text" className="form-control" id="" placeholder="input Last Name"/>
                   </div>
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" for="">Phone</p>
+                    <p className="control-label col-sm-6 paytopic" for="">Phone</p>
                     <input type="text" className="form-control" id="" placeholder="input Your Phone"/>
                   </div>
 
@@ -61,15 +61,15 @@ class Booking extends React.Component {
                     </div>
                   </div>
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" for="">Card Name</p>
+                    <p className="control-label col-sm-6 paytopic" for="">Card Name</p>
                     <input type="text" className="form-control" id="" placeholder="input Your Card Name"/>
                   </div>
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" for="">Card Number</p>
+                    <p className="control-label col-sm-6 paytopic" for="">Card Number</p>
                     <input type="text" className="form-control" id="" placeholder="input Your Card Number"/>
                   </div>
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" for="">CVV</p>
+                    <p className="control-label col-sm-6 paytopic" for="">CVV</p>
                     <input type="text" className="form-control" id="" placeholder="input Your Card CVV"/>
                   </div>
                    <div className="form-group col-sm-6 col-xs-12">
@@ -77,12 +77,12 @@ class Booking extends React.Component {
                     <input type="text" className="form-control" id="" placeholder="input Your Expiration Date"/>
                   </div>
                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-5 paytopic" for="" className="blankLabel"></p>
+                    <p className="control-label col-sm-6 paytopic" for="" className="blankLabel"></p>
                     <ul className="list-inline">
-                      <li><a href="#"><img src="img/booking/master-card.png" alt="image"/></a></li>
-                      <li><a href="#"><img src="img/booking/omise.png" style={{width:66,height:45}}alt="image"/></a></li>
-                      <li><a href="#"><img src="img/booking/visa.png" alt="image"/></a></li>
-                      <li><a href="#"><img src="img/booking/paypal.png" alt="image"/></a></li>
+                      <li><a href="#"><img src="img/booking/master-card.png" alt="image" style={{width:60,height:45}}/></a></li>
+                      <li><a href="#"><img src="img/booking/omise.png" style={{width:60,height:45}}alt="image"/></a></li>
+                      <li><a href="#"><img src="img/booking/visa.png" alt="image" style={{width:60,height:45}}/></a></li>
+                      <li><a href="#"><img src="img/booking/paypal.png" alt="image" style={{width:60,height:45}}/></a></li>
                     </ul>
                   </div>
                       <div className="col-sm-1"/>
