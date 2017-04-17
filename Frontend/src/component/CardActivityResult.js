@@ -9,9 +9,10 @@ class CardActivityResult extends React.Component{
 
       <div className="col-md-4 col-xs-12">
         <div className="thumbnail">
+           <Link to={'/activity/'+this.props.name}>
             <img src={this.props.pic} alt="deal-image" style={{height: 340}}/>
-            <Link to={'/activity/'+this.props.name} className="pageLink"></Link>
-            <div className="caption margintop " style={{height: 100}}>
+           </Link>
+            <div className="caption well" style={{height: 100}}>
               <h5><Link to={'/activity/'+this.props.name} className="captionTitle">{this.props.name}</Link></h5>
               <p style={{color: '#262a2e'}}><span className="glyphicon glyphicon-pushpin"/> Location : {this.props.province}</p>
               <p style={{color: '#262a2e'}}><span className="glyphicon glyphicon-paperclip"/> Description :  {this.props.desc}</p>

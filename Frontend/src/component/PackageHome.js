@@ -65,16 +65,6 @@ method: 'GET' }).then(
      </div>
 
 
-   <div className="row isotopeContainer">
-       {
-         this.state.activity.map((value , index) => {
-           return(
-                  <PopularActivities name={value.activity_name} cover={value.cover_photo} key={index} province={value.province} />
-           
-           )
-         })
-       }
-   </div>
 </section>
  <Footer />
 </div>

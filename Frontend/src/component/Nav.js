@@ -291,18 +291,29 @@ class Nav extends React.Component {
               <Link to="/" className="navbar-brand"></Link>
             </div>
 
+
             <div className="collapse navbar-collapse marg" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
-                <li className="dropdown singleDrop">
-                  <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span className="glyphicon glyphicon-user"/> {this.state.username}</Link>
-                  <ul className="dropdown-menu dropdown-menu-left">
+
+              <li className="dropdown singleDrop">
+                  <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span className="glyphicon glyphicon-plane"/>Activity</Link>
+                  <ul className="dropdown-menu">
                     <li><Link to="/Dashboard"><span className="glyphicon glyphicon-stats"/> Dashboard</Link></li>
-                    <li><Link to="/EditProfile"><span className="	glyphicon glyphicon-wrench"/> Edit Profile</Link></li>
                     <li><Link to={"/CreateActivity/" + 1}><span className="glyphicon glyphicon-file"/> Create Activity</Link></li>
                     <li><Link to="/Wishlist"><span className="glyphicon glyphicon-bookmark"/> Wishlist</Link></li>
                   </ul>
                 </li>
-                <li><Link onClick={this.logout}><span className="glyphicon glyphicon-log-out"/>Logout</Link></li>
+
+                <li className="dropdown singleDrop">
+                  <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span className="glyphicon glyphicon-user"/> {this.state.username}</Link>
+                  <ul className="dropdown-menu">
+                    <li><Link to="/EditProfile"><span className="	glyphicon glyphicon-wrench"/> Edit Profile</Link></li>
+                    <li><Link to="/Analytic"><span className="glyphicon glyphicon-eye-open"/> Analytic</Link></li>
+                    <li><Link to="/Verify"><span className="glyphicon glyphicon-qrcode"/>  Verify Account</Link></li>
+                    <li><Link onClick={this.logout}><span className="glyphicon glyphicon-log-out"/> Logout</Link></li>
+                  </ul>
+                </li>
+
               </ul>
             </div>
           </div>
