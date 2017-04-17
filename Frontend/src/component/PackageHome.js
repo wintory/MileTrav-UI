@@ -5,8 +5,7 @@ import {Link} from 'react-router'
 import {host} from './host'
 import Home from './home'
 import Footer from './footer'
-import HomeCard from './homecard'
-import ActivityHome from './ActivityHome'
+import ActivityHomeCard from './ActivityHomeCard'
 import Recommend from './Recommend'
 import GalleryHome from './GalleryHome'
 
@@ -45,9 +44,9 @@ method: 'GET' }).then(
          </div>  
        </div>
 
-       <ActivityHome pic="http://slovakia-explorer.com/uploads/tours/winter-activity-holiday-high-tatras/_tourThumbnail/winter-walking-snowshoeing-tatras.jpg"/>
-       <ActivityHome pic="https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329"/>
-       <ActivityHome pic="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/050/original/become-org.png?1488169379"/>
+       <ActivityHomeCard pic="http://slovakia-explorer.com/uploads/tours/winter-activity-holiday-high-tatras/_tourThumbnail/winter-walking-snowshoeing-tatras.jpg"/>
+       <ActivityHomeCard pic="https://p-u.popcdn.net/events/covers/000/001/648/original/WEB_Cover_1702x800.jpg?1490352329"/>
+       <ActivityHomeCard pic="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/050/original/become-org.png?1488169379"/>
             <div className="col-sm-6 col-xs-12 margintop">
        <div className="bgwhite">
          <img className="component" src="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/002/original/UPC_EV_1_LINE-1.jpg?1485235233"/>

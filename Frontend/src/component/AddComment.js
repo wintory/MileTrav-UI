@@ -18,8 +18,8 @@ class Comment extends React.Component {
                             </div>
                         </div>
                         <div className="form-group">
-                            <div className="col-sm-offset-2 col-sm-10">                    
-                                <button className="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span className="glyphicon glyphicon-send"></span> Summit comment</button>
+                            <div className="col-sm-offset-2 col-sm-4">                    
+                                <button type="button" className="btn btn-block buttonCustomPrimary" >Add Comment</button>
                             </div>
                         </div>            
                     </form>

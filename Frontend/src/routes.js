@@ -8,6 +8,7 @@ import CreateActivity from './component/CreateActivity';
 import EditProfile from './component/EditProfile'
 import Booking from './component/Booking'
 import EditActivity from './component/EditActivity'
+
 export default (
         <Route>
                 <Route path="/" component={PackageHome}> </Route>
