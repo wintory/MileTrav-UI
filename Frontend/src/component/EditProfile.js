@@ -196,7 +196,7 @@ class EditProfile extends React.Component{
       <div className="main-wrapper b">
         <Home />
         <section className="margintop">
-        <div className="container b" >
+        <div className="container b createac" >
           <div className="col-sm-12 col-xs-12 well">
                 <div className="portlet ">
             <div className="portlet-title">
@@ -250,8 +250,7 @@ class EditProfile extends React.Component{
                     <div className="form-group">
                        <div className="col-sm-2"/>    
                        <div className="col-sm-2"/>
-                        <div className="col-sm-1"/>
-                      <div className="col-sm-2">
+                      <div className="col-sm-4">
                         <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.update}>Update Profile</button>
                       </div>
                     </div>

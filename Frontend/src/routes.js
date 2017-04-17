@@ -10,7 +10,7 @@ import Booking from './component/Booking'
 import EditActivity from './component/EditActivity'
 import Verify from './component/Verify'
 import WishList from './component/WishList'
-
+import Analytic from './component/Analytic'
 export default (
         <Route>
                 <Route path="/" component={PackageHome}> </Route>
@@ -23,6 +23,6 @@ export default (
                 <Route path="/EditActivity" component={EditActivity}/>
                 <Route path="/Verify" component={Verify}/>
                 <Route path="/WishList" component={WishList}/>
-
+                <Route path="/Analytic" component={Analytic}/>
         </Route>
 )
