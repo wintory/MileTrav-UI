@@ -88,10 +88,22 @@ server.route({
   },
   handler : function(request, reply){
       var pv = encodeURIComponent(request.params.pv)
-      connection.query('select * from tbl_activity where province = ?' , [pv])
+      var min = request.query.min || 0;
+      var max = request.query.max || 4000;
+      var cate = request.query.cate || '%';
+      if(cate === 'Any'){
+        cate = '%'
+      }
+      console.log(min)
+      console.log(max)
+      console.log(cate)
+
+      connection.query('select * from tbl_activity '+ 
+      'where province = ? and type like ? and (price between ? and ?)' , [pv , cate, min , max])
       .then(function(rows){
           reply(rows)
       }).catch(function(err){
+          console.log(err)
           reply(err)
       })
   }
@@ -176,6 +188,22 @@ server.route({
   handler: (request, reply) => {
     console.log(request.payload.name)
     reply(request.auth.credentials);
+  }
+});
+
+server.route({
+  method: 'POST',
+  path: '/photo',
+  handler: (request, reply) => {
+    var url =  request.payload.url;
+    var id = request.payload.aid;
+    connection.query('insert into tbl_photo_activity(photo_path , activity_id) values(?,?)', [url , id])
+    .then(function(res){
+        reply(res)
+    })
+    .catch(function(err){
+      reply(err)
+    })
   }
 });
 
@@ -306,7 +334,6 @@ server.route({
   handler: function(req , res){
         connection.query("select * from tbl_activity limit 6"
       ).then(function(results){
-        console.log(results)
         res(results)
       }).catch(function(err){
           res(err)
@@ -342,11 +369,11 @@ server.route({
         var tick = req.payload.tickets
         var insertId = req.payload.aid
         for(var i = 0 ; i < tick.length ; i++){
-          var x = [insertId , tick[i].name, tick[i].price]
+          var x = [insertId , tick[i].name, tick[i].price , tick[i].amount]
           tickets.push(x)
         }
         console.log(tickets)
-        connection.query("insert into tbl_tickets(activity_id , ticket_name , price) values ?" , [tickets]).then(function(result){
+        connection.query("insert into tbl_tickets(activity_id , ticket_name , price, amount) values ?" , [tickets]).then(function(result){
             res(result);
         }).catch(function(err){
           console.log(err);
@@ -380,6 +407,55 @@ server.route({
 
 
 server.route({
+  method: 'GET',
+  path: '/api/photo/{id}',
+  config: {
+    auth: false
+  },
+  handler: function(req , res){
+    var id =  encodeURIComponent(req.params.id)
+    connection.query('select * from tbl_photo_activity where activity_id = ?', [id])
+    .then(function(r){
+      console.log(r)
+      res(r)
+    }).catch(function(err){
+      res(err)
+    })
+  }
+})
+
+
+server.route({
+  method: 'PUT',
+  path: '/api/bank_account',
+  handler: function(req , res){
+    var username = req.payload.username
+    var acc = req.payload.bank_acc
+    connection.query("update tbl_user set bank_account = ? where username = ?" , [acc , username]).then(function(result){
+      res(result)
+    }).catch((err)=>{
+      console.log(err)
+      res(err)
+    })
+  }
+})
+
+server.route({
+  method: 'PUT',
+  path: '/api/citizen',
+  handler: function(req , res){
+    var username = req.payload.username
+    var citizen = req.payload.citizen
+    connection.query("update tbl_user set citizen = ? where username = ?" , [citizen , username]).then(function(result){
+      res(result)
+    }).catch((err)=>{
+      console.log(err)
+      res(err)
+    })
+  }
+})
+
+server.route({
   method: 'POST',
   path: '/api/activities',
 
@@ -394,9 +470,10 @@ server.route({
         var type = req.payload.type
         var status = "opened"
         var owner = req.payload.owner
+        var price = req.payload.price
         //console.log(priceArr)
-        connection.query("insert into tbl_activity(activity_name , activity_desc ,province , location,type , status , owner) values(?,? , ? , ? , ? , ? , ?)",
-         [name , desc  ,province , location , type , status , owner] ).then(function(result){
+        connection.query("insert into tbl_activity(activity_name , activity_desc ,province , location,type , status , owner , price) values(?,? , ? , ? , ? , ? , ? , ?)",
+         [name , desc  ,province , location , type , status , owner, price] ).then(function(result){
            res(result);
         //  console.log(result.insertId)
         /*var priceArr = [];
@@ -433,9 +510,51 @@ server.route({
 
 
 
+
+server.route({
+  method: 'POST',
+  path: '/api/operating_day',
+  handler: function(req , res){
+      //var payload = req.payload
+      console.log("kuyyy")
+        var aid = req.payload.aid
+        var operating = req.payload.operating
+        var date = []
+         for(var i = 0 ; i < operating.length ; i++){
+          var x = [aid , operating[i]]
+          date.push(x)
+        }
+        //console.log(priceArr)
+        connection.query("insert into tbl_operating_day(activity_id , day_of_week) values ?",[date]).then(function(result){
+           console.log(result)
+           res(result);
+      }).catch(function(err){
+          res(err)
+        })
+  }
+})
+
+server.route({
+  method: 'GET',
+  path: '/api/operating_day/{aid}',
+  handler: function(req , res){
+        var aid = req.params.aid
+        connection.query("select * from tbl_operating_day where activity_id =  ?",[aid]).then(function(result){
+        res(result);
+      }).catch(function(err){
+          console.log(err)
+          res(err)
+      })
+  }
+})
+
+
+
 server.start((err) => {
   if(err){
     throw(err)
   }
   console.log("Running API SERVER on port 8000")
 });
+
+module.exports = server

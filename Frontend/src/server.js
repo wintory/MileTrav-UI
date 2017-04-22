@@ -35,12 +35,3 @@ var server = http.createServer(app).listen(3000 , function(){
   console.log("senior project running on port 3000")
 })
 
-/*var server = app.listen(3000 , function(){
-  console.log('senior project running on port 3000')
-})*/
-
-/*app.get('*' , function(req , res){
-  res.render('index.handlebars' , {
-      markup: ReactDOMServer.renderToString(React.createElement(Page1))
-  })
-})*/

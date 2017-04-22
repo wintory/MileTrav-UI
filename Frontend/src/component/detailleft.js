@@ -1,8 +1,33 @@
 import React from 'react'
 import Tickets from './Tickets'
 import Schedule from './Schedule'
-import {Link} from 'react-router'
+import {host} from './host'
+import HostDetail from './HostDetail'
+import OperatingDay from './OperatingDay'
+import 'whatwg-fetch'
 class Detail extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state ={
+            img : []
+        }
+    }
+
+    componentDidMount() {
+        fetch(host+'api/photo/'+this.props.aid, {method: 'GET'})
+        .then((res)=>{
+            return res.json()
+        }).then((res)=>{
+            //console.log(res)
+           this.setState({
+               img : res
+           })     
+        })
+          
+    }
+
+
     render() {
         return (
             <div >
@@ -30,6 +55,13 @@ class Detail extends React.Component {
                         <div className="col-sm-12">
                             <h4>Description</h4>
                             <p>{this.props.activity_desc}</p>
+                             {this.state.img.length > 0 &&
+                                this.state.img.map((value , index)=>{
+                                    return(
+                                        <img src={value.photo_path} style={{width: 575, height: 575 , marginBottom: 20, marginRight: 100 , marginLeft: 100}} key={index}/>
+                                    )
+                                })      
+                            }
                         </div>
                     </div>
                     </div>

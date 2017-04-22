@@ -9,6 +9,7 @@ class DetailRight extends React.Component {
                 <div className="well">
                     <div className="row">
                         <div className="col-sm-12">
+                            <OperatingDay aid={this.props.aid}/>
                             <h3>{this.props.activity_name}</h3> 
                             <br />
                             <Tickets aid={this.props.aid} />

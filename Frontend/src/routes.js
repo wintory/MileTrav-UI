@@ -10,7 +10,10 @@ import Booking from './component/Booking'
 import EditActivity from './component/EditActivity'
 import Verify from './component/Verify'
 import WishList from './component/WishList'
-import Analytic from './component/Analytic'
+import Manage from './component/Manage'
+import UploadPhotoActivity from './component/UploadPhotoActivity'
+import Setting from './component/Setting'
+
 export default (
         <Route>
                 <Route path="/" component={PackageHome}> </Route>
@@ -23,6 +26,8 @@ export default (
                 <Route path="/EditActivity" component={EditActivity}/>
                 <Route path="/Verify" component={Verify}/>
                 <Route path="/WishList" component={WishList}/>
-                <Route path="/Analytic" component={Analytic}/>
+                <Route path="/Manage" component={Manage}/>
+                <Route path="/Setting" component={Setting} ></Route>
+                <Route path="/UploadPhotoActivity/:activity_name" component={UploadPhotoActivity}></Route>
         </Route>
 )

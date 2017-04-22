@@ -44,6 +44,14 @@ method: 'GET' }).then(
          </div>  
        </div>
 
+        {
+         this.state.activity.map((value , index) => {
+           return(
+                  <ActivityHomeCard name={value.activity_name} pic={value.cover_photo} key={index} province={value.province} />
+           )
+         })
+       }
+
        <ActivityHomeCard pic="http://slovakia-explorer.com/uploads/tours/winter-activity-holiday-high-tatras/_tourThumbnail/winter-walking-snowshoeing-tatras.jpg"/>
        <ActivityHomeCard pic="https://www.businessblogshub.com/wp-content/uploads/2016/12/event.jpg"/>
        <ActivityHomeCard pic="https://p-u.popcdn.net/content_blocks/backgrounds/000/000/050/original/become-org.png?1488169379"/>

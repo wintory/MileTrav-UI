@@ -6,10 +6,10 @@ import Footer from './Footer'
 import DropzoneComponent from 'react-dropzone-component/lib/react-dropzone';
 import {host} from './host'
 import firebase from 'firebase'
-
+import Sidemenu from './Sidemenu'
 class EditProfile extends React.Component{
 
-          constructor(props){
+      constructor(props){
             super(props)
             this.state ={
               name: "",
@@ -36,14 +36,7 @@ class EditProfile extends React.Component{
             if (localStorage.getItem("username") == null || localStorage.getItem("token") == null) {
                 browserHistory.replace("/login")
             }else{
-              var config = {
-                  apiKey: "AIzaSyDu0FY6mCxbAek2ZWq-z8WcQvnR0IZJO4Q",
-                  authDomain: "miletrav-4f855.firebaseapp.com",
-                  databaseURL: "https://miletrav-4f855.firebaseio.com",
-                  storageBucket: "miletrav-4f855.appspot.com",
-                  messagingSenderId: "469316737513"
-                };
-              firebase.initializeApp(config);
+                
               fetch(host+'api/profile/'+localStorage.getItem('username') , {
                 method: 'GET',
                  headers: {
@@ -69,7 +62,6 @@ class EditProfile extends React.Component{
                   })
               })
             }
-
           }
 
           fetchData(){
@@ -137,8 +129,8 @@ class EditProfile extends React.Component{
             e.preventDefault()
             console.log(this.state)
             var img = localStorage.getItem("username")+"_cover."+this.state.type_file
-            firebase.storage().ref('profile_cover/'+img).put(this.state.cover).then((snapshot)=>{
-              return firebase.storage().ref('profile_cover'+'/'+img).getDownloadURL()
+            firebaseConfig.storage().ref('profile_cover/'+img).put(this.state.cover).then((snapshot)=>{
+              return firebaseConfig.storage().ref('profile_cover'+'/'+img).getDownloadURL()
             }).then((url)=>{
                 this.setState({
                   cover_photo : url
@@ -163,18 +155,16 @@ class EditProfile extends React.Component{
             }).then((res)=>{
               return res.json()
             }).then((res)=>{
-                return  this.fetchData();
+               this.fetchData();
             }).catch((err)=>{
               console.log(err);
             })
           }
 
 
-
   render(){
 
-
-    var componentConfig = {
+  var componentConfig = {
         iconFiletypes: ['.jpg', '.png'],
         showFiletypeIcon: true,
         postUrl: 'no-url',
@@ -191,14 +181,16 @@ class EditProfile extends React.Component{
         })
       }
     }
-
     return(
-      <div className="main-wrapper b">
+     <div className="main-wrapper b">
         <Home />
         <section className="margintop">
-        <div className="container b createac" >
-          <div className="col-sm-12 col-xs-12 well">
-                <div className="portlet ">
+           <div className="col-sm-3 well slidemenu">
+            <Sidemenu />
+            </div>
+        <div className="b createac" >
+          <div className="col-sm-8 well">
+          <div className="portlet ">
             <div className="portlet-title">
                 <center>
                    <img className="img-circle img-responsive img-hovers" src={this.state.cover_photo == ""? '/img/cover/incognito.png': this.state.cover_photo} style={{padding: 10,marginBottom: 50,height: 140 , width : 140  }}/>

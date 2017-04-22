@@ -4,7 +4,7 @@ import { Router, Link, browserHistory } from 'react-router'
 import ModalLogin from 'react-modal'
 import ModalRegister from 'react-modal'
 import { host } from './Host'
-
+import 'whatwg-fetch'
 
 const appElement = document.getElementById('your-app-element');
 
@@ -74,63 +74,60 @@ class Nav extends React.Component {
     });
   }
 
-  register() {
-    console.log('sending');
+  register(){
+                      console.log('sending');
 
-    fetch(host + "api/user/register", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password,
-        name: this.state.name,
-        surname: this.state.surname
-      })
-    }).then((res) => {
-      console.log("res.json()");
-      return res.json()
-    }
-      ).then(
-      (res) => {
-        console.log(res);
-        localStorage.setItem("token", res.token);
-        localStorage.setItem("username", res.username);
-        browserHistory.push('/');
+                        fetch(host+"api/user/register" , {
+                          method: 'POST',
+                           headers: {
+                             'Content-Type': 'application/json',
+                              'Accept': 'application/json'
+                           },
+                           body: JSON.stringify({
+                                username: this.state.username,
+                                password: this.state.password,
+                                name: this.state.name,
+                                surname : this.state.surname
+                              })
+                        }).then((res) =>{
+                          console.log("res.json()");
+                            return res.json()
+                        }
+                        ).then(
+                          (res) => {
+                            console.log(res);
+                            localStorage.setItem("token" , res.token);
+                            localStorage.setItem("username" , res.username);
+                            browserHistory.push('/');
+                          }
+                        ).catch((err)=>{
+                          console.log(err)
+                        })
+                    }
+
+  login(e){
+        e.preventDefault();
+        fetch(host+"api/user/login" , {
+          method: 'POST',
+           headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+           },
+           body: JSON.stringify({
+                username: this.state.username,
+                password: this.state.password,
+              })
+        }).then( (res) => {
+          return res.json()
+        }).then((res) => {
+          localStorage.setItem("token" , res.token);
+          localStorage.setItem("username" , res.username);
+          browserHistory.push('/');
+        }).catch((err) =>{
+          console.log(err)
+        })
+        location.reload()
       }
-      ).catch((err) => {
-        console.log(err)
-      })
-  }
-
-  login(e) {
-    console.log(this.state.username)
-    console.log(this.state.password)
-    e.preventDefault();
-    fetch(host + "api/user/login", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password,
-      })
-    }).then((res) => {
-      return res.json()
-    }).then((res) => {
-      localStorage.setItem("token", res.token);
-      localStorage.setItem("username", res.username);
-      browserHistory.push('/');
-      console.log("success")
-    }).catch((err) => {
-      console.log(err)
-    })
-    location.reload();
-  }
 
   static contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -308,8 +305,8 @@ class Nav extends React.Component {
                 <li className="dropdown singleDrop">
                   <Link className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span className="glyphicon glyphicon-user"/> {this.state.username}</Link>
                   <ul className="dropdown-menu">
-                    <li><Link to="/EditProfile"><span className="	glyphicon glyphicon-wrench"/> Edit Profile</Link></li>
-                    <li><Link to="/Analytic"><span className="glyphicon glyphicon-eye-open"/> Analytic</Link></li>
+                    <li><Link to="/EditProfile"><span className="	glyphicon glyphicon-wrench"/> Profile</Link></li>
+                    <li><Link to="/Manage"><span className="glyphicon glyphicon-eye-open"/> Manage System</Link></li>
                     <li><Link to="/Verify"><span className="glyphicon glyphicon-qrcode"/>  Verify Account</Link></li>
                     <li><Link onClick={this.logout}><span className="glyphicon glyphicon-log-out"/> Logout</Link></li>
                   </ul>
