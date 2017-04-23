@@ -8529,32 +8529,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var PackageHome = function (_React$Component) {
   _inherits(PackageHome, _React$Component);
 
-  function PackageHome(props) {
+  function PackageHome() {
     _classCallCheck(this, PackageHome);
 
-    var _this = _possibleConstructorReturn(this, (PackageHome.__proto__ || Object.getPrototypeOf(PackageHome)).call(this, props));
-
-    _this.state = {
-      activity: []
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (PackageHome.__proto__ || Object.getPrototypeOf(PackageHome)).apply(this, arguments));
   }
 
   _createClass(PackageHome, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      fetch(_host.host + 'api/activities/popular', {
-        method: 'GET' }).then(function (res) {
-        return res.json();
-      }).then(function (res) {
-        _this2.setState({
-          activity: res
-        });
-      });
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -8577,10 +8558,6 @@ var PackageHome = function (_React$Component) {
                 _react2.default.createElement(_Recommend2.default, { topic: '', outborder: 'col-sm-12 well' })
               )
             ),
-            this.state.activity.map(function (value, index) {
-              return _react2.default.createElement(_ActivityHomeCard2.default, { name: value.activity_name, pic: value.cover_photo, key: index, province: value.province });
-            }),
-            _react2.default.createElement(_ActivityHomeCard2.default, { pic: 'http://slovakia-explorer.com/uploads/tours/winter-activity-holiday-high-tatras/_tourThumbnail/winter-walking-snowshoeing-tatras.jpg' }),
             _react2.default.createElement(_ActivityHomeCard2.default, { pic: 'https://www.businessblogshub.com/wp-content/uploads/2016/12/event.jpg' }),
             _react2.default.createElement(_ActivityHomeCard2.default, { pic: 'https://p-u.popcdn.net/content_blocks/backgrounds/000/000/050/original/become-org.png?1488169379' }),
             _react2.default.createElement(
@@ -12630,6 +12607,10 @@ var _RecommendCard = __webpack_require__(235);
 
 var _RecommendCard2 = _interopRequireDefault(_RecommendCard);
 
+__webpack_require__(9);
+
+var _host = __webpack_require__(7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12641,13 +12622,33 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Recommend = function (_React$Component) {
   _inherits(Recommend, _React$Component);
 
-  function Recommend() {
+  function Recommend(props) {
     _classCallCheck(this, Recommend);
 
-    return _possibleConstructorReturn(this, (Recommend.__proto__ || Object.getPrototypeOf(Recommend)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Recommend.__proto__ || Object.getPrototypeOf(Recommend)).call(this, props));
+
+    _this.state = {
+      activity: []
+    };
+    return _this;
   }
 
   _createClass(Recommend, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch(_host.host + 'api/activities/popular', {
+        method: 'GET'
+      }).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        _this2.setState({
+          activity: res
+        });
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -12670,10 +12671,9 @@ var Recommend = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { role: 'tabpanel', className: 'tab-pane active', id: 'recent' },
-                _react2.default.createElement(_RecommendCard2.default, null),
-                _react2.default.createElement(_RecommendCard2.default, null),
-                _react2.default.createElement(_RecommendCard2.default, null),
-                _react2.default.createElement(_RecommendCard2.default, null)
+                this.state.activity.map(function (value, index) {
+                  return _react2.default.createElement(_RecommendCard2.default, { name: value.activity_name, pic: value.cover_photo, key: index, province: value.province });
+                })
               )
             )
           )
@@ -19020,7 +19020,11 @@ var ActivityHome = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'bgwhite' },
-          _react2.default.createElement('img', { className: 'component', src: this.props.pic, style: { height: 210 } })
+          _react2.default.createElement(
+            _reactRouter.Link,
+            { to: '/activity/' + this.props.name },
+            _react2.default.createElement('img', { className: 'component', src: this.props.pic, style: { height: 210 } })
+          )
         )
       );
     }
@@ -24330,32 +24334,36 @@ var RecommendCard = function (_React$Component) {
                     { className: 'media col-sm-9', style: { height: 120 } },
                     _react2.default.createElement(
                         _reactRouter.Link,
-                        { to: '#', className: 'media-left' },
-                        _react2.default.createElement('img', { className: 'media-object', src: 'http://www.thaiticketmajor.com/concert/images/flo-rida/poster.jpg', style: { width: 100, height: 100 }, alt: 'Image' })
+                        { to: '/activity/' + this.props.name, className: 'media-left' },
+                        _react2.default.createElement('img', { className: 'media-object', src: this.props.pic, style: { width: 100, height: 100 }, alt: 'Image' })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },
                         _react2.default.createElement(
                             _reactRouter.Link,
-                            { to: '#', className: 'media-heading' },
-                            'Activity Name : Coming Soon'
+                            { to: '/activity/' + this.props.name, className: 'media-heading' },
+                            this.props.name
                         )
                     ),
                     _react2.default.createElement(
                         'p',
                         null,
                         _react2.default.createElement('i', { className: 'fa fa-calendar', 'aria-hidden': 'true' }),
-                        'Location : Coming Soon'
+                        this.props.province
                     )
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'col-sm-3' },
                     _react2.default.createElement(
-                        'button',
-                        { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
-                        'Booking'
+                        _reactRouter.Link,
+                        { to: '/activity/' + this.props.name },
+                        _react2.default.createElement(
+                            'button',
+                            { type: 'button', className: 'btn btn-block buttonCustomPrimary' },
+                            'Booking'
+                        )
                     )
                 ),
                 _react2.default.createElement('br', null),

@@ -8,7 +8,7 @@ class ActivityHome extends React.Component{
     return(
      <div className="col-xs-12 col-sm-6 margintop">
        <div className="bgwhite">
-        <img className="component" src={this.props.pic} style={{height:210}}/>
+        <Link to={'/activity/'+this.props.name}><img className="component" src={this.props.pic} style={{height:210}}/></Link>
          </div>
        </div>
 
