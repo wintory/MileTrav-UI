@@ -19520,7 +19520,7 @@ var BankUpload = function (_Component) {
                 if (this.state.verify_bank == 0) {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
                         _react2.default.createElement(
                             'div',
                             { className: 'thumbnail deals verify' },
@@ -19551,7 +19551,7 @@ var BankUpload = function (_Component) {
                 } else {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
                         _react2.default.createElement(
                             'div',
                             { className: 'thumbnail deals verify' },
@@ -20448,7 +20448,7 @@ var CitizenUpload = function (_Component) {
                 if (this.state.verify_citizen == 0) {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
                         _react2.default.createElement(
                             'div',
                             { className: 'thumbnail deals verify' },
@@ -20479,7 +20479,7 @@ var CitizenUpload = function (_Component) {
                 } else {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
                         _react2.default.createElement(
                             'div',
                             { className: 'thumbnail deals verify' },
