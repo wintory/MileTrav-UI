@@ -129,7 +129,7 @@ class UploadPhotoActivity extends React.Component {
                     <Home />
                     <section className="margintop">
                         <div className="b createac" >
-                            <div className="col-sm-3"/>
+                            <div className="col-sm-3" />
                             <div className="col-sm-9 well">
                                 <div className="portlet ">
                                     <div className="portlet-title">
@@ -152,7 +152,7 @@ class UploadPhotoActivity extends React.Component {
 
                                             </div>
                                             <div className="form-group">
-                                                <div className="col-sm-2"/>
+                                                <div className="col-sm-2" />
                                                 <div className="col-sm-offset-2 col-sm-4">
                                                     <button type="button" className="btn btn-block buttonCustomPrimary" onClick={this.create}>Create Activity</button>
                                                 </div>
@@ -177,37 +177,20 @@ class UploadPhotoActivity extends React.Component {
                 <div className="main-wrapper b">
                     <Home />
                     <section className="margintop">
-                        <div className="col-sm-3 well slidemenu">
-                        </div>
-                        <div className="b createac" >
-                            <div className="col-sm-8 well">
-                                <div className="portlet ">
+                        <div className="container b createac">
+                            <div className="col-sm-12 col-xs-12">
+                                <div className="h2login ">
                                     <div className="portlet-title">
-                                        <center>
-                                            <div className="caption font-kademy">
-                                                <h3>Picture of your activity</h3>
-                                                <p>This is optional process if you have any picture of {this.state.name}</p>
-                                            </div>
-                                        </center>
-                                    </div>
-                                    <div className="portlet-body">
-                                        <form className="form-horizontal">
-                                            <div className="form-group">
-                                                <div className="container" style={{ marginTop: 300, marginBottom: 300 }}>
-                                                    <Loading type='bars' color="#26A65B" style={{ width: 200, height: 100 }} />
-                                                </div>
-                                            </div>
-
-                                        </form>
+                                        <div align="center" className=" loading">
+                                            <Loading type='bars' color="#26A65B" style={{ width: 200, height: 100 }} />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
                     <Footer />
-
                 </div>
-
             )
         }
 

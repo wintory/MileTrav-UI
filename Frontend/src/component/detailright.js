@@ -10,11 +10,8 @@ class DetailRight extends React.Component {
                 <div className="well">
                     <div className="row">
                         <div className="col-sm-12">
-                            <OperatingDay aid={this.props.aid}/>
-                            <h3>{this.props.activity_name}</h3> 
-                            <br />
                             <Tickets aid={this.props.aid} />
-                            <br/>
+                            <br />
                             <div className="col-sm-3"/>
                             <div className="col-sm-5">
                                 <Link to="/Booking"><button type="button" className="btn btn-block buttonCustomPrimary" >Booking Now</button></Link>
@@ -22,6 +19,10 @@ class DetailRight extends React.Component {
                               <br/>
                               <br/>
                               <br/>
+                            <OperatingDay aid={this.props.aid}/>
+                            <h3>{this.props.activity_name}</h3> 
+                            <Tickets aid={this.props.aid} />
+                            <br/>
                     <Schedule aid={this.props.aid} />
               
                     </div>

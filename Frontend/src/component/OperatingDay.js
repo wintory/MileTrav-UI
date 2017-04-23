@@ -30,23 +30,35 @@ class OperatingDay extends Component {
 
     render() {
         return (
-            <div className="thumbnail deals" style={{marginTop: 20, width: 775}}>
-              <div className="caption">
-                      <h3>Available day</h3>
-              </div>
-            <div  className="row">
 
-              {
+             <div>
+        <h4>Operating Day</h4>
+          <hr/>
+              <center>
+                    <table className="table">
+                        <thead>
+                          <tr>
+                            <td><p className="topic">Day</p></td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {
                   this.state.date.map((value , index) => {
                       return(
-                                <div key={index} className="col-md-3">
+                                <tr key={index}>
+                                    <td>
                                    <p>{value.day_of_week}</p>
-                                </div>
+                                   </td>
+                                </tr>
                       )
                   })
               }
-              </div>
-            </div>
+                        </tbody>
+                    </table>
+            </center>
+      </div>
+
+
         );
     }
 }

@@ -6,6 +6,7 @@ import Footer from './Footer'
 import DropzoneComponent from 'react-dropzone-component/lib/react-dropzone';
 import {host} from './host'
 import firebase from 'firebase'
+import firebaseConfig from './firebase'
 import Sidemenu from './Sidemenu'
 class EditProfile extends React.Component{
 

@@ -59,7 +59,7 @@ class Detail extends React.Component {
                              {this.state.img.length > 0 &&
                                 this.state.img.map((value , index)=>{
                                     return(
-                                        <img src={value.photo_path} style={{width: 575, height: 575 , marginBottom: 20, marginRight: 100 , marginLeft: 100}} key={index}/>
+                                        <img src={value.photo_path} style={{width: 450, height: 300 , marginBottom: 20,  marginLeft: 70}} key={index}/>
                                     )
                                 })      
                             }

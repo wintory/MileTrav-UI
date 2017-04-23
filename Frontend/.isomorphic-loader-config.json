@@ -1,7 +1,7 @@
 {
   "valid": true,
   "version": "1.6.2",
-  "timestamp": 1492970953537,
+  "timestamp": 1492973572640,
   "context": "",
   "output": {
     "path": "public\\js",
@@ -13,7 +13,7 @@
     "chunks": {
       "main": [
         "bundle.js",
-        "0.00576afb04ae3f1cd395.hot-update.js"
+        "0.503b0cde361926b811af.hot-update.js"
       ]
     }
   },

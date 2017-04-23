@@ -371,8 +371,8 @@ class CreateActivity extends React.Component {
           <Home />
           <section className="margintop">
             <div className="container b createac">
-                <div className="col-sm-12 col-xs-12 well">
-                <div className="portlet ">
+                <div className="col-sm-12 col-xs-12">
+                <div className="h2login">
                   <div className="portlet-title">
               <div align="center" className=" loading">
                 <Loading type='bars' color="#26A65B" style={{ width: 200, height: 100 }} />

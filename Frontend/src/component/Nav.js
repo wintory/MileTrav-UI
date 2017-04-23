@@ -323,7 +323,6 @@ class Nav extends React.Component {
                   <ul className="dropdown-menu">
                     <li><Link to="/EditProfile"><span className="	glyphicon glyphicon-wrench"/> Profile</Link></li>
                     <li><Link to="/Manage"><span className="glyphicon glyphicon-eye-open"/> Manage System</Link></li>
-                    <li><Link to="/Verify"><span className="glyphicon glyphicon-qrcode"/>  Verify Account</Link></li>
                     <li><Link onClick={this.logout}><span className="glyphicon glyphicon-log-out"/> Logout</Link></li>
                   </ul>
                 </li>
