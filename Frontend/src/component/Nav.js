@@ -32,7 +32,8 @@ class Nav extends React.Component {
       password: "",
       name: "",
       surname: "",
-      canRegist: true
+      canRegist: true,
+      confirmPassword:""
     }
     this.goToLogin = this.goToLogin.bind(this);
     this.goToRegister = this.goToRegister.bind(this);
@@ -49,6 +50,7 @@ class Nav extends React.Component {
     this.setName = this.setName.bind(this);
     this.setSurname = this.setSurname.bind(this);
     this.register = this.register.bind(this);
+    this.setConfirmPassword = this.setConfirmPassword.bind(this)
   }
 
 
@@ -74,9 +76,18 @@ class Nav extends React.Component {
     });
   }
 
-  register(){
-                      console.log('sending');
 
+  setConfirmPassword(e){
+    this.setState({
+      confirmPassword: e.target.value
+    });
+  }
+
+  register(){
+              if(this.state.username == "" || this.state.name == "" || this.state.surname == "" || this.state.password == ""){
+                console.log("invalid input")
+              }else if(this.state.password === this.state.confirmPassword){
+                 console.log('success');
                         fetch(host+"api/user/register" , {
                           method: 'POST',
                            headers: {
@@ -103,10 +114,19 @@ class Nav extends React.Component {
                         ).catch((err)=>{
                           console.log(err)
                         })
-                    }
+                   alert("Register Success")
+                   this.login();
+              }else{
+                 alert("password did not match") 
+              }
+                   }
 
   login(e){
-        e.preventDefault();
+     if(this.state.username == "" || this.state.password == ""){
+          alert("invalid username or password")
+         
+     }else{
+      e.preventDefault();
         fetch(host+"api/user/login" , {
           method: 'POST',
            headers: {
@@ -127,12 +147,8 @@ class Nav extends React.Component {
           console.log(err)
         })
         location.reload()
+     }   
       }
-
-  static contextTypes: {
-    router: React.PropTypes.func.isRequired
-  }
-
 
 
   goToLogin() {
@@ -234,7 +250,7 @@ class Nav extends React.Component {
               </button>
               <h2 className="h2login">login</h2>
               <button className="btn btn-facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i><span >Log In with Facebook</span></button>
-              <input onChange={this.setUsername} placeholder="enter your username" className="input pass" />
+              <input onChange={this.setUsername} placeholder="enter your username" className="input pass" required="required" />
               <input onChange={this.setPassword} type="password" placeholder="enter your password" required="required" className="input pass" />
               <input type="button" onClick={this.login} value="Sign me in!" className="inputButton" />
               <div className="text-center">
@@ -258,7 +274,7 @@ class Nav extends React.Component {
               <h2 className="h2login">create an account</h2>
               <input onChange={this.setUsername} type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" className="input pass" />
               <input onChange={this.setPassword} type="password" placeholder="Choose a password" required="required" className="input pass" />
-              <input type="password" placeholder="Confirm password" required="required" className="input pass" />
+              <input type="password" onChange={this.setConfirmPassword} placeholder="Confirm password" required="required" className="input pass" />
               <input onChange={this.setName} type="text" placeholder="Name" className="input pass" required="required" />
               <input onChange={this.setSurname} type="text" placeholder="Surname" className="input pass" required="required" />
               <input type="submit" onClick={this.register} value="Sign me up!" className="inputButton" />
