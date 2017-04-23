@@ -123,33 +123,32 @@ class BankUpload extends Component {
         } else {
             if (this.state.verify_bank == 0) {
                 return (
-                    <div className="col-xs-4 col-md-4 col-lg-4 margbtm" style={{width:200,height:200}}>
-                        <div className="thumbnail deals verify">
-                            <div className="caption">
-                                <h4>Bank Account</h4>
+                    <div className="col-xs-4 col-md-4 col-lg-4 margbtm">
+                 
+                            <div className="caption" >
+                                <h4>Bank ID</h4>
                                 <div className="detailsInfo">
                                     <div>
                                         <p className="topic">Pending...</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+        
                     </div>
                 )
             } else {
                 return (
-                     <div className="col-xs-4 col-md-4 col-lg-4 margbtm" style={{width:200,height:200}}>
-                        <div className="thumbnail deals verify">
-                            <div className="caption">
-                                <h4>Bank Account</h4>
+                     <div className="col-xs-4 col-md-4 col-lg-4 margbtm">
+                            <div className="caption" >
+                                <h4>Bank ID</h4>
                                 <div className="detailsInfo">
                                     <div>
                                         <p className="green">Confirm</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            </div>
+          
                 )
             }
         }

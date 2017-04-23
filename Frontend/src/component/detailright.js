@@ -21,7 +21,6 @@ class DetailRight extends React.Component {
                               <br/>
                             <OperatingDay aid={this.props.aid}/>
                             <h3>{this.props.activity_name}</h3> 
-                            <Tickets aid={this.props.aid} />
                             <br/>
                     <Schedule aid={this.props.aid} />
               

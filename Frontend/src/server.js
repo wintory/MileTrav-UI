@@ -19,17 +19,6 @@ app.set('view engine' , 'handlebars')
 app.set('views' , path.join(__dirname , './templete'))
 app.use(router)
 
-/*
-var options = {
-         key: fs.readFileSync(path.join(__dirname , './server.key')),
-        cert: fs.readFileSync(path.join(__dirname ,'./miletrav_com.crt'))
-
-}
-
-var servers = https.createServer(options, app).listen(443 , function(){
-        console.log('https running on 443');
-});
-*/
 
 var server = http.createServer(app).listen(3000 , function(){
   console.log("senior project running on port 3000")

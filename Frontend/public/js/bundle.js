@@ -19520,29 +19520,25 @@ var BankUpload = function (_Component) {
                 if (this.state.verify_bank == 0) {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'thumbnail deals verify' },
+                            { className: 'caption' },
+                            _react2.default.createElement(
+                                'h4',
+                                null,
+                                'Bank ID'
+                            ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'caption' },
-                                _react2.default.createElement(
-                                    'h4',
-                                    null,
-                                    'Bank Account'
-                                ),
+                                { className: 'detailsInfo' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'detailsInfo' },
+                                    null,
                                     _react2.default.createElement(
-                                        'div',
-                                        null,
-                                        _react2.default.createElement(
-                                            'p',
-                                            { className: 'topic' },
-                                            'Pending...'
-                                        )
+                                        'p',
+                                        { className: 'topic' },
+                                        'Pending...'
                                     )
                                 )
                             )
@@ -19551,29 +19547,25 @@ var BankUpload = function (_Component) {
                 } else {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'thumbnail deals verify' },
+                            { className: 'caption' },
+                            _react2.default.createElement(
+                                'h4',
+                                null,
+                                'Bank ID'
+                            ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'caption' },
-                                _react2.default.createElement(
-                                    'h4',
-                                    null,
-                                    'Bank Account'
-                                ),
+                                { className: 'detailsInfo' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'detailsInfo' },
+                                    null,
                                     _react2.default.createElement(
-                                        'div',
-                                        null,
-                                        _react2.default.createElement(
-                                            'p',
-                                            { className: 'green' },
-                                            'Confirm'
-                                        )
+                                        'p',
+                                        { className: 'green' },
+                                        'Confirm'
                                     )
                                 )
                             )
@@ -19802,46 +19794,6 @@ var Booking = function (_React$Component) {
                             'card info'
                           )
                         )
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'form-group col-sm-6 col-xs-12' },
-                        _react2.default.createElement(
-                          'p',
-                          { className: 'control-label col-sm-6 paytopic', 'for': '' },
-                          'Card Name'
-                        ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control', id: '', placeholder: 'input Your Card Name' })
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'form-group col-sm-6 col-xs-12' },
-                        _react2.default.createElement(
-                          'p',
-                          { className: 'control-label col-sm-6 paytopic', 'for': '' },
-                          'Card Number'
-                        ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control', id: '', placeholder: 'input Your Card Number' })
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'form-group col-sm-6 col-xs-12' },
-                        _react2.default.createElement(
-                          'p',
-                          { className: 'control-label col-sm-6 paytopic', 'for': '' },
-                          'CVV'
-                        ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control', id: '', placeholder: 'input Your Card CVV' })
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'form-group col-sm-6 col-xs-12' },
-                        _react2.default.createElement(
-                          'p',
-                          { className: 'control-label col-sm-6 paytopic', 'for': '' },
-                          'Expiration Date'
-                        ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control', id: '', placeholder: 'input Your Expiration Date' })
                       ),
                       _react2.default.createElement(
                         'div',
@@ -20448,29 +20400,25 @@ var CitizenUpload = function (_Component) {
                 if (this.state.verify_citizen == 0) {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'thumbnail deals verify' },
+                            { className: 'caption' },
+                            _react2.default.createElement(
+                                'h4',
+                                null,
+                                'Citizen ID'
+                            ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'caption' },
-                                _react2.default.createElement(
-                                    'h4',
-                                    null,
-                                    'Citizen ID'
-                                ),
+                                { className: 'detailsInfo' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'detailsInfo' },
+                                    null,
                                     _react2.default.createElement(
-                                        'div',
-                                        null,
-                                        _react2.default.createElement(
-                                            'p',
-                                            { className: 'topic' },
-                                            'Pending...'
-                                        )
+                                        'p',
+                                        { className: 'topic' },
+                                        'Pending...'
                                     )
                                 )
                             )
@@ -20479,29 +20427,25 @@ var CitizenUpload = function (_Component) {
                 } else {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm', style: { width: 200, height: 200 } },
+                        { className: 'col-xs-4 col-md-4 col-lg-4 margbtm' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'thumbnail deals verify' },
+                            { className: 'caption' },
+                            _react2.default.createElement(
+                                'h4',
+                                null,
+                                'Citizen ID'
+                            ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'caption' },
-                                _react2.default.createElement(
-                                    'h4',
-                                    null,
-                                    'Citizen ID'
-                                ),
+                                { className: 'detailsInfo' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'detailsInfo' },
+                                    null,
                                     _react2.default.createElement(
-                                        'div',
-                                        null,
-                                        _react2.default.createElement(
-                                            'p',
-                                            { className: 'green' },
-                                            'Confirm'
-                                        )
+                                        'p',
+                                        { className: 'green' },
+                                        'Confirm'
                                     )
                                 )
                             )
@@ -25375,7 +25319,6 @@ var DetailRight = function (_React$Component) {
                                 null,
                                 this.props.activity_name
                             ),
-                            _react2.default.createElement(_Tickets2.default, { aid: this.props.aid }),
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(_Schedule2.default, { aid: this.props.aid })
                         )

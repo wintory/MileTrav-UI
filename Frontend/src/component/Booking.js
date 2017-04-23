@@ -60,22 +60,7 @@ class Booking extends React.Component {
                       <h4>card info</h4>
                     </div>
                   </div>
-                  <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-6 paytopic" for="">Card Name</p>
-                    <input type="text" className="form-control" id="" placeholder="input Your Card Name"/>
-                  </div>
-                  <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-6 paytopic" for="">Card Number</p>
-                    <input type="text" className="form-control" id="" placeholder="input Your Card Number"/>
-                  </div>
-                  <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-6 paytopic" for="">CVV</p>
-                    <input type="text" className="form-control" id="" placeholder="input Your Card CVV"/>
-                  </div>
-                   <div className="form-group col-sm-6 col-xs-12">
-                    <p className="control-label col-sm-6 paytopic" for="">Expiration Date</p>
-                    <input type="text" className="form-control" id="" placeholder="input Your Expiration Date"/>
-                  </div>
+              
                   <div className="form-group col-sm-6 col-xs-12">
                     <p className="control-label col-sm-6 paytopic" for="" className="blankLabel"></p>
                     <ul className="list-inline">

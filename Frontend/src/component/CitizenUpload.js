@@ -116,9 +116,9 @@ class CitizenUpload extends Component {
         } else {
             if (this.state.verify_citizen == 0) {
                 return (
-                    <div className="col-xs-4 col-md-4 col-lg-4 margbtm" style={{width:200,height:200}}>
-                        <div className="thumbnail deals verify" >
-                            <div className="caption">
+                    <div className="col-xs-4 col-md-4 col-lg-4 margbtm">
+                   
+                            <div className="caption" >
                                 <h4>Citizen ID</h4>
                                 <div className="detailsInfo">
                                     <div>
@@ -127,12 +127,12 @@ class CitizenUpload extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+              
                 )
             } else {
                 return (
-                          <div className="col-xs-4 col-md-4 col-lg-4 margbtm" style={{width:200,height:200}}>
-                        <div className="thumbnail deals verify">
+                          <div className="col-xs-4 col-md-4 col-lg-4 margbtm">
+             
                             <div className="caption">
                                 <h4>Citizen ID</h4>
                                 <div className="detailsInfo">
@@ -142,7 +142,7 @@ class CitizenUpload extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                  
                 )
             }
 
