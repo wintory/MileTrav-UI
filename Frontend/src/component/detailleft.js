@@ -4,6 +4,7 @@ import Schedule from './Schedule'
 import {host} from './host'
 import HostDetail from './HostDetail'
 import OperatingDay from './OperatingDay'
+import {Link} from 'react-router'
 import 'whatwg-fetch'
 class Detail extends React.Component {
 

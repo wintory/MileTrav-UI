@@ -18,7 +18,7 @@ class Home extends React.Component{
           <Nav/>
           <div>    </div>
           <Header/>
-          <Search/>
+          <Search header="Your Activities" minheader="choose"/>
 
         </div>
 

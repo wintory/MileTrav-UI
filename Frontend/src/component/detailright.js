@@ -2,6 +2,7 @@ import React from 'react'
 import Tickets from './Tickets'
 import Schedule from './Schedule'
 import {Link} from 'react-router'
+import OperatingDay from './OperatingDay'
 class DetailRight extends React.Component {
     render() {
         return (

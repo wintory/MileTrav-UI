@@ -1,11 +1,13 @@
 import React from 'react'
-import Home from './Home'
+import Nav from './Nav'
+import Header from './Header'
+import Search from './Search'
 import CardActivityResult from './CardActivityResult'
 import 'whatwg-fetch'
 import Footer from './Footer'
 import { host } from './host'
 class ActivityResultByProvince extends React.Component {
-    constructor(props){
+  constructor(props){
       super(props)
       this.state = {
         province : this.props.params.province ,
@@ -37,6 +39,7 @@ class ActivityResultByProvince extends React.Component {
       maxPrice: nextProps.location.query.maxPrice || '&',
       category : nextProps.location.query.category || '&'
     }
+ 
     console.log(this.state)
     fetch(host+'api/activities/province/'+this.state.province+'?cate='+this.state.category+'&min='+this.state.minPrice+'&max='+this.state.maxPrice, 
     { method: 'GET' }).then(
@@ -49,15 +52,17 @@ class ActivityResultByProvince extends React.Component {
     )
   }
 
+
   render() {
 
     return (
       <div className="main-wrapper b">
-        <Home />
+        <Nav/>
+        <Header/>
+        <Search page='result' header={this.props.params.province} minheader="Activity in"/>
         <section>
           <div className=" margintopprovince">
             <div className="row ">
-              <h3 className="middle ">{this.props.params.province}</h3>
               <br />
 
               {

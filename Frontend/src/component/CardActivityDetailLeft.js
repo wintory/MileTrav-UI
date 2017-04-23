@@ -80,7 +80,7 @@ class CardActivityDetailLeft extends React.Component {
         {
           this.state.activity.map((value , index) => {
             return(
-              <Detail key={index} covers={value.cover_photo} aid={value.activity_id} type={value.type} province={value.province} owner={value.owner} location={value.location} activity_name={value.activity_name} activity_desc={value.activity_desc}/>
+              <DetailLeft key={index} covers={value.cover_photo} aid={value.activity_id} type={value.type} province={value.province} owner={value.owner} location={value.location} activity_name={value.activity_name} activity_desc={value.activity_desc}/>
             )
           })
         }
