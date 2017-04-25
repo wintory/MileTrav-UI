@@ -12,9 +12,9 @@ class Comment extends React.Component {
 
       <div className="col-sm-12 events-block events-block-heading">
                    <div className="comment-tabs well">
-            <ul className="nav nav-tabs" role="tablist">
-                <li className="active"><a href="#comments-logout" role="tab" data-toggle="tab"><p className="reviews text-capitalize">Comments</p></a></li>
-                <li><a href="#add-comment" role="tab" data-toggle="tab"><p className="reviews text-capitalize">Add comment</p></a></li>
+            <ul className="nav nav-tabs">
+                <li className="active"><a href="#comments-logout" ><p className="reviews text-capitalize">Comments</p></a></li>
+                <li><a href="#add-comment"  ><p className="reviews text-capitalize">Add comment</p></a></li>
             </ul>            
             <div className="tab-content">
 

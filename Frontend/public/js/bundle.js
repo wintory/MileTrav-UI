@@ -20515,13 +20515,13 @@ var Comment = function (_React$Component) {
                     { className: 'comment-tabs well' },
                     _react2.default.createElement(
                         'ul',
-                        { className: 'nav nav-tabs', role: 'tablist' },
+                        { className: 'nav nav-tabs' },
                         _react2.default.createElement(
                             'li',
                             { className: 'active' },
                             _react2.default.createElement(
                                 'a',
-                                { href: '#comments-logout', role: 'tab', 'data-toggle': 'tab' },
+                                { href: '#comments-logout' },
                                 _react2.default.createElement(
                                     'p',
                                     { className: 'reviews text-capitalize' },
@@ -20534,7 +20534,7 @@ var Comment = function (_React$Component) {
                             null,
                             _react2.default.createElement(
                                 'a',
-                                { href: '#add-comment', role: 'tab', 'data-toggle': 'tab' },
+                                { href: '#add-comment' },
                                 _react2.default.createElement(
                                     'p',
                                     { className: 'reviews text-capitalize' },
